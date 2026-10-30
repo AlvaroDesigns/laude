@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 
 export default function ServiciosPage() {
   return (
-    <div className="space-y-4 sm:space-y-6 pt-24 sm:pt-28 pb-12">
+    <div className="space-y-5 pt-20 sm:pt-24 pb-6 sm:pb-8">
       {/* Header Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="max-w-3xl text-left space-y-4">
           <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
             ESPECIALIDADES CLÍNICAS
@@ -34,7 +34,7 @@ export default function ServiciosPage() {
         return (
           <section
             key={s.id}
-            className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden"
+            className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden"
           >
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center`}>
               <div

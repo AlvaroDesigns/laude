@@ -3,9 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Calendar, Clock, ArrowLeft, User, Share2 } from 'lucide-react';
-import { Container } from '@/components/layout/Container';
-import { Section } from '@/components/layout/Section';
+import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
 import { BLOG_POSTS } from '@/data/siteData';
 
 export async function generateStaticParams() {
@@ -45,13 +43,14 @@ export default async function BlogPostPage({
   }
 
   return (
-    <>
-      <Section variant="hero" className="border-b border-stone-100">
-        <Container size="narrow">
-          <div className="mb-6">
+    <div className="space-y-5 pt-20 sm:pt-24 pb-6 sm:pb-8">
+      {/* Header Island */}
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
+        <div className="max-w-4xl mx-auto space-y-5">
+          <div>
             <Link
               href="/noticias"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#7A5B4C] hover:underline"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8F8C7F] hover:underline"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Volver a Noticias</span>
@@ -59,13 +58,13 @@ export default async function BlogPostPage({
           </div>
 
           <div className="space-y-4">
-            <span className="inline-block bg-[#EFE9E4] text-[#7A5B4C] text-xs font-bold px-3 py-1 rounded-md">
+            <span className="inline-block bg-[#FAF8F5] border border-stone-200 text-[#8F8C7F] text-xs font-medium px-3 py-1 rounded-md">
               {post.category}
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight">
+            <h1 className="font-editorial text-3xl sm:text-4xl md:text-5xl text-stone-900 font-normal leading-tight">
               {post.title}
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-xs text-stone-500 pt-2">
+            <div className="flex flex-wrap items-center gap-4 text-xs text-stone-500 pt-1 font-light">
               <span className="flex items-center gap-1">
                 <User className="w-3.5 h-3.5" />
                 {post.author}
@@ -82,54 +81,51 @@ export default async function BlogPostPage({
               </span>
             </div>
           </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
 
-      <Section variant="normal">
-        <Container size="narrow">
-          <div className="space-y-8">
-            <div className="relative aspect-[16/9] rounded-3xl overflow-hidden  border border-stone-200">
-              <Image
-                src={post.image}
-                alt={post.title}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+      {/* Article Body Island */}
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <div className="relative aspect-[16/9] rounded-2xl overflow-hidden">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
 
-            {/* Article body */}
-            <div className="prose prose-stone prose-lg max-w-none space-y-6 text-stone-700 leading-relaxed">
-              <p className="text-xl font-medium text-stone-800 leading-snug border-l-4 border-[#7A5B4C] pl-4 italic">
-                {post.excerpt}
-              </p>
-              {post.content.map((paragraph, idx) => (
-                <p key={idx} className="text-base sm:text-lg">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+          {/* Article text */}
+          <div className="space-y-6 text-stone-700 leading-relaxed font-light text-base sm:text-lg">
+            <p className="text-lg sm:text-xl font-normal text-stone-900 border-l-4 border-[#B2AFA0] pl-4 italic">
+              {post.excerpt}
+            </p>
+            {post.content.map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
+          </div>
 
-            {/* Bottom CTA for Patient Consultation */}
-            <div className="mt-12 p-8 bg-[#FAF8F5] rounded-2xl border border-stone-200 text-center space-y-4">
-              <h3 className="text-2xl font-bold text-stone-900">
-                ¿Necesitas valoración personalizada en Palma?
-              </h3>
-              <p className="text-sm text-stone-600 max-w-md mx-auto">
-                No dejes que el dolor limite tu día a día. Pide cita con nuestros fisioterapeutas colegiados.
-              </p>
-              <div className="pt-2">
-                <Link
-                  href="/reservas"
-                  className="inline-flex items-center gap-2 bg-[#7A5B4C] hover:bg-[#654A3D] text-white px-7 py-3 rounded-xl text-sm font-semibold shadow transition-all"
-                >
-                  Pedir Cita Online
-                </Link>
-              </div>
+          {/* CTA Box */}
+          <div className="mt-12 p-8 bg-[#FAF8F5] rounded-2xl border border-stone-200 text-center space-y-4">
+            <h3 className="font-editorial text-2xl text-stone-900 font-normal">
+              ¿Necesitas valoración personalizada en Palma?
+            </h3>
+            <p className="text-xs sm:text-sm text-stone-600 max-w-md mx-auto font-light">
+              No dejes que el dolor limite tu día a día. Pide cita con nuestros fisioterapeutas colegiados.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/reservas"
+                className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
+              >
+                Pedir Cita Online
+              </Link>
             </div>
           </div>
-        </Container>
-      </Section>
-    </>
+        </div>
+      </section>
+    </div>
   );
 }

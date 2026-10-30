@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function TarifasPage() {
   return (
-    <div className="space-y-4 sm:space-y-6 pt-24 sm:pt-28 pb-12">
+    <div className="space-y-5 pt-20 sm:pt-24 pb-6 sm:pb-8">
       {/* Header Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="max-w-3xl text-left space-y-4">
           <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
             TARIFAS TRANSPARENTES
@@ -27,7 +27,7 @@ export default function TarifasPage() {
       </section>
 
       {/* Fisioterapia Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="text-left mb-10 space-y-2">
           <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal">
             Fisioterapia y Rehabilitación
@@ -74,7 +74,7 @@ export default function TarifasPage() {
       </section>
 
       {/* Pilates Reformer Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="text-left mb-10 space-y-2">
           <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal">
             Pilates Máquinas (Reformer)
@@ -121,7 +121,7 @@ export default function TarifasPage() {
       </section>
 
       {/* Pilates Suelo Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="text-left mb-10 space-y-2">
           <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal">
             Pilates Suelo (Mat)

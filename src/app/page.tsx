@@ -6,9 +6,9 @@ import { GoogleReviewsCarousel } from '@/components/ui/GoogleReviewsCarousel';
 
 export default function HomePage() {
   return (
-    <div className="space-y-4 sm:space-y-6">
+    <div className="space-y-5 pb-6 sm:pb-8">
       {/* 1. HERO SECTION (Rounded-25px Island with Fullscreen Background) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 mt-6 sm:mt-8 lg:mt-10 relative min-h-[94vh] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-16 pt-48 sm:pt-56 lg:pt-64 pb-16 sm:pb-24 ">
+      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[580px] sm:min-h-[640px] lg:min-h-[680px] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-14 pt-28 sm:pt-36 lg:pt-40 pb-10 sm:pb-14">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -56,7 +56,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. SECTION: ¿Y si existiera un lugar donde tu cuerpo es escuchado de verdad? */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Image (Exact original: span_4 on left) */}
           <div className="lg:col-span-5 order-2 lg:order-1">
@@ -126,7 +126,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. SECTION: NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL (HEADER: LEFT TITLE + RIGHT CTA) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         {/* Header with LEFT content and RIGHT CTA */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
           <div className="max-w-3xl text-left space-y-3">
@@ -240,7 +240,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. SECTION: PANORAMIC PILATES BANNER (Rounded 25px) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8">
+      <section className="mx-4 sm:mx-5">
         <div className="relative h-96 sm:h-[480px] rounded-[25px] overflow-hidden ">
           <Image
             src="/images/mujeres-de-tiro-completo-haciendo-pilates-juntas-scaled.jpg"
@@ -252,7 +252,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. SECTION: LO QUE OPINÁIS VOSOTROS ES LO QUE MÁS VALORAMOS (WITH GOOGLE CAROUSEL) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
             LO QUE OPINÁIS VOSOTROS ES LO QUE MÁS VALORAMOS

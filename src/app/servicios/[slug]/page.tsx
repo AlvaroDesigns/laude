@@ -39,11 +39,11 @@ export default async function ServiceDetailPage({
   }
 
   return (
-    <div className="space-y-4 sm:space-y-6 pt-24 sm:pt-28 pb-12">
+    <div className="space-y-5 pt-20 sm:pt-24 pb-6 sm:pb-8">
       <FaqSchema faqs={service.faqs} />
 
       {/* Hero Service Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6 text-left">
             <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
@@ -80,7 +80,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* Content & Details Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8 space-y-10 text-left">
             <div className="space-y-4">
@@ -154,7 +154,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* FAQs Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 space-y-2">
             <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
