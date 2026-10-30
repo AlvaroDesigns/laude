@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div className="space-y-4 sm:space-y-6">
       {/* 1. HERO SECTION (Rounded-25px Island with Fullscreen Background) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 mt-5 sm:mt-8 lg:mt-9 relative min-h-[92vh] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-16 pt-36 sm:pt-44 lg:pt-52 pb-16 sm:pb-24 shadow-sm">
+      <section className="mx-3 sm:mx-5 lg:mx-8 mt-6 sm:mt-8 lg:mt-10 relative min-h-[94vh] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-16 pt-48 sm:pt-56 lg:pt-64 pb-16 sm:pb-24 shadow-sm">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
