@@ -27,7 +27,10 @@ export function Header() {
     setServicesDropdownOpen(false);
   }, [pathname]);
 
-  const isTransparent = (isHome || pathname === '/nosotros' || pathname === '/nosotros/' || pathname?.startsWith('/nosotros')) && !scrolled;
+  const cleanPath = pathname?.replace(/\/$/, '') || '/';
+  const heroPages = ['', '/', '/nosotros', '/servicios', '/tarifas', '/contacto'];
+  const hasHero = heroPages.includes(cleanPath);
+  const isTransparent = hasHero && !scrolled;
 
   return (
     <header
