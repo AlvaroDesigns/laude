@@ -35,6 +35,10 @@ export async function generateMetadata({
 interface ServiceConfig {
   heroTitle: string;
   heroSubtitle: string;
+  introP1: string;
+  introHeadline: string;
+  introP2: string;
+  introImage: string;
   twoColTitle: string;
   twoColIntro: string;
   twoColItems: string[];
@@ -50,6 +54,10 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
   fisioterapia: {
     heroTitle: "Fisioterapia",
     heroSubtitle: "Fisioterapia profesional enfocada en resultados. Te acompañamos en cada paso hacia una recuperación segura.",
+    introP1: "En LAUDE creemos que la salud no es solo la ausencia de dolor, sino la presencia de equilibrio. Nos enfocamos en escuchar al cuerpo, guiarlo con respeto y promover un estilo de vida consciente. Cada paciente es único y merece un tratamiento personalizado, técnico y humano.",
+    introHeadline: "No tienes que resignarte al dolor. Tu cuerpo es tu templo, y merece ser cuidado, comprendido y reconquistado.",
+    introP2: "A veces no es solo el dolor. Es la frustración de no poder moverte como antes, el miedo a que algo esté mal, o el cansancio de sentir que nadie entiende lo que te pasa.",
+    introImage: "/images/fisio.jpg",
     twoColTitle: "Tu recuperación empieza aquí. Se protagonista de tu cambio.",
     twoColIntro: "Sabemos que el dolor tiene muchas caras. Puede aparecer:",
     twoColItems: [
@@ -110,6 +118,10 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
   "pilates-suelo": {
     heroTitle: "Pilates Suelo",
     heroSubtitle: "Control, respiración y fuerza profunda. Clases en grupos reducidos dirigidas por fisioterapeutas.",
+    introP1: "En LAUDE entendemos el cuerpo como algo que se entrena, se cuida y se escucha. Te acompañamos a recuperar la movilidad, fuerza y estabilidad.",
+    introHeadline: "Muévete con consciencia, precisión y sin dolor.",
+    introP2: "Grupos reducidos supervisados por fisioterapeutas para que cada sesión se adapte a tus necesidades específicas.",
+    introImage: "/images/pilates_suelo.jpg",
     twoColTitle: "Pilates con intención: guiado, consciente y adaptado a ti.",
     twoColIntro: "Acompañamiento profesional y grupos reducidos para que cada movimiento cuente:",
     twoColItems: [
@@ -147,6 +159,10 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
   "pilates-maquinas": {
     heroTitle: "Pilates Máquinas",
     heroSubtitle: "Entrena con precisión en Reformer y Cadillac. Asistencia y resistencia progresiva para tu cuerpo.",
+    introP1: "En LAUDE entendemos el cuerpo como algo que se entrena, se cuida y se escucha. El entrenamiento con máquinas ofrece la máxima precisión y protección articular.",
+    introHeadline: "Fortalece tu cuerpo desde el centro hacia afuera con asistencia progresiva.",
+    introP2: "Una experiencia guiada con muelles y resistencias graduadas para mejorar postura, flexibilidad y fuerza profunda.",
+    introImage: "/images/pilates_maquinas-min.jpg",
     twoColTitle: "Una forma inteligente y respetuosa de fortalecer tu cuerpo.",
     twoColIntro: "El sistema de muelles y poleas de las máquinas Reformer asiste el movimiento:",
     twoColItems: [
@@ -198,6 +214,10 @@ export default async function ServiceDetailPage({
   const config = SERVICE_CONFIGS[slug] || {
     heroTitle: service.title,
     heroSubtitle: service.subtitle || service.shortDesc,
+    introP1: "En LAUDE creemos que la salud no es solo la ausencia de dolor, sino la presencia de equilibrio. Nos enfocamos en escuchar al cuerpo, guiarlo con respeto y promover un estilo de vida consciente. Cada paciente es único y merece un tratamiento personalizado, técnico y humano.",
+    introHeadline: "No tienes que resignarte al dolor. Tu cuerpo es tu templo, y merece ser cuidado, comprendido y reconquistado.",
+    introP2: "A veces no es solo el dolor. Es la frustración de no poder moverte como antes, el miedo a que algo esté mal, o el cansancio de sentir que nadie entiende lo que te pasa.",
+    introImage: service.image || "/images/fisio.jpg",
     twoColTitle: "Tu recuperación empieza aquí. Se protagonista de tu cambio.",
     twoColIntro: "Sabemos que el dolor tiene muchas caras. Puede aparecer:",
     twoColItems: [
@@ -237,7 +257,7 @@ export default async function ServiceDetailPage({
     <div className="space-y-5 pb-6 sm:pb-8">
       <FaqSchema faqs={service.faqs} />
 
-      {/* 1. HERO SECTION (Identical photographic island matching fisiolaude.com) */}
+      {/* 1. HERO SECTION (Photographic island matching fisiolaude.com) */}
       <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[640px] rounded-[25px] overflow-hidden flex items-center justify-start px-5 sm:px-8 lg:px-14 pt-20 sm:pt-28 md:pt-36 lg:pt-40 pb-7 sm:pb-10 lg:pb-14">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
@@ -270,16 +290,45 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
-      {/* 2. INTRO BANNER TEXT */}
+      {/* 2. EXACT SECTION REQUESTED BY USER (No resignarte al dolor + Reservar cita + Photo) */}
       <ScrollReveal>
-        <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden text-center">
-          <p className="text-stone-600 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-4xl mx-auto">
-            En LAUDE entendemos el cuerpo como algo que se entrena, se cuida y se escucha. Nos enfocamos en guiarlo con respeto y promover un estilo de vida consciente, técnico y humano.
+        <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 max-w-5xl mx-auto text-center space-y-7">
+          <p className="text-stone-600 text-sm sm:text-base md:text-[17px] font-light leading-relaxed max-w-4xl mx-auto">
+            {config.introP1}
           </p>
+
+          <h2 className="font-editorial text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] text-[#787361] font-normal leading-[1.25] max-w-3xl mx-auto">
+            {config.introHeadline}
+          </h2>
+
+          <p className="text-stone-500 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto">
+            {config.introP2}
+          </p>
+
+          <div className="pt-2">
+            <Link
+              href="/reservas"
+              className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3 rounded-full text-xs uppercase tracking-wider font-semibold shadow-sm transition-all hover:scale-105"
+            >
+              Reservar cita
+            </Link>
+          </div>
         </section>
       </ScrollReveal>
 
-      {/* 3. TWO-COLUMN HIGHLIGHT SECTION (Exact UI matching user screenshot) */}
+      {/* 3. PHOTO BANNER (Woman with dumbbell / service image with rounded-[25px]) */}
+      <ScrollReveal>
+        <section className="mx-4 sm:mx-5 rounded-[25px] overflow-hidden relative aspect-[16/9] sm:aspect-[21/9] shadow-sm">
+          <Image
+            src={config.introImage}
+            alt={config.heroTitle}
+            fill
+            className="object-cover object-center"
+          />
+        </section>
+      </ScrollReveal>
+
+      {/* 4. TWO-COLUMN HIGHLIGHT SECTION (Tu recuperacion empieza aqui + man on roller) */}
       <ScrollReveal>
         <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
@@ -327,7 +376,7 @@ export default async function ServiceDetailPage({
         </section>
       </ScrollReveal>
 
-      {/* 4. 4 PILLARS SECTION (Warm beige cards) */}
+      {/* 5. 4 PILLARS SECTION (Warm beige cards) */}
       <ScrollReveal>
         <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden space-y-10">
           <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal max-w-3xl text-left leading-tight">
@@ -360,7 +409,7 @@ export default async function ServiceDetailPage({
         </section>
       </ScrollReveal>
 
-      {/* 5. AREAS DE TRATAMIENTO (If available) */}
+      {/* 6. AREAS DE TRATAMIENTO (If available) */}
       {config.areas && (
         <ScrollReveal>
           <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden space-y-8">
@@ -392,7 +441,7 @@ export default async function ServiceDetailPage({
         </ScrollReveal>
       )}
 
-      {/* 6. FAQS SECTION */}
+      {/* 7. FAQS SECTION */}
       <ScrollReveal>
         <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
           <div className="max-w-4xl mx-auto space-y-8">
