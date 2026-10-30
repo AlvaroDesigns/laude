@@ -114,16 +114,28 @@ export const SERVICES_DATA: Record<string, Service> = {
     ],
     faqs: [
       {
-        question: "¿Qué necesito llevar a mi primera consulta de fisioterapia?",
-        answer: "Ropa cómoda que permita el movimiento y la visualización de la zona a tratar. Si tienes pruebas médicas recientes (radiografías, resonancias magnéticas o informes), tráelas para valorarlas."
+        question: "¿Cuánto dura una sesión de fisioterapia?",
+        answer: "Normalmente, entre 45 y 60 minutos, dependiendo de la técnica y la valoración inicial."
       },
       {
-        question: "¿Cuánto dura cada sesión de fisioterapia?",
-        answer: "Nuestras sesiones individuales tienen una duración aproximada de 50 a 60 minutos, dedicados íntegramente a ti de manera exclusiva con el fisioterapeuta."
+        question: "¿Cuántas sesiones necesito para notar mejoría?",
+        answer: "Varía según cada persona y el tipo de lesión. Algunas personas notan alivio en 1-2 sesiones, mientras que otras necesitan un plan más prolongado (4-6 sesiones o más). Hacemos una valoración inicial para estimar el número de sesiones y te decimos, en caso necesario, que bono te sale más rentable."
       },
       {
-        question: "¿Puedo acudir si tengo una lesión muy reciente con inflamación?",
-        answer: "Sí, intervenir en fases tempranas con técnicas desinflamatorias, drenaje y movilización segura acelera notablemente la recuperación y previene compensaciones posturales nocivas."
+        question: "¿Cuánto tiempo tengo para usar un bono de fisioterapia? ¿Se puede compartir?",
+        answer: "El bono tanto de 5 como de 10 sesiones tienes 9 meses para poder disfrutarlo. Están pensados para programas de fisioterapia que requieran más de una sesión y un seguimiento supervisado por el fisioterapeuta. Pero también para aquellos que debido a su trabajo, deporte necesiten venir con más frecuencia a fisioterapia. También es posible compartir el bono con un familiar u amigo."
+      },
+      {
+        question: "¿La fisioterapia duele?",
+        answer: "No siempre. Es decir se puede utilizar tanto técnicas de terapia manual, invasiva y ejercicio terapéutico. Puede haber cierta molestias en algún momento del tratamiento, pero no buscamos “dolor” para curar. Por tanto es una falsa creencia el “cuanto más duela, más cura”."
+      },
+      {
+        question: "¿Aceptáis seguros médicos?",
+        answer: "No trabajamos con seguros. Pero si es necesario podemos hacerte justificante o informe sobre tu caso clínico e indicar el número de sesiones requeridas para tu dolencia."
+      },
+      {
+        question: "¿Hacéis sesiones de fisioterapia a domicilio?",
+        answer: "De momento, no hacemos ese servicio. Pero contamos con un espacio amplio de fácil acceso y adaptado según la normativa como centro sanitario."
       }
     ]
   },

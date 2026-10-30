@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Check, Sparkles, Compass, ShieldCheck, HeartHandshake, type LucideIcon } from "lucide-react";
 import { FaqSchema } from "@/components/seo/JsonLd";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { ServiceFaqAccordion } from "@/components/ui/ServiceFaqAccordion";
 import { SERVICES_DATA } from "@/data/siteData";
 
 export const instant = false;
@@ -32,6 +33,11 @@ export async function generateMetadata({
   };
 }
 
+interface CommonProblemCategory {
+  title: string;
+  items: string[];
+}
+
 interface ServiceConfig {
   heroTitle: string;
   heroSubtitle: string;
@@ -48,6 +54,10 @@ interface ServiceConfig {
   pillars: { icon: LucideIcon; title: string; desc: string }[];
   areasLabel?: string;
   areas?: { title: string; desc: string }[];
+  commonProblemsTitle?: string;
+  commonProblems?: CommonProblemCategory[];
+  faqLabel?: string;
+  faqTitle?: string;
 }
 
 const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
@@ -91,29 +101,52 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
         desc: "Sabemos que es difícil cumplir tareas por el ritmo de vida o simplemente falta de fuerza de voluntad. Por eso priorizamos el seguimiento individual."
       }
     ],
-    areasLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
-    areas: [
+    commonProblemsTitle: "Aquí tienes algunos de los problemas más comunes que tratamos:",
+    commonProblems: [
       {
         title: "Columna y postura",
-        desc: "Dolor lumbar y cervical. Síndromes de atrapamiento nervioso. Problemas posturales. Disfunciones de movimiento."
+        items: [
+          "Dolor lumbar y cervical.",
+          "Síndromes de atrapamiento nervioso.",
+          "Problemas posturales.",
+          "Disfunciones de movimiento.",
+          "Sobrecarga por estrés físico."
+        ]
       },
       {
         title: "Lesiones deportivas",
-        desc: "Distensiones y desgarros musculares. Sobrecargas por sobreuso. Prevención de recaídas."
+        items: [
+          "Distensiones y desgarros musculares.",
+          "Sobrecargas por sobreuso.",
+          "Prevención de recaídas."
+        ]
       },
       {
         title: "Articulaciones",
-        desc: "Esguinces articulares. Lesiones de rodilla y tobillo. Preparación preoperatoria y rehabilitación postoperatoria."
+        items: [
+          "Esguinces articulares.",
+          "Lesiones de rodilla y tobillo.",
+          "Preparación preparatoria y rehabilitación postoperatoria."
+        ]
       },
       {
         title: "Tendones y fascia",
-        desc: "Tendinitis, tendinopatías y sobrecargas. Fascitis plantar."
+        items: [
+          "Tendinitis.",
+          "Fascitis plantar."
+        ]
       },
       {
         title: "Mandíbula y ATM",
-        desc: "Dolor orofacial. Disfunción temporomandibular. Bruxismo y tensiones craneomandibulares."
+        items: [
+          "Dolor orofacial.",
+          "Disfunción temporomandibular.",
+          "Bruxismo."
+        ]
       }
-    ]
+    ],
+    faqLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
+    faqTitle: "¿Preguntas sobre el servicio de fisioterapia? Tenemos las respuestas"
   },
   "pilates-suelo": {
     heroTitle: "Pilates Suelo",
@@ -154,7 +187,9 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
         title: "Variedad y dinamismo",
         desc: "Sesiones progresivas que combinan fluidez, técnica y bienestar integral."
       }
-    ]
+    ],
+    faqLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
+    faqTitle: "¿Preguntas sobre Pilates Suelo? Tenemos las respuestas"
   },
   "pilates-maquinas": {
     heroTitle: "Pilates Máquinas",
@@ -187,15 +222,17 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       },
       {
         icon: ShieldCheck,
-        title: "Wunda Chair",
-        desc: "Entrenamiento avanzado de equilibrio, fuerza de piernas y tronco."
+        title: "Adaptado a cada nivel",
+        desc: "Desde personas con dolor de espalda hasta deportistas que buscan optimizar su rendimiento."
       },
       {
         icon: HeartHandshake,
         title: "Atención individualizada",
         desc: "Máximo 4 personas por clase para una supervisión clínica constante."
       }
-    ]
+    ],
+    faqLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
+    faqTitle: "¿Preguntas sobre Pilates Máquinas? Tenemos las respuestas"
   }
 };
 
@@ -250,7 +287,9 @@ export default async function ServiceDetailPage({
         title: "Acompañamiento real",
         desc: "Seguimiento cercano en cada etapa de tu proceso."
       }
-    ]
+    ],
+    faqLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
+    faqTitle: `¿Preguntas sobre ${service.title}? Tenemos las respuestas`
   };
 
   return (
@@ -290,7 +329,7 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
-      {/* 2. EXACT SECTION REQUESTED BY USER (No resignarte al dolor + Reservar cita + Photo) */}
+      {/* 2. INTRO QUOTE & CTA SECTION */}
       <ScrollReveal>
         <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 max-w-5xl mx-auto text-center space-y-7">
           <p className="text-stone-600 text-sm sm:text-base md:text-[17px] font-light leading-relaxed max-w-4xl mx-auto">
@@ -316,7 +355,7 @@ export default async function ServiceDetailPage({
         </section>
       </ScrollReveal>
 
-      {/* 3. PHOTO BANNER (Woman with dumbbell / service image with rounded-[25px]) */}
+      {/* 3. PHOTO BANNER */}
       <ScrollReveal>
         <section className="mx-4 sm:mx-5 rounded-[25px] overflow-hidden relative aspect-[16/9] sm:aspect-[21/9] shadow-sm">
           <Image
@@ -328,7 +367,7 @@ export default async function ServiceDetailPage({
         </section>
       </ScrollReveal>
 
-      {/* 4. TWO-COLUMN HIGHLIGHT SECTION (Tu recuperacion empieza aqui + man on roller) */}
+      {/* 4. TWO-COLUMN HIGHLIGHT SECTION */}
       <ScrollReveal>
         <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
@@ -376,7 +415,7 @@ export default async function ServiceDetailPage({
         </section>
       </ScrollReveal>
 
-      {/* 5. 4 PILLARS SECTION (Warm beige cards) */}
+      {/* 5. 4 PILLARS SECTION */}
       <ScrollReveal>
         <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden space-y-10">
           <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal max-w-3xl text-left leading-tight">
@@ -409,31 +448,31 @@ export default async function ServiceDetailPage({
         </section>
       </ScrollReveal>
 
-      {/* 6. AREAS DE TRATAMIENTO (If available) */}
-      {config.areas && (
+      {/* 6. PROBLEMAS MÁS COMUNES */}
+      {config.commonProblems && config.commonProblems.length > 0 && (
         <ScrollReveal>
-          <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden space-y-8">
-            <div className="text-left space-y-2">
-              <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
-                {config.areasLabel || "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL"}
-              </p>
-              <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal">
-                Áreas de tratamiento y especialidad
-              </h2>
-            </div>
+          <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden space-y-8 sm:space-y-10 text-left">
+            <h2 className="font-editorial text-2xl sm:text-3xl md:text-4xl lg:text-[42px] text-[#676767] font-normal leading-[1.2] max-w-4xl">
+              {config.commonProblemsTitle || "Aquí tienes algunos de los problemas más comunes que tratamos:"}
+            </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {config.areas.map((area, idx) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {config.commonProblems.map((problem, idx) => (
                 <div
                   key={idx}
-                  className="bg-[#FAF8F5] p-6 rounded-2xl border border-stone-200/80 space-y-2"
+                  className="bg-white rounded-[15px] border-2 border-[#eae4ce] p-6 sm:p-8 flex flex-col justify-start"
                 >
-                  <h3 className="font-editorial text-xl text-stone-900 font-normal">
-                    {area.title}
+                  <h3 className="font-editorial text-xl sm:text-2xl text-[#676767] font-normal mb-5 leading-snug">
+                    {problem.title}
                   </h3>
-                  <p className="text-stone-600 text-xs sm:text-sm font-light leading-relaxed">
-                    {area.desc}
-                  </p>
+                  <ul className="space-y-3">
+                    {problem.items.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#676767] font-light leading-relaxed">
+                        <Check className="w-4 h-4 text-[#8F8C7F] shrink-0 mt-0.5" strokeWidth={1.5} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
@@ -441,45 +480,13 @@ export default async function ServiceDetailPage({
         </ScrollReveal>
       )}
 
-      {/* 7. FAQS SECTION */}
+      {/* 7. PREGUNTAS FRECUENTES (Interactive Accordion Island) */}
       <ScrollReveal>
-        <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="text-center space-y-2">
-              <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
-                DUDAS FRECUENTES
-              </p>
-              <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal">
-                ¿Preguntas sobre {config.heroTitle}? Tenemos las respuestas
-              </h2>
-            </div>
-
-            <div className="space-y-4 text-left">
-              {service.faqs.map((faq, i) => (
-                <div
-                  key={i}
-                  className="bg-[#FAF8F5] p-7 rounded-2xl border border-stone-200/80 transition-all"
-                >
-                  <h3 className="text-base font-semibold text-stone-900 mb-2">
-                    {faq.question}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center pt-4">
-              <Link
-                href="/reservas"
-                className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
-              >
-                Pedir cita en Fisiolaude
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ServiceFaqAccordion
+          label={config.faqLabel || "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL"}
+          title={config.faqTitle || `¿Preguntas sobre el servicio de ${config.heroTitle}? Tenemos las respuestas`}
+          faqs={service.faqs}
+        />
       </ScrollReveal>
     </div>
   );
