@@ -7,7 +7,7 @@ import { SITE_INFO } from '@/data/siteData';
 export function Footer() {
   return (
     <footer className="mx-3 sm:mx-5 lg:mx-8 mb-6 mt-12">
-      <div className="bg-[#B2AFA0] text-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden shadow-sm">
+      <div className="bg-[#B2AFA0] text-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
         {/* Top Contact Highlight Bar */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-white/20">
           {/* Phone */}

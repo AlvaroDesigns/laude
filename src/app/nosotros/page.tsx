@@ -13,7 +13,7 @@ export default function NosotrosPage() {
   return (
     <div className="space-y-4 sm:space-y-6 pt-24 sm:pt-28 pb-12">
       {/* Hero Header Section */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
         <div className="max-w-3xl text-left space-y-4">
           <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
             VOCACIÓN Y PROFESIONALIDAD
@@ -28,9 +28,9 @@ export default function NosotrosPage() {
       </section>
 
       {/* Main Philosophy Section */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div className="lg:col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+          <div className="lg:col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden ">
             <Image
               src="/images/laure_terapeuta-min.jpg"
               alt="Instalaciones Fisiolaude Palma"

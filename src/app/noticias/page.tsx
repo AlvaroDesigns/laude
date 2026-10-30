@@ -37,7 +37,7 @@ export default function NoticiasPage() {
             {BLOG_POSTS.map(post => (
               <article
                 key={post.id}
-                className="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col group"
+                className="bg-white rounded-2xl border border-stone-200 overflow-hidden  hover: transition-all flex flex-col group"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
                   <Image

@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div className="space-y-4 sm:space-y-6">
       {/* 1. HERO SECTION (Rounded-25px Island with Fullscreen Background) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 mt-6 sm:mt-8 lg:mt-10 relative min-h-[94vh] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-16 pt-48 sm:pt-56 lg:pt-64 pb-16 sm:pb-24 shadow-sm">
+      <section className="mx-3 sm:mx-5 lg:mx-8 mt-6 sm:mt-8 lg:mt-10 relative min-h-[94vh] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-16 pt-48 sm:pt-56 lg:pt-64 pb-16 sm:pb-24 ">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -47,7 +47,7 @@ export default function HomePage() {
           <div className="pt-2">
             <Link
               href="/servicios"
-              className="inline-block bg-white hover:bg-stone-100 text-stone-900 px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 shadow-lg"
+              className="inline-block bg-white hover:bg-stone-100 text-stone-900 px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 "
             >
               Quiero más información
             </Link>
@@ -56,10 +56,22 @@ export default function HomePage() {
       </section>
 
       {/* 2. SECTION: ¿Y si existiera un lugar donde tu cuerpo es escuchado de verdad? */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Texts */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          {/* Left Image (Exact original: span_4 on left) */}
+          <div className="lg:col-span-5 order-2 lg:order-1">
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/laure_terapeuta-min.jpg"
+                alt="Laude Fisioterapeuta"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Right Texts (Exact original: span_8 on right) */}
+          <div className="lg:col-span-7 space-y-6 text-left order-1 lg:order-2">
             <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl text-stone-900 font-normal leading-[1.15]">
               ¿Y si existiera un lugar donde tu cuerpo es escuchado<br className="hidden sm:inline" /> de verdad?
             </h2>
@@ -70,20 +82,24 @@ export default function HomePage() {
               </p>
               <ul className="space-y-3 text-sm sm:text-base text-stone-700 font-light">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#8F8C7F] font-serif text-lg leading-none mt-0.5">•</span>
-                  <span>«Llevo meses con esta molestia y ya no sé qué hacer.»</span>
+                  <span className="text-[#8F8C7F] font-bold text-sm mt-0.5">✔</span>
+                  <span>Tuve que dejar el deporte por culpa del dolor.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#8F8C7F] font-serif text-lg leading-none mt-0.5">•</span>
-                  <span>«He ido a varios sitios y me dan un masaje o me ponen una máquina, pero el dolor siempre vuelve.»</span>
+                  <span className="text-[#8F8C7F] font-bold text-sm mt-0.5">✔</span>
+                  <span>Evito hacer planes. El dolor me controla a mí, no al revés.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#8F8C7F] font-serif text-lg leading-none mt-0.5">•</span>
-                  <span>«Me da miedo moverme o hacer ejercicio por si me hago daño.»</span>
+                  <span className="text-[#8F8C7F] font-bold text-sm mt-0.5">✔</span>
+                  <span>Voy tirando con las pastillas.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#8F8C7F] font-serif text-lg leading-none mt-0.5">•</span>
-                  <span>«Siento que mi cuerpo ya no responde como antes.»</span>
+                  <span className="text-[#8F8C7F] font-bold text-sm mt-0.5">✔</span>
+                  <span>Será la edad, tendré que acostumbrarme.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#8F8C7F] font-bold text-sm mt-0.5">✔</span>
+                  <span>Ya no cuento mis dolores a mi gente cercana, porque pensarán que exagero siempre con lo mismo.</span>
                 </li>
               </ul>
             </div>
@@ -100,29 +116,17 @@ export default function HomePage() {
             <div className="pt-4">
               <Link
                 href="/reservas"
-                className="inline-block bg-[#212121] hover:bg-[#383838] text-white px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 shadow"
+                className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105"
               >
                 Reservar una cita
               </Link>
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="lg:col-span-5">
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="/images/laure_terapeuta-min.jpg"
-                alt="Laude Fisioterapeuta"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
         </div>
       </section>
 
       {/* 3. SECTION: NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL (HEADER: LEFT TITLE + RIGHT CTA) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
         {/* Header with LEFT content and RIGHT CTA */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
           <div className="max-w-3xl text-left space-y-3">
@@ -143,7 +147,7 @@ export default function HomePage() {
               href="https://wa.me/34622313254"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 shadow"
+              className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 "
             >
               Quiero más información
             </a>
@@ -155,7 +159,7 @@ export default function HomePage() {
           {/* Box 1 */}
           <Link
             href="/servicios/fisioterapia"
-            className="group relative h-[560px] rounded-2xl overflow-hidden shadow-lg flex flex-col justify-end p-8 text-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
+            className="group relative h-[560px] rounded-2xl overflow-hidden  flex flex-col justify-end p-8 text-white transition-all duration-300 hover:-translate-y-1.5 hover:"
           >
             <Image
               src="/images/paciente-haciendo-rehabilitacion-fisica-ayudado-por-terapeutas-de-fisio-min.jpg"
@@ -182,7 +186,7 @@ export default function HomePage() {
           {/* Box 2 */}
           <Link
             href="/servicios/pilates-suelo"
-            className="group relative h-[560px] rounded-2xl overflow-hidden shadow-lg flex flex-col justify-end p-8 text-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
+            className="group relative h-[560px] rounded-2xl overflow-hidden  flex flex-col justify-end p-8 text-white transition-all duration-300 hover:-translate-y-1.5 hover:"
           >
             <Image
               src="/images/mujer-de-tiro-pilates.jpg"
@@ -209,7 +213,7 @@ export default function HomePage() {
           {/* Box 3 */}
           <Link
             href="/servicios/pilates-maquinas"
-            className="group relative h-[560px] rounded-2xl overflow-hidden shadow-lg flex flex-col justify-end p-8 text-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
+            className="group relative h-[560px] rounded-2xl overflow-hidden  flex flex-col justify-end p-8 text-white transition-all duration-300 hover:-translate-y-1.5 hover:"
           >
             <Image
               src="/images/personas-que-toman-clases-de-pilates-reformador-min.jpg"
@@ -237,7 +241,7 @@ export default function HomePage() {
 
       {/* 4. SECTION: PANORAMIC PILATES BANNER (Rounded 25px) */}
       <section className="mx-3 sm:mx-5 lg:mx-8">
-        <div className="relative h-96 sm:h-[480px] rounded-[25px] overflow-hidden shadow-md">
+        <div className="relative h-96 sm:h-[480px] rounded-[25px] overflow-hidden ">
           <Image
             src="/images/mujeres-de-tiro-completo-haciendo-pilates-juntas-scaled.jpg"
             alt="Clases de Pilates en Fisiolaude"
@@ -248,7 +252,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. SECTION: LO QUE OPINÁIS VOSOTROS ES LO QUE MÁS VALORAMOS (WITH GOOGLE CAROUSEL) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
             LO QUE OPINÁIS VOSOTROS ES LO QUE MÁS VALORAMOS

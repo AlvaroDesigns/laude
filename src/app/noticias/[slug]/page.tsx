@@ -88,7 +88,7 @@ export default async function BlogPostPage({
       <Section variant="normal">
         <Container size="narrow">
           <div className="space-y-8">
-            <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-lg border border-stone-200">
+            <div className="relative aspect-[16/9] rounded-3xl overflow-hidden  border border-stone-200">
               <Image
                 src={post.image}
                 alt={post.title}

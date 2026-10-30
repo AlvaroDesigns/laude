@@ -14,7 +14,7 @@ export default function ServiciosPage() {
   return (
     <div className="space-y-4 sm:space-y-6 pt-24 sm:pt-28 pb-12">
       {/* Header Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
         <div className="max-w-3xl text-left space-y-4">
           <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
             ESPECIALIDADES CLÍNICAS
@@ -34,11 +34,11 @@ export default function ServiciosPage() {
         return (
           <section
             key={s.id}
-            className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 border border-stone-200/60 shadow-sm overflow-hidden"
+            className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden"
           >
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center`}>
               <div
-                className={`lg:col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg ${
+                className={`lg:col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden  ${
                   isEven ? 'lg:order-2' : 'lg:order-1'
                 }`}
               >
@@ -68,7 +68,7 @@ export default function ServiciosPage() {
                 <div className="pt-2">
                   <Link
                     href={`/servicios/${s.slug}`}
-                    className="inline-flex items-center gap-2 bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-7 py-3 rounded-full text-xs uppercase tracking-wider font-semibold transition-all shadow-sm hover:scale-105"
+                    className="inline-flex items-center gap-2 bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-7 py-3 rounded-full text-xs uppercase tracking-wider font-semibold transition-all  hover:scale-105"
                   >
                     <span>Ver información completa y precios</span>
                     <ArrowRight className="w-3.5 h-3.5" />

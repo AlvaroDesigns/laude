@@ -33,7 +33,7 @@ export default function ReservasPage() {
         <Container size="narrow">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* WhatsApp option */}
-            <div className="bg-white rounded-2xl p-8 border-2 border-[#25D366] shadow-lg flex flex-col justify-between text-center">
+            <div className="bg-white rounded-2xl p-8 border-2 border-[#25D366]  flex flex-col justify-between text-center">
               <div>
                 <div className="w-14 h-14 bg-[#25D366]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 text-[#25D366]">
                   <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@ export default function ReservasPage() {
             </div>
 
             {/* Phone option */}
-            <div className="bg-white rounded-2xl p-8 border border-stone-200 shadow-md flex flex-col justify-between text-center">
+            <div className="bg-white rounded-2xl p-8 border border-stone-200  flex flex-col justify-between text-center">
               <div>
                 <div className="w-14 h-14 bg-[#FAF8F5] rounded-2xl flex items-center justify-center mx-auto mb-4 text-[#7A5B4C]">
                   <Phone className="w-7 h-7" />

@@ -43,7 +43,7 @@ export default async function ServiceDetailPage({
       <FaqSchema faqs={service.faqs} />
 
       {/* Hero Service Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6 text-left">
             <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
@@ -66,7 +66,7 @@ export default async function ServiceDetailPage({
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden ">
               <Image
                 src={service.image}
                 alt={service.title}
@@ -80,7 +80,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* Content & Details Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8 space-y-10 text-left">
             <div className="space-y-4">
@@ -154,7 +154,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* FAQs Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 space-y-2">
             <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
@@ -167,7 +167,7 @@ export default async function ServiceDetailPage({
 
           <div className="space-y-4 text-left">
             {service.faqs.map((faq, i) => (
-              <div key={i} className="bg-[#FAF8F5] p-7 rounded-2xl border border-stone-200 shadow-sm">
+              <div key={i} className="bg-[#FAF8F5] p-7 rounded-2xl border border-stone-200 ">
                 <h3 className="text-base font-semibold text-stone-900 mb-2">{faq.question}</h3>
                 <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">{faq.answer}</p>
               </div>

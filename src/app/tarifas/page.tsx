@@ -12,7 +12,7 @@ export default function TarifasPage() {
   return (
     <div className="space-y-4 sm:space-y-6 pt-24 sm:pt-28 pb-12">
       {/* Header Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
         <div className="max-w-3xl text-left space-y-4">
           <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
             TARIFAS TRANSPARENTES
@@ -27,7 +27,7 @@ export default function TarifasPage() {
       </section>
 
       {/* Fisioterapia Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
         <div className="text-left mb-10 space-y-2">
           <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal">
             Fisioterapia y Rehabilitación
@@ -42,7 +42,7 @@ export default function TarifasPage() {
             <div
               key={idx}
               className={`bg-[#FAF8F5] rounded-2xl p-7 border ${
-                t.popular ? 'border-2 border-[#B2AFA0] shadow-md' : 'border-stone-200'
+                t.popular ? 'border-2 border-[#B2AFA0] ' : 'border-stone-200'
               } flex flex-col justify-between`}
             >
               <div>
@@ -74,7 +74,7 @@ export default function TarifasPage() {
       </section>
 
       {/* Pilates Reformer Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
         <div className="text-left mb-10 space-y-2">
           <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal">
             Pilates Máquinas (Reformer)
@@ -89,7 +89,7 @@ export default function TarifasPage() {
             <div
               key={idx}
               className={`bg-[#FAF8F5] rounded-2xl p-7 border ${
-                t.popular ? 'border-2 border-[#B2AFA0] shadow-md' : 'border-stone-200'
+                t.popular ? 'border-2 border-[#B2AFA0] ' : 'border-stone-200'
               } flex flex-col justify-between`}
             >
               <div>
@@ -121,7 +121,7 @@ export default function TarifasPage() {
       </section>
 
       {/* Pilates Suelo Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
         <div className="text-left mb-10 space-y-2">
           <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal">
             Pilates Suelo (Mat)
@@ -136,7 +136,7 @@ export default function TarifasPage() {
             <div
               key={idx}
               className={`bg-[#FAF8F5] rounded-2xl p-7 border ${
-                t.popular ? 'border-2 border-[#B2AFA0] shadow-md' : 'border-stone-200'
+                t.popular ? 'border-2 border-[#B2AFA0] ' : 'border-stone-200'
               } flex flex-col justify-between`}
             >
               <div>

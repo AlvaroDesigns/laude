@@ -12,7 +12,7 @@ export default function ContactoPage() {
   return (
     <div className="space-y-4 sm:space-y-6 pt-24 sm:pt-28 pb-12">
       {/* Header Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
         <div className="max-w-3xl text-left space-y-4">
           <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
             CONTÁCTANOS
@@ -27,7 +27,7 @@ export default function ContactoPage() {
       </section>
 
       {/* Form & Details Island */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Form */}
           <div className="lg:col-span-7 text-left space-y-6">
@@ -93,7 +93,7 @@ export default function ContactoPage() {
 
           {/* Contact Details Cards */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-[#B2AFA0] text-white p-8 rounded-2xl shadow-sm space-y-6">
+            <div className="bg-[#B2AFA0] text-white p-8 rounded-2xl  space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center shrink-0">
                   <Phone className="w-4 h-4 text-white" />

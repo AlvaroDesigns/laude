@@ -89,9 +89,9 @@ export function GoogleReviewsCarousel() {
   return (
     <div className="space-y-8">
       {/* Google Badge Summary */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/90 p-4 sm:p-5 rounded-2xl border border-stone-200 shadow-sm">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#FAF8F5] p-4 sm:p-5 rounded-2xl ">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center p-2 border border-stone-100">
+          <div className="w-10 h-10 rounded-full bg-[#FAF8F5]  flex items-center justify-center p-2 ">
             <svg className="w-full h-full" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
               <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
@@ -118,14 +118,14 @@ export function GoogleReviewsCarousel() {
         <div className="flex items-center gap-2">
           <button
             onClick={handlePrev}
-            className="w-9 h-9 rounded-full bg-white hover:bg-stone-100 border border-stone-200 text-stone-700 flex items-center justify-center transition-colors shadow-sm"
+            className="w-9 h-9 rounded-full bg-[#FAF8F5] hover:bg-stone-100  text-stone-700 flex items-center justify-center transition-colors "
             aria-label="Opinión anterior"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={handleNext}
-            className="w-9 h-9 rounded-full bg-white hover:bg-stone-100 border border-stone-200 text-stone-700 flex items-center justify-center transition-colors shadow-sm"
+            className="w-9 h-9 rounded-full bg-[#FAF8F5] hover:bg-stone-100  text-stone-700 flex items-center justify-center transition-colors "
             aria-label="Siguiente opinión"
           >
             <ChevronRight className="w-4 h-4" />
@@ -138,12 +138,12 @@ export function GoogleReviewsCarousel() {
         {visibleReviews.map((r, i) => (
           <div
             key={`${r.name}-${i}`}
-            className="bg-white border border-stone-200/90 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow min-h-[260px]"
+            className="bg-[#FAF8F5]  rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all min-h-[260px]"
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#B2AFA0] text-white font-bold flex items-center justify-center text-sm shadow-inner">
+                  <div className="w-10 h-10 rounded-full bg-[#B2AFA0] text-white font-bold flex items-center justify-center text-sm ">
                     {r.initial}
                   </div>
                   <div>
