@@ -215,7 +215,7 @@ export default function TarifasPage() {
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
-            src="/images/Hero-Image.webp"
+            src="/images/Hero-Image.jpg"
             alt="Laude - Nuestras Tarifas"
             fill
             className="object-cover object-center"

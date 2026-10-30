@@ -19,7 +19,7 @@ export default function NosotrosPage() {
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
-            src="/images/Hero-Image.webp"
+            src="/images/Hero-Image.jpg"
             alt="Laude - Fisioterapia y Pilates Palma - Nosotros"
             fill
             className="object-cover object-center"

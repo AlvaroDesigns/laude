@@ -20,7 +20,7 @@ export default function ServiciosPage() {
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
-            src="/images/Hero-Image.webp"
+            src="/images/Hero-Image.jpg"
             alt="Laude - Servicios de Fisioterapia y Pilates Palma"
             fill
             className="object-cover object-center"
