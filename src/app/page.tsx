@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div className="space-y-4 sm:space-y-6">
       {/* 1. HERO SECTION (Rounded-25px Island with Fullscreen Background) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 mt-3 sm:mt-5 relative min-h-[90vh] rounded-[25px] overflow-hidden flex items-center justify-start p-6 sm:p-12 lg:p-20 shadow-sm">
+      <section className="mx-3 sm:mx-5 lg:mx-8 mt-5 sm:mt-8 lg:mt-9 relative min-h-[92vh] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-16 pt-36 sm:pt-44 lg:pt-52 pb-16 sm:pb-24 shadow-sm">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -30,7 +30,7 @@ export default function HomePage() {
         ></div>
 
         {/* Content */}
-        <div className="max-w-2xl text-left space-y-6 pt-16">
+        <div className="max-w-2xl text-left space-y-6">
           <p className="text-white text-xs uppercase font-medium tracking-[0.25em]">
             TU CUERPO, TU TEMPLO, TU HOGAR
           </p>
@@ -56,7 +56,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. SECTION: ¿Y si existiera un lugar donde tu cuerpo es escuchado de verdad? */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 border border-stone-200/60 shadow-sm overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Texts */}
           <div className="lg:col-span-7 space-y-6 text-left">
@@ -122,7 +122,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. SECTION: NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL (HEADER: LEFT TITLE + RIGHT CTA) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 border border-stone-200/60 shadow-sm overflow-hidden">
         {/* Header with LEFT content and RIGHT CTA */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
           <div className="max-w-3xl text-left space-y-3">
@@ -248,7 +248,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. SECTION: LO QUE OPINÁIS VOSOTROS ES LO QUE MÁS VALORAMOS (WITH GOOGLE CAROUSEL) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 border border-stone-200/60 shadow-sm overflow-hidden">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 border border-stone-200/60 shadow-sm overflow-hidden">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
             LO QUE OPINÁIS VOSOTROS ES LO QUE MÁS VALORAMOS
