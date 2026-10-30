@@ -27,7 +27,7 @@ export function Header() {
     setServicesDropdownOpen(false);
   }, [pathname]);
 
-  const isTransparent = isHome && !scrolled;
+  const isTransparent = (isHome || pathname === '/nosotros' || pathname === '/nosotros/' || pathname?.startsWith('/nosotros')) && !scrolled;
 
   return (
     <header
