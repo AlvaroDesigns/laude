@@ -1,0 +1,305 @@
+[
+  {
+    "id": 1,
+    "count": 5,
+    "description": "Your blog category",
+    "link": "https://fisiolaude.com/category/fisioterapia/",
+    "name": "Fisioterapia",
+    "slug": "fisioterapia",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.6 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Fisioterapia archivos | Expertos en Fisioterapia y pilates en Palma Mallorca</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://fisiolaude.com/category/fisioterapia/\" />\n<meta property=\"og:locale\" content=\"es_ES\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Fisioterapia archivos | Expertos en Fisioterapia y pilates en Palma Mallorca\" />\n<meta property=\"og:description\" content=\"Your blog category\" />\n<meta property=\"og:url\" content=\"https://fisiolaude.com/category/fisioterapia/\" />\n<meta property=\"og:site_name\" content=\"Expertos en Fisioterapia y pilates en Palma Mallorca\" />\n<meta property=\"og:image\" content=\"https://fisiolaude.com/wp-content/uploads/2025/10/laude_marron-min.png\" />\n\t<meta property=\"og:image:width\" content=\"1249\" />\n\t<meta property=\"og:image:height\" content=\"540\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https:\\/\\/fisiolaude.com\\/category\\/fisioterapia\\/\",\"url\":\"https:\\/\\/fisiolaude.com\\/category\\/fisioterapia\\/\",\"name\":\"Fisioterapia archivos | Expertos en Fisioterapia y pilates en Palma Mallorca\",\"isPartOf\":{\"@id\":\"https:\\/\\/fisiolaude.com\\/#website\"},\"breadcrumb\":{\"@id\":\"https:\\/\\/fisiolaude.com\\/category\\/fisioterapia\\/#breadcrumb\"},\"inLanguage\":\"es\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/fisiolaude.com\\/category\\/fisioterapia\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Portada\",\"item\":\"https:\\/\\/fisiolaude.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Fisioterapia\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/fisiolaude.com\\/#website\",\"url\":\"https:\\/\\/fisiolaude.com\\/\",\"name\":\"Expertos en Fisioterapia y pilates en Palma Mallorca\",\"description\":\"Laude\",\"publisher\":{\"@id\":\"https:\\/\\/fisiolaude.com\\/#organization\"},\"alternateName\":\"Laude\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/fisiolaude.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"es\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/fisiolaude.com\\/#organization\",\"name\":\"Expertos en Fisioterapia y pilates en Palma Mallorca\",\"url\":\"https:\\/\\/fisiolaude.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"es\",\"@id\":\"https:\\/\\/fisiolaude.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/fisiolaude.com\\/wp-content\\/uploads\\/2025\\/10\\/laude_optimizado.jpeg\",\"contentUrl\":\"https:\\/\\/fisiolaude.com\\/wp-content\\/uploads\\/2025\\/10\\/laude_optimizado.jpeg\",\"width\":1600,\"height\":1600,\"caption\":\"Expertos en Fisioterapia y pilates en Palma Mallorca\"},\"image\":{\"@id\":\"https:\\/\\/fisiolaude.com\\/#\\/schema\\/logo\\/image\\/\"}}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "yoast_head_json": {
+      "title": "Fisioterapia archivos | Expertos en Fisioterapia y pilates en Palma Mallorca",
+      "robots": {
+        "index": "index",
+        "follow": "follow",
+        "max-snippet": "max-snippet:-1",
+        "max-image-preview": "max-image-preview:large",
+        "max-video-preview": "max-video-preview:-1"
+      },
+      "canonical": "https://fisiolaude.com/category/fisioterapia/",
+      "og_locale": "es_ES",
+      "og_type": "article",
+      "og_title": "Fisioterapia archivos | Expertos en Fisioterapia y pilates en Palma Mallorca",
+      "og_description": "Your blog category",
+      "og_url": "https://fisiolaude.com/category/fisioterapia/",
+      "og_site_name": "Expertos en Fisioterapia y pilates en Palma Mallorca",
+      "og_image": [
+        {
+          "width": 1249,
+          "height": 540,
+          "url": "https://fisiolaude.com/wp-content/uploads/2025/10/laude_marron-min.png",
+          "type": "image/png"
+        }
+      ],
+      "twitter_card": "summary_large_image",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://fisiolaude.com/category/fisioterapia/",
+            "url": "https://fisiolaude.com/category/fisioterapia/",
+            "name": "Fisioterapia archivos | Expertos en Fisioterapia y pilates en Palma Mallorca",
+            "isPartOf": {
+              "@id": "https://fisiolaude.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://fisiolaude.com/category/fisioterapia/#breadcrumb"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://fisiolaude.com/category/fisioterapia/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Portada",
+                "item": "https://fisiolaude.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Fisioterapia"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://fisiolaude.com/#website",
+            "url": "https://fisiolaude.com/",
+            "name": "Expertos en Fisioterapia y pilates en Palma Mallorca",
+            "description": "Laude",
+            "publisher": {
+              "@id": "https://fisiolaude.com/#organization"
+            },
+            "alternateName": "Laude",
+            "potentialAction": [
+              {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://fisiolaude.com/?s={search_term_string}"
+                },
+                "query-input": {
+                  "@type": "PropertyValueSpecification",
+                  "valueRequired": true,
+                  "valueName": "search_term_string"
+                }
+              }
+            ],
+            "inLanguage": "es"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://fisiolaude.com/#organization",
+            "name": "Expertos en Fisioterapia y pilates en Palma Mallorca",
+            "url": "https://fisiolaude.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "inLanguage": "es",
+              "@id": "https://fisiolaude.com/#/schema/logo/image/",
+              "url": "https://fisiolaude.com/wp-content/uploads/2025/10/laude_optimizado.jpeg",
+              "contentUrl": "https://fisiolaude.com/wp-content/uploads/2025/10/laude_optimizado.jpeg",
+              "width": 1600,
+              "height": 1600,
+              "caption": "Expertos en Fisioterapia y pilates en Palma Mallorca"
+            },
+            "image": {
+              "@id": "https://fisiolaude.com/#/schema/logo/image/"
+            }
+          }
+        ]
+      }
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https://fisiolaude.com/wp-json/wp/v2/categories/1",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://fisiolaude.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://fisiolaude.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://fisiolaude.com/wp-json/wp/v2/posts?categories=1"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "count": 0,
+    "description": "",
+    "link": "https://fisiolaude.com/category/patologia/",
+    "name": "Patología",
+    "slug": "patologia",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.6 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Patología archivos | Expertos en Fisioterapia y pilates en Palma Mallorca</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://fisiolaude.com/category/patologia/\" />\n<meta property=\"og:locale\" content=\"es_ES\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Patología archivos | Expertos en Fisioterapia y pilates en Palma Mallorca\" />\n<meta property=\"og:url\" content=\"https://fisiolaude.com/category/patologia/\" />\n<meta property=\"og:site_name\" content=\"Expertos en Fisioterapia y pilates en Palma Mallorca\" />\n<meta property=\"og:image\" content=\"https://fisiolaude.com/wp-content/uploads/2025/10/laude_marron-min.png\" />\n\t<meta property=\"og:image:width\" content=\"1249\" />\n\t<meta property=\"og:image:height\" content=\"540\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https:\\/\\/fisiolaude.com\\/category\\/patologia\\/\",\"url\":\"https:\\/\\/fisiolaude.com\\/category\\/patologia\\/\",\"name\":\"Patología archivos | Expertos en Fisioterapia y pilates en Palma Mallorca\",\"isPartOf\":{\"@id\":\"https:\\/\\/fisiolaude.com\\/#website\"},\"breadcrumb\":{\"@id\":\"https:\\/\\/fisiolaude.com\\/category\\/patologia\\/#breadcrumb\"},\"inLanguage\":\"es\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/fisiolaude.com\\/category\\/patologia\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Portada\",\"item\":\"https:\\/\\/fisiolaude.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Patología\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/fisiolaude.com\\/#website\",\"url\":\"https:\\/\\/fisiolaude.com\\/\",\"name\":\"Expertos en Fisioterapia y pilates en Palma Mallorca\",\"description\":\"Laude\",\"publisher\":{\"@id\":\"https:\\/\\/fisiolaude.com\\/#organization\"},\"alternateName\":\"Laude\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/fisiolaude.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"es\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/fisiolaude.com\\/#organization\",\"name\":\"Expertos en Fisioterapia y pilates en Palma Mallorca\",\"url\":\"https:\\/\\/fisiolaude.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"es\",\"@id\":\"https:\\/\\/fisiolaude.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/fisiolaude.com\\/wp-content\\/uploads\\/2025\\/10\\/laude_optimizado.jpeg\",\"contentUrl\":\"https:\\/\\/fisiolaude.com\\/wp-content\\/uploads\\/2025\\/10\\/laude_optimizado.jpeg\",\"width\":1600,\"height\":1600,\"caption\":\"Expertos en Fisioterapia y pilates en Palma Mallorca\"},\"image\":{\"@id\":\"https:\\/\\/fisiolaude.com\\/#\\/schema\\/logo\\/image\\/\"}}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "yoast_head_json": {
+      "title": "Patología archivos | Expertos en Fisioterapia y pilates en Palma Mallorca",
+      "robots": {
+        "index": "index",
+        "follow": "follow",
+        "max-snippet": "max-snippet:-1",
+        "max-image-preview": "max-image-preview:large",
+        "max-video-preview": "max-video-preview:-1"
+      },
+      "canonical": "https://fisiolaude.com/category/patologia/",
+      "og_locale": "es_ES",
+      "og_type": "article",
+      "og_title": "Patología archivos | Expertos en Fisioterapia y pilates en Palma Mallorca",
+      "og_url": "https://fisiolaude.com/category/patologia/",
+      "og_site_name": "Expertos en Fisioterapia y pilates en Palma Mallorca",
+      "og_image": [
+        {
+          "width": 1249,
+          "height": 540,
+          "url": "https://fisiolaude.com/wp-content/uploads/2025/10/laude_marron-min.png",
+          "type": "image/png"
+        }
+      ],
+      "twitter_card": "summary_large_image",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://fisiolaude.com/category/patologia/",
+            "url": "https://fisiolaude.com/category/patologia/",
+            "name": "Patología archivos | Expertos en Fisioterapia y pilates en Palma Mallorca",
+            "isPartOf": {
+              "@id": "https://fisiolaude.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://fisiolaude.com/category/patologia/#breadcrumb"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://fisiolaude.com/category/patologia/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Portada",
+                "item": "https://fisiolaude.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Patología"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://fisiolaude.com/#website",
+            "url": "https://fisiolaude.com/",
+            "name": "Expertos en Fisioterapia y pilates en Palma Mallorca",
+            "description": "Laude",
+            "publisher": {
+              "@id": "https://fisiolaude.com/#organization"
+            },
+            "alternateName": "Laude",
+            "potentialAction": [
+              {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://fisiolaude.com/?s={search_term_string}"
+                },
+                "query-input": {
+                  "@type": "PropertyValueSpecification",
+                  "valueRequired": true,
+                  "valueName": "search_term_string"
+                }
+              }
+            ],
+            "inLanguage": "es"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://fisiolaude.com/#organization",
+            "name": "Expertos en Fisioterapia y pilates en Palma Mallorca",
+            "url": "https://fisiolaude.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "inLanguage": "es",
+              "@id": "https://fisiolaude.com/#/schema/logo/image/",
+              "url": "https://fisiolaude.com/wp-content/uploads/2025/10/laude_optimizado.jpeg",
+              "contentUrl": "https://fisiolaude.com/wp-content/uploads/2025/10/laude_optimizado.jpeg",
+              "width": 1600,
+              "height": 1600,
+              "caption": "Expertos en Fisioterapia y pilates en Palma Mallorca"
+            },
+            "image": {
+              "@id": "https://fisiolaude.com/#/schema/logo/image/"
+            }
+          }
+        ]
+      }
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https://fisiolaude.com/wp-json/wp/v2/categories/8",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://fisiolaude.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://fisiolaude.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://fisiolaude.com/wp-json/wp/v2/posts?categories=8"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]
