@@ -1,3 +1,4 @@
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -15,7 +16,7 @@ export default function ContactoPage() {
   return (
     <div className="space-y-5 pb-6 sm:pb-8">
       {/* 1. HERO SECTION (Identical to original with Hero image & transparent header) */}
-      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-14 pt-28 sm:pt-36 lg:pt-40 pb-10 sm:pb-14">
+      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[640px] rounded-[25px] overflow-hidden flex items-center justify-start px-5 sm:px-8 lg:px-14 pt-20 sm:pt-28 md:pt-36 lg:pt-40 pb-7 sm:pb-10 lg:pb-14">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -48,6 +49,7 @@ export default function ContactoPage() {
         </div>
       </section>
 
+      <ScrollReveal>
       {/* 2. FORM SECTION (Island with image on left and form on right) */}
       <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
         <div className="text-left space-y-3 mb-10">
@@ -140,6 +142,9 @@ export default function ContactoPage() {
         </div>
       </section>
 
+      </ScrollReveal>
+
+      <ScrollReveal>
       {/* 3. GOOGLE MAPS ISLAND */}
       <section className="mx-4 sm:mx-5 rounded-[25px] overflow-hidden shadow-sm">
         <iframe
@@ -153,6 +158,7 @@ export default function ContactoPage() {
           className="w-full"
         />
       </section>
+      </ScrollReveal>
     </div>
   );
 }

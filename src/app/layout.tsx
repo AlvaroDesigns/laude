@@ -46,8 +46,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
-        <LocalBusinessSchema />
+                <LocalBusinessSchema />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${SITE_INFO.gtmId}`}
           strategy="afterInteractive"

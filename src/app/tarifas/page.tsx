@@ -1,5 +1,7 @@
 'use client';
 
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -211,7 +213,7 @@ export default function TarifasPage() {
   return (
     <div className="space-y-5 pb-6 sm:pb-8">
       {/* 1. HERO SECTION (Identical to original with Hero image & transparent header) */}
-      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-14 pt-28 sm:pt-36 lg:pt-40 pb-10 sm:pb-14">
+      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[640px] rounded-[25px] overflow-hidden flex items-center justify-start px-5 sm:px-8 lg:px-14 pt-20 sm:pt-28 md:pt-36 lg:pt-40 pb-7 sm:pb-10 lg:pb-14">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -244,6 +246,7 @@ export default function TarifasPage() {
         </div>
       </section>
 
+      <ScrollReveal>
       {/* 2. PRICING TABS SECTION (Island) */}
       <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
         {/* Title area */}
@@ -344,6 +347,7 @@ export default function TarifasPage() {
           })}
         </div>
       </section>
+      </ScrollReveal>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,7 +9,7 @@ export default function HomePage() {
   return (
     <div className="space-y-5 pb-6 sm:pb-8">
       {/* 1. HERO SECTION (Rounded-25px Island with Fullscreen Background) */}
-      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[580px] sm:min-h-[640px] lg:min-h-[680px] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-14 pt-28 sm:pt-36 lg:pt-40 pb-10 sm:pb-14">
+      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[640px] rounded-[25px] overflow-hidden flex items-center justify-start px-5 sm:px-8 lg:px-14 pt-20 sm:pt-28 md:pt-36 lg:pt-40 pb-7 sm:pb-10 lg:pb-14">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -56,6 +57,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. SECTION: ¿Y si existiera un lugar donde tu cuerpo es escuchado de verdad? */}
+      <ScrollReveal>
       <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Image (Exact original: span_4 on left) */}
@@ -124,8 +126,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* 3. SECTION: NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL (HEADER: LEFT TITLE + RIGHT CTA) */}
+      <ScrollReveal>
       <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         {/* Header with LEFT content and RIGHT CTA */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
@@ -238,8 +242,10 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* 4. SECTION: PANORAMIC PILATES BANNER (Rounded 25px) */}
+      <ScrollReveal>
       <section className="mx-4 sm:mx-5">
         <div className="relative h-96 sm:h-[480px] rounded-[25px] overflow-hidden ">
           <Image
@@ -250,8 +256,10 @@ export default function HomePage() {
           />
         </div>
       </section>
+      </ScrollReveal>
 
       {/* 5. SECTION: LO QUE OPINÁIS VOSOTROS ES LO QUE MÁS VALORAMOS (WITH GOOGLE CAROUSEL) */}
+      <ScrollReveal>
       <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
@@ -268,6 +276,7 @@ export default function HomePage() {
         {/* Google Reviews Trustindex Carousel */}
         <GoogleReviewsCarousel />
       </section>
+      </ScrollReveal>
     </div>
   );
 }

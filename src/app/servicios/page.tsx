@@ -1,3 +1,4 @@
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -16,7 +17,7 @@ export default function ServiciosPage() {
   return (
     <div className="space-y-5 pb-6 sm:pb-8">
       {/* 1. HERO SECTION (Identical to original with Hero image & transparent header) */}
-      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-14 pt-28 sm:pt-36 lg:pt-40 pb-10 sm:pb-14">
+      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[640px] rounded-[25px] overflow-hidden flex items-center justify-start px-5 sm:px-8 lg:px-14 pt-20 sm:pt-28 md:pt-36 lg:pt-40 pb-7 sm:pb-10 lg:pb-14">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -49,6 +50,7 @@ export default function ServiciosPage() {
         </div>
       </section>
 
+      <ScrollReveal>
       {/* 2. INTRO SECTION: En LAUDE entendemos el cuerpo como algo que se entrena... */}
       <section className="max-w-4xl mx-auto py-8 sm:py-12 px-6 text-center space-y-5">
         <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl text-stone-900 font-normal leading-snug">
@@ -68,6 +70,9 @@ export default function ServiciosPage() {
         </div>
       </section>
 
+      </ScrollReveal>
+
+      <ScrollReveal>
       {/* 3. FISIOTERAPIA (Island) */}
       <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -113,6 +118,9 @@ export default function ServiciosPage() {
         </div>
       </section>
 
+      </ScrollReveal>
+
+      <ScrollReveal>
       {/* 4. PILATES MÁQUINA (Island) */}
       <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -163,6 +171,9 @@ export default function ServiciosPage() {
         </div>
       </section>
 
+      </ScrollReveal>
+
+      <ScrollReveal>
       {/* 5. PILATES SUELO (Island) */}
       <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -212,6 +223,9 @@ export default function ServiciosPage() {
         </div>
       </section>
 
+      </ScrollReveal>
+
+      <ScrollReveal>
       {/* 6. VALORACIÓN INICIAL COMPARISON ISLAND */}
       <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -267,6 +281,7 @@ export default function ServiciosPage() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
     </div>
   );
 }
