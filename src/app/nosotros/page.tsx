@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 export default function NosotrosPage() {
   return (
-    <div className="space-y-6 sm:space-y-8 pb-12 sm:pb-16">
-      {/* 1. HERO SECTION (Identical to live fisiolaude.com/nosotros) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 mt-6 sm:mt-8 lg:mt-10 relative min-h-[85vh] sm:min-h-[88vh] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-16 pt-48 sm:pt-56 lg:pt-64 pb-16 sm:pb-24">
+    <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
+      {/* 1. HERO SECTION (Identical to Home Hero pattern & live nosotros) */}
+      <section className="mx-3 sm:mx-5 lg:mx-8 mt-6 sm:mt-8 lg:mt-10 relative min-h-[85vh] sm:min-h-[88vh] lg:min-h-[92vh] rounded-[25px] overflow-hidden flex items-center justify-start px-6 sm:px-10 lg:px-16 pt-48 sm:pt-56 lg:pt-64 pb-16 sm:pb-24">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -49,11 +49,11 @@ export default function NosotrosPage() {
       </section>
 
       {/* 2. SOBRE LAUDE SECTION (Collage on left, copy on right) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left: Dual Image Collage */}
-          <div className="lg:col-span-6 relative flex justify-center lg:justify-start">
-            <div className="relative w-full max-w-[420px] mr-6 sm:mr-10">
+          <div className="md:col-span-6 relative flex justify-center md:justify-start pr-4 sm:pr-8 md:pr-10">
+            <div className="relative w-full max-w-[420px]">
               {/* Main vertical photo */}
               <div className="relative aspect-[3/4] w-full rounded-[25px] overflow-hidden">
                 <Image
@@ -64,8 +64,8 @@ export default function NosotrosPage() {
                 />
               </div>
 
-              {/* Overlapping floating photo on right */}
-              <div className="absolute -right-6 sm:-right-10 top-1/2 -translate-y-1/2 w-48 sm:w-56 md:w-64 aspect-[3/4] rounded-[25px] overflow-hidden shadow-2xl z-10">
+              {/* Overlapping floating photo on bottom-right */}
+              <div className="absolute -right-4 sm:-right-8 bottom-6 sm:bottom-10 w-48 sm:w-56 md:w-64 aspect-[3/4] rounded-[25px] overflow-hidden shadow-2xl z-10">
                 <Image
                   src="/images/pareja-estirando-en-la-playa-min-scaled.jpg"
                   alt="Cuidar el cuerpo y honrar el movimiento"
@@ -77,16 +77,16 @@ export default function NosotrosPage() {
           </div>
 
           {/* Right: Narrative Copy */}
-          <div className="lg:col-span-6 space-y-6 text-left">
-            <p className="text-xs sm:text-sm uppercase font-medium tracking-[0.2em] text-[#908968]">
-              Cuidar el cuerpo, honrar el movimiento
+          <div className="md:col-span-6 space-y-6 text-left">
+            <p className="text-xs sm:text-sm uppercase font-semibold tracking-[0.2em] text-[#908968]">
+              CUIDAR EL CUERPO, HONRAR EL MOVIMIENTO
             </p>
 
-            <h2 className="font-editorial text-4xl sm:text-5xl lg:text-[50px] text-[#3A3935] font-normal leading-[1.12]">
+            <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-[52px] text-stone-900 font-normal leading-[1.12]">
               Sobre LAUDE
             </h2>
 
-            <div className="space-y-5 text-stone-600 font-light text-base sm:text-[17px] leading-[1.75] max-w-xl">
+            <div className="space-y-5 text-stone-600 font-light text-sm sm:text-base lg:text-[17px] leading-[1.75] max-w-xl">
               <p>
                 En la antigua cultura grecolatina, rendir «laude» era un acto de reconocimiento. Se honraba lo valioso, lo digno de atención.
               </p>
@@ -105,15 +105,15 @@ export default function NosotrosPage() {
       </section>
 
       {/* 3. SOBRE MÍ SECTION (Bio text on left, therapist photo on right) */}
-      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-20 overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <section className="mx-3 sm:mx-5 lg:mx-8 bg-white rounded-[25px] p-8 sm:p-12 lg:p-16 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left: Bio text */}
-          <div className="lg:col-span-6 space-y-6 text-left">
-            <h2 className="font-editorial text-4xl sm:text-5xl lg:text-[50px] text-[#908968] font-normal leading-[1.12]">
+          <div className="md:col-span-6 space-y-6 text-left order-1">
+            <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-[52px] text-[#908968] font-normal leading-[1.12]">
               Sobre mí
             </h2>
 
-            <div className="space-y-5 text-stone-600 font-light text-base sm:text-[16px] leading-[1.8] max-w-xl">
+            <div className="space-y-5 text-stone-600 font-light text-sm sm:text-base lg:text-[16px] leading-[1.8] max-w-xl">
               <p>
                 Soy Laura, fisioterapeuta (Nº col 1580) y la persona que está detrás de LAUDE.
                 <br />
@@ -147,7 +147,7 @@ export default function NosotrosPage() {
           </div>
 
           {/* Right: Laura / Therapist photo */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-end">
+          <div className="md:col-span-6 flex justify-center md:justify-end order-2">
             <div className="relative aspect-[13/12] w-full max-w-[560px] rounded-[25px] overflow-hidden">
               <Image
                 src="/images/fisio_s-min.jpg"
