@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
 import { BLOG_POSTS } from '@/data/siteData';
 
+export const instant = false;
+
 export async function generateStaticParams() {
   return BLOG_POSTS.map(p => ({ slug: p.slug }));
 }

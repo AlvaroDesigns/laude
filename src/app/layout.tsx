@@ -31,8 +31,14 @@ export const metadata: Metadata = {
   description:
     'Laude, clínica de fisioterapia en Mallorca. Rehabilitación, tratamientos personalizados, pilates con máquinas y mejora de tu bienestar físico en Son Ferriol.',
   icons: {
-    icon: '/images/favicon.png',
-    apple: '/images/cropped-favicon.png'
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" }
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
+    ]
   }
 };
 

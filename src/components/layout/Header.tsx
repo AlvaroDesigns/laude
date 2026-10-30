@@ -13,8 +13,8 @@ export function Header() {
   const pathname = usePathname();
 
   const cleanPath = pathname?.replace(/\/$/, '') || '/';
-  const heroPages = ['', '/', '/nosotros', '/servicios', '/tarifas', '/contacto', '/reservas'];
-  const hasHero = heroPages.includes(cleanPath);
+  const heroPages = ['', '/', '/nosotros', '/servicios', '/tarifas', '/contacto', '/reservas', '/noticias'];
+  const hasHero = heroPages.includes(cleanPath) || cleanPath.startsWith('/servicios/');
   const isTransparent = hasHero && !scrolled;
 
   // Handle scroll detection
