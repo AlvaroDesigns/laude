@@ -45,7 +45,7 @@ interface ServiceConfig {
   introP1: string;
   introHeadline: string;
   introP2: string;
-  introImage: string;
+  introImage?: string;
   twoColTitle: string;
   twoColIntro: string;
   twoColItems: string[];
@@ -153,7 +153,6 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
     introP1: "¿Crees que el pilates es solo para mujeres, personas mayores o para “hacer algo suave”? ¿Te imaginas una clase lenta y aburrida?",
     introHeadline: "En LAUDE rompemos con todos esos mitos.",
     introP2: "Nuestro enfoque de pilates mantiene la esencia del método original, pero lo llevamos a un nivel más activo, desafiante y funcional. Te enseñamos a moverte con consciencia, ganar fuerza real y prevenir lesiones.",
-    introImage: "/images/pilates_suelo.jpg",
     twoColTitle: "Pilates con intención: guiado, consciente y adaptado a ti.",
     twoColIntro: "Aquí no vienes a “hacer Pilates general”, vienes a entrenar desde el control, entender tu postura y ganar fuerza:",
     twoColItems: [
@@ -211,7 +210,6 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
     introP1: "¿Has visto esas camas con torre, muelles y correas que parecen de otro planeta? Eso es el Reformer, y lo utilizamos con un propósito claro: ayudarte a moverte mejor, con más control, fuerza y sin dolor.",
     introHeadline: "Una forma inteligente y respetuosa de fortalecer tu cuerpo.",
     introP2: "Nuestro Pilates con máquinas combina lo mejor de la terapia y el entrenamiento funcional. Trabajamos en grupos reducidos de máximo 4 personas para que cada sesión mantenga su esencia personalizada, pero con la energía del grupo.",
-    introImage: "/images/pialtes_maquinas_de_todo-min.jpg",
     twoColTitle: "¿Qué equipamiento usamos?",
     twoColIntro: "Cada máquina permite adaptar el nivel de exigencia y progresión ya que cuenta con muelles de resistencia:",
     twoColItems: [
@@ -358,41 +356,51 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
-      {/* 2. INTRO QUOTE & CTA SECTION */}
+      {/* 2. UNIFIED INTRO QUOTE, CTA & CONTAINED PHOTO ISLAND (Matching fisiolaude.com) */}
       <ScrollReveal>
-        <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 max-w-5xl mx-auto text-center space-y-7">
-          <p className="text-stone-600 text-sm sm:text-base md:text-[17px] font-light leading-relaxed max-w-4xl mx-auto">
-            {config.introP1}
-          </p>
+        <section
+          className={`mx-4 sm:mx-5 rounded-[25px] overflow-hidden pt-12 sm:pt-16 md:pt-20 px-4 sm:px-8 text-center ${
+            config.introImage ? "pb-0" : "pb-12 sm:pb-16"
+          }`}
+          style={{ backgroundColor: "rgba(226, 224, 215, 0.34)" }}
+        >
+          {/* Text and Button Container */}
+          <div className="max-w-4xl mx-auto space-y-6 sm:space-y-7">
+            <p className="text-stone-600 text-sm sm:text-base md:text-[17px] font-light leading-relaxed max-w-3xl mx-auto">
+              {config.introP1}
+            </p>
 
-          <h2 className="font-editorial text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] text-[#787361] font-normal leading-[1.25] max-w-3xl mx-auto">
-            {config.introHeadline}
-          </h2>
+            <h2 className="font-editorial text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] text-[#787361] font-normal leading-[1.25] max-w-3xl mx-auto">
+              {config.introHeadline}
+            </h2>
 
-          <p className="text-stone-500 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto">
-            {config.introP2}
-          </p>
+            <p className="text-stone-500 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto">
+              {config.introP2}
+            </p>
 
-          <div className="pt-2">
-            <Link
-              href="/reservas"
-              className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3 rounded-full text-xs uppercase tracking-wider font-semibold shadow-sm transition-all hover:scale-105"
-            >
-              Reservar cita
-            </Link>
+            <div className="pt-2">
+              <Link
+                href="/reservas"
+                className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow-sm transition-all hover:scale-105"
+              >
+                Reservar cita
+              </Link>
+            </div>
           </div>
-        </section>
-      </ScrollReveal>
 
-      {/* 3. PHOTO BANNER */}
-      <ScrollReveal>
-        <section className="mx-4 sm:mx-5 rounded-[25px] overflow-hidden relative aspect-[16/9] sm:aspect-[21/9] shadow-sm">
-          <Image
-            src={config.introImage}
-            alt={config.heroTitle}
-            fill
-            className="object-cover object-center"
-          />
+          {/* Centered Contained Image (NOT 100% width, resting at card bottom with rounded top corners) */}
+          {config.introImage && (
+            <div className="mt-10 sm:mt-14 max-w-4xl lg:max-w-5xl mx-auto">
+              <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-t-[20px] sm:rounded-t-[25px] overflow-hidden shadow-sm">
+                <Image
+                  src={config.introImage}
+                  alt={config.heroTitle}
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            </div>
+          )}
         </section>
       </ScrollReveal>
 
