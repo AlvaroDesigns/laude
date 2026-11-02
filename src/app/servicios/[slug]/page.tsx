@@ -262,7 +262,7 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
     twoColButtonText: "Ver más información",
     twoColButtonHref: "/reservas",
     banner: {
-      image: "/images/mujeres-de-tiro-completo-haciendo-pilates-juntas-scaled.jpg",
+      image: "/images/pilates-maquinas/sala_de_pilates_maquinas.webp",
       text: "Cada máquina permite adaptar el nivel de exigencia y progresión ya que cuenta con muelles de resistencia. En grupo reducido, el fisioterapeuta corrige, guia y reta a cada persona según su estado físico y objetivo.",
       buttonText: "Quiero más información",
       buttonHref: "/reservas"
