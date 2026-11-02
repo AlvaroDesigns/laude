@@ -49,11 +49,11 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isTransparent
-            ? 'bg-transparent pt-5 sm:pt-7 lg:pt-8 pb-3 sm:pb-4'
+            ? 'bg-transparent pt-7 sm:pt-9 lg:pt-10 pb-4'
             : 'bg-[#FAF8F5]/95 backdrop-blur-md shadow-sm border-b border-stone-200/80 py-3.5 sm:py-4'
         }`}
       >
-        <div className="mx-4 sm:mx-5 px-3 sm:px-6 lg:px-8">
+        <div className="mx-4 sm:mx-5 px-5 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="relative block h-9 sm:h-10 w-32 sm:w-44 transition-transform hover:opacity-90">

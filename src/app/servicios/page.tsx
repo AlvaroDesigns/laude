@@ -17,7 +17,7 @@ export default function ServiciosPage() {
   return (
     <div className="space-y-5 pb-6 sm:pb-8">
       {/* 1. HERO SECTION (Identical to original with Hero image & transparent header) */}
-      <section className="mx-4 sm:mx-5 mt-6 sm:mt-7 lg:mt-8 relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[640px] rounded-[25px] overflow-hidden flex items-center justify-start px-5 sm:px-8 lg:px-14 pt-24 sm:pt-32 md:pt-38 lg:pt-44 pb-7 sm:pb-10 lg:pb-14">
+      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[640px] rounded-[25px] overflow-hidden flex items-center justify-start px-5 sm:px-8 lg:px-14 pt-24 sm:pt-32 md:pt-38 lg:pt-44 pb-7 sm:pb-10 lg:pb-14">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
