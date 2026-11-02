@@ -58,7 +58,7 @@ export default function HomePage() {
 
       {/* 2. SECTION: ¿Y si existiera un lugar donde tu cuerpo es escuchado de verdad? */}
       <ScrollReveal>
-      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-[#f5f4f2] rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Image (Exact original: span_4 on left) */}
           <div className="lg:col-span-5 order-2 lg:order-1">
@@ -260,7 +260,7 @@ export default function HomePage() {
 
       {/* 5. SECTION: LO QUE OPINÁIS VOSOTROS ES LO QUE MÁS VALORAMOS (WITH GOOGLE CAROUSEL) */}
       <ScrollReveal>
-      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-[#f5f4f2] rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
             LO QUE OPINÁIS VOSOTROS ES LO QUE MÁS VALORAMOS

@@ -89,7 +89,7 @@ export function GoogleReviewsCarousel() {
   return (
     <div className="space-y-8">
       {/* Google Badge Summary */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-stone-50 p-4 sm:p-5 rounded-2xl ">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-stone-200/60 ">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-stone-50  flex items-center justify-center p-2 ">
             <svg className="w-full h-full" viewBox="0 0 24 24">
@@ -118,14 +118,14 @@ export function GoogleReviewsCarousel() {
         <div className="flex items-center gap-2">
           <button
             onClick={handlePrev}
-            className="w-9 h-9 rounded-full bg-stone-50 hover:bg-stone-100  text-stone-700 flex items-center justify-center transition-colors "
+            className="w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200  text-stone-700 flex items-center justify-center transition-colors "
             aria-label="Opinión anterior"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={handleNext}
-            className="w-9 h-9 rounded-full bg-stone-50 hover:bg-stone-100  text-stone-700 flex items-center justify-center transition-colors "
+            className="w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200  text-stone-700 flex items-center justify-center transition-colors "
             aria-label="Siguiente opinión"
           >
             <ChevronRight className="w-4 h-4" />
@@ -138,7 +138,7 @@ export function GoogleReviewsCarousel() {
         {visibleReviews.map((r, i) => (
           <div
             key={`${r.name}-${i}`}
-            className="bg-stone-50  rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all min-h-[260px]"
+            className="bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-stone-200/60 flex flex-col justify-between transition-all min-h-[260px]"
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
