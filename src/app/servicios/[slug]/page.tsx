@@ -7,6 +7,7 @@ import { Check, Sparkles, Compass, ShieldCheck, HeartHandshake, type LucideIcon 
 import { FaqSchema } from "@/components/seo/JsonLd";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ServiceFaqAccordion } from "@/components/ui/ServiceFaqAccordion";
+import { ImageGalleryLightbox, type GalleryImage } from "@/components/ui/ImageGalleryLightbox";
 import { SERVICES_DATA } from "@/data/siteData";
 
 export const instant = false;
@@ -53,6 +54,12 @@ interface ServiceConfig {
   twoColButtonText: string;
   pillarsTitle: string;
   pillars: { icon: LucideIcon; title: string; desc: string }[];
+  gallery?: {
+    subtitle?: string;
+    title: string;
+    intro?: string;
+    images: GalleryImage[];
+  };
   commonProblemsTitle?: string;
   commonProblems?: CommonProblemCategory[];
   faqLabel?: string;
@@ -243,6 +250,28 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
         desc: "Desde personas con dolor o en rehabilitación hasta deportistas, embarazadas y personas mayores."
       }
     ],
+    gallery: {
+      subtitle: "NUESTRO ESTUDIO EN MOVIMIENTO",
+      title: "Galería de Pilates con Máquinas",
+      intro: "Espacios luminosos, máquinas Reformer de última generación y grupos reducidos para que cada movimiento esté guiado con precisión.",
+      images: [
+        {
+          src: "/images/pilates_maquinas-min.jpg",
+          alt: "Clases de Pilates Reformer con correas de piernas y muelles",
+          title: "Alineación y resistencia con Reformer"
+        },
+        {
+          src: "/images/pialtes_maquinas_de_todo-min.jpg",
+          alt: "Sesión guiada por fisioterapeuta colegiado en máquinas de Pilates",
+          title: "Grupos reducidos y supervisión clínica continua"
+        },
+        {
+          src: "/images/mujeres-de-tiro-completo-haciendo-pilates-juntas-scaled.jpg",
+          alt: "Ejercicios de fuerza profunda y estabilidad postural en Reformer",
+          title: "Fuerza profunda, estabilidad y consciencia corporal"
+        }
+      ]
+    },
     commonProblemsTitle: "Lo que muchas personas sienten antes de empezar…",
     commonProblems: [
       {
@@ -484,6 +513,18 @@ export default async function ServiceDetailPage({
           </div>
         </section>
       </ScrollReveal>
+
+      {/* 5.5 IMAGE GALLERY LIGHTBOX */}
+      {config.gallery && config.gallery.images.length > 0 && (
+        <ScrollReveal>
+          <ImageGalleryLightbox
+            subtitle={config.gallery.subtitle}
+            title={config.gallery.title}
+            intro={config.gallery.intro}
+            images={config.gallery.images}
+          />
+        </ScrollReveal>
+      )}
 
       {/* 6. BORDERED CARDS (Problemas más comunes / Lo que muchas personas sienten antes de empezar) */}
       {config.commonProblems && config.commonProblems.length > 0 && (
