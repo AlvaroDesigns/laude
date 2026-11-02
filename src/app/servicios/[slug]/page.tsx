@@ -49,13 +49,19 @@ interface ServiceBanner {
 
 interface TwoColumnSection {
   title: string;
+  titleColor?: string;
   intro?: string;
+  textColor?: string;
   items?: string[];
+  checkColor?: string;
   image: string;
   imageAlt?: string;
   imageLeft?: boolean;
   buttonText?: string;
   buttonHref?: string;
+  buttonClass?: string;
+  bgClass?: string;
+  cardVariant?: "flush-image" | "standard";
 }
 
 interface ServiceConfig {
@@ -82,6 +88,8 @@ interface ServiceConfig {
   };
   pillarsTitle?: string;
   pillars?: { icon: LucideIcon; title: string; desc: string }[];
+  audienceSection?: TwoColumnSection;
+  crossLinkSection?: TwoColumnSection;
   additionalSections?: TwoColumnSection[];
   commonProblemsTitle?: string;
   commonProblems?: CommonProblemCategory[];
@@ -281,37 +289,41 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
         }
       ]
     },
-    additionalSections: [
-      {
-        title: "¿Para quién es el Pilates con máquinas?",
-        intro: "Sabemos que el dolor tiene muchas caras. Puede aparecer:",
-        items: [
-          "Amplio rango de edad y por supuesto tanto para hombres y mujeres que quieran mejorar su capacidad física.",
-          "Personas con dolor crónico o en rehabilitación.",
-          "Deportistas que quieren prevenir lesiones y mejorar el control corporal.",
-          "Mujeres embarazadas o en postparto (con valoración previa).",
-          "Personas mayores que desean entrenar con seguridad y en grupo con condiciones similares.",
-          "Y también tú, si buscas una forma eficaz y motivadora de entrenar tu cuerpo con consciencia."
-        ],
-        image: "/images/pialtes_maquinas_de_todo-min.jpg",
-        imageAlt: "¿Para quién es el Pilates con máquinas?",
-        buttonText: "Ver más información",
-        buttonHref: "/reservas"
-      },
-      {
-        title: "¿Prefieres empezar con pilates suelo?",
-        intro: "También ofrecemos Pilates suelo terapéutico y funcional, con el mismo enfoque adaptado, profesional y grandes resultados.",
-        items: [
-          "Ideal si partes de cero o prefieres comenzar sin máquinas.",
-          "Combinable, muchos eligen una clase de suelo y máquinas por semana (muy buena opción)"
-        ],
-        image: "/images/grupo-de-personas-deportivas-en-burro-plantean-min-scaled.jpg",
-        imageAlt: "¿Prefieres empezar con pilates suelo?",
-        imageLeft: true,
-        buttonText: "Ver Pilates suelo",
-        buttonHref: "/servicios/pilates-suelo"
-      }
-    ],
+    audienceSection: {
+      title: "¿Para quién es el Pilates con máquinas?",
+      intro: "Sabemos que el dolor tiene muchas caras. Puede aparecer:",
+      items: [
+        "Amplio rango de edad y por supuesto tanto para hombres y mujeres que quieran mejorar su capacidad física.",
+        "Personas con dolor crónico o en rehabilitación.",
+        "Deportistas que quieren prevenir lesiones y mejorar el control corporal.",
+        "Mujeres embarazadas o en postparto (con valoración previa).",
+        "Personas mayores que desean entrenar con seguridad y en grupo con condiciones similares.",
+        "Y también tú, si buscas una forma eficaz y motivadora de entrenar tu cuerpo con consciencia."
+      ],
+      image: "/images/pialtes_maquinas_de_todo-min.jpg",
+      imageAlt: "¿Para quién es el Pilates con máquinas?",
+      buttonText: "Ver más información",
+      buttonHref: "/reservas"
+    },
+    crossLinkSection: {
+      title: "¿Prefieres empezar  con\npilates suelo?",
+      titleColor: "text-[#676767]",
+      intro: "También ofrecemos Pilates suelo terapéutico y funcional, con el mismo enfoque adaptado, profesional y grandes resultados.",
+      textColor: "text-[#676767]",
+      items: [
+        "Ideal si partes de cero o prefieres comenzar sin máquinas.",
+        "Combinable, muchos eligen una clase de suelo y máquinas por semana (muy buena opción)"
+      ],
+      checkColor: "text-[#8F8B82]",
+      image: "/images/grupo-de-personas-deportivas-en-burro-plantean-min-scaled.jpg",
+      imageAlt: "¿Prefieres empezar con pilates suelo?",
+      imageLeft: true,
+      buttonText: "Ver Pilates suelo",
+      buttonHref: "/servicios/pilates-suelo",
+      buttonClass: "inline-block bg-[#A9A499] hover:bg-[#969286] text-white px-7 py-3 rounded-full text-sm font-medium transition-all shadow-none hover:shadow",
+      bgClass: "bg-[rgba(226,224,215,0.34)]",
+      cardVariant: "flush-image"
+    },
     commonProblemsTitle: "Lo que muchas personas sienten antes de empezar…",
     commonProblems: [
       {
@@ -331,6 +343,114 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
     faqTitle: "¿Preguntas sobre Pilates Máquinas? Tenemos las respuestas"
   }
 };
+
+function RenderTwoColSection({ sec }: { sec: TwoColumnSection }) {
+  const isFlush = sec.cardVariant === "flush-image";
+  return (
+    <ScrollReveal>
+      <section
+        className={`mx-4 sm:mx-5 ${
+          sec.bgClass || "bg-white"
+        } rounded-[25px] overflow-hidden`}
+      >
+        <div
+          className={`grid grid-cols-1 lg:grid-cols-12 ${
+            isFlush
+              ? "items-stretch gap-0"
+              : "items-center gap-8 lg:gap-14 p-6 sm:p-10 lg:p-14"
+          }`}
+        >
+          {/* Text Content */}
+          <div
+            className={`lg:col-span-6 space-y-6 text-left flex flex-col justify-center ${
+              sec.imageLeft ? "lg:order-2" : "lg:order-1"
+            } ${isFlush ? "p-6 sm:p-10 lg:p-12 xl:p-16" : ""}`}
+          >
+            <h2
+              className={`font-editorial text-3xl sm:text-4xl lg:text-[44px] ${
+                sec.titleColor || "text-[#908968]"
+              } font-normal leading-[1.15] whitespace-pre-line`}
+            >
+              {sec.title}
+            </h2>
+
+            {sec.intro && (
+              <p
+                className={`${
+                  sec.textColor || "text-stone-600"
+                } text-sm sm:text-base font-light leading-relaxed`}
+              >
+                {sec.intro}
+              </p>
+            )}
+
+            {sec.items && sec.items.length > 0 && (
+              <ul className="space-y-3.5">
+                {sec.items.map((item, itemIdx) => (
+                  <li
+                    key={itemIdx}
+                    className={`flex items-start gap-3 text-xs sm:text-sm ${
+                      sec.textColor || "text-stone-700"
+                    } font-light`}
+                  >
+                    <Check
+                      className={`w-4 h-4 ${
+                        sec.checkColor || "text-[#908968]"
+                      } flex-shrink-0 mt-0.5`}
+                      strokeWidth={1.5}
+                    />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {sec.buttonText && (
+              <div className="pt-2">
+                <Link
+                  href={sec.buttonHref || "/reservas"}
+                  className={
+                    sec.buttonClass ||
+                    "inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-7 py-3 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
+                  }
+                >
+                  {sec.buttonText}
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Image */}
+          <div
+            className={`lg:col-span-6 ${
+              sec.imageLeft ? "lg:order-1" : "lg:order-2"
+            } ${isFlush ? "h-full w-full" : ""}`}
+          >
+            {isFlush ? (
+              <div className="relative w-full h-[320px] sm:h-[420px] lg:h-full lg:min-h-[480px] rounded-[20px] overflow-hidden">
+                <Image
+                  src={sec.image}
+                  alt={sec.imageAlt || sec.title}
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            ) : (
+              <div className="relative aspect-[4/3] sm:aspect-[5/4] rounded-[25px] overflow-hidden shadow-sm">
+                <Image
+                  src={sec.image}
+                  alt={sec.imageAlt || sec.title}
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    </ScrollReveal>
+  );
+}
 
 export default async function ServiceDetailPage({
   params
@@ -631,72 +751,11 @@ export default async function ServiceDetailPage({
         </ScrollReveal>
       )}
 
-      {/* 5.5 ADDITIONAL TWO-COLUMN SECTIONS (e.g. "¿Para quién es..." & "¿Prefieres empezar con pilates suelo?") */}
+      {/* 5.5 AUDIENCE SECTION (e.g. "¿Para quién es el Pilates con máquinas?") */}
+      {config.audienceSection && <RenderTwoColSection sec={config.audienceSection} />}
       {config.additionalSections &&
         config.additionalSections.map((sec, idx) => (
-          <ScrollReveal key={idx}>
-            <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-                {/* Text Content */}
-                <div
-                  className={`lg:col-span-6 space-y-6 text-left ${
-                    sec.imageLeft ? "lg:order-2" : "lg:order-1"
-                  }`}
-                >
-                  <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-[#908968] font-normal leading-[1.15]">
-                    {sec.title}
-                  </h2>
-
-                  {sec.intro && (
-                    <p className="text-stone-600 text-sm sm:text-base font-light leading-relaxed">
-                      {sec.intro}
-                    </p>
-                  )}
-
-                  {sec.items && sec.items.length > 0 && (
-                    <ul className="space-y-3.5">
-                      {sec.items.map((item, itemIdx) => (
-                        <li
-                          key={itemIdx}
-                          className="flex items-start gap-3 text-xs sm:text-sm text-stone-700 font-light"
-                        >
-                          <Check className="w-4 h-4 text-[#908968] flex-shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {sec.buttonText && (
-                    <div className="pt-2">
-                      <Link
-                        href={sec.buttonHref || "/reservas"}
-                        className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-7 py-3 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
-                      >
-                        {sec.buttonText}
-                      </Link>
-                    </div>
-                  )}
-                </div>
-
-                {/* Image */}
-                <div
-                  className={`lg:col-span-6 ${
-                    sec.imageLeft ? "lg:order-1" : "lg:order-2"
-                  }`}
-                >
-                  <div className="relative aspect-[4/3] sm:aspect-[5/4] rounded-[25px] overflow-hidden shadow-sm">
-                    <Image
-                      src={sec.image}
-                      alt={sec.imageAlt || sec.title}
-                      fill
-                      className="object-cover object-center"
-                    />
-                  </div>
-                </div>
-              </div>
-            </section>
-          </ScrollReveal>
+          <RenderTwoColSection key={idx} sec={sec} />
         ))}
 
       {/* 6. BORDERED CARDS (Problemas más comunes / Lo que muchas personas sienten antes de empezar) */}
@@ -737,6 +796,9 @@ export default async function ServiceDetailPage({
           </section>
         </ScrollReveal>
       )}
+
+      {/* 6.5 CROSS-LINK SECTION (e.g. "¿Prefieres empezar con pilates suelo?") */}
+      {config.crossLinkSection && <RenderTwoColSection sec={config.crossLinkSection} />}
 
       {/* 7. PREGUNTAS FRECUENTES (Interactive Accordion Island) */}
       <ScrollReveal>
