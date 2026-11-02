@@ -40,26 +40,49 @@ interface CommonProblemCategory {
   items?: string[];
 }
 
+interface ServiceBanner {
+  image: string;
+  text: string;
+  buttonText: string;
+  buttonHref: string;
+}
+
+interface TwoColumnSection {
+  title: string;
+  intro?: string;
+  items?: string[];
+  image: string;
+  imageAlt?: string;
+  imageLeft?: boolean;
+  buttonText?: string;
+  buttonHref?: string;
+}
+
 interface ServiceConfig {
   heroTitle: string;
   heroSubtitle: string;
   introP1: string;
   introHeadline: string;
   introP2: string;
+  introP3?: string;
   introImage?: string;
+  introButtonText?: string;
   twoColTitle: string;
   twoColIntro: string;
   twoColItems: string[];
   twoColImage: string;
   twoColButtonText: string;
-  pillarsTitle: string;
-  pillars: { icon: LucideIcon; title: string; desc: string }[];
+  twoColButtonHref?: string;
+  banner?: ServiceBanner;
   gallery?: {
     subtitle?: string;
     title: string;
     intro?: string;
     images: GalleryImage[];
   };
+  pillarsTitle?: string;
+  pillars?: { icon: LucideIcon; title: string; desc: string }[];
+  additionalSections?: TwoColumnSection[];
   commonProblemsTitle?: string;
   commonProblems?: CommonProblemCategory[];
   faqLabel?: string;
@@ -212,44 +235,30 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
     faqTitle: "¿Preguntas sobre Pilates Suelo? Tenemos las respuestas"
   },
   "pilates-maquinas": {
-    heroTitle: "Pilates Máquinas",
+    heroTitle: "Pilates maquinas",
     heroSubtitle: "Pilates máquinas: entrenamiento preciso, seguro y adaptado a tus objetivos.",
-    introP1: "¿Has visto esas camas con torre, muelles y correas que parecen de otro planeta? Eso es el Reformer, y lo utilizamos con un propósito claro: ayudarte a moverte mejor, con más control, fuerza y sin dolor.",
+    introP1: "¿Has visto esas camas con torre, muelles y correas que parecen de otro planeta? Eso es el Reformer, lo utilizamos con un propósito claro: ayudarte a moverte mejor, con más control, fuerza y sin dolor.",
     introHeadline: "Una forma inteligente y respetuosa de fortalecer tu cuerpo.",
-    introP2: "Nuestro Pilates con máquinas combina lo mejor de la terapia y el entrenamiento funcional. Trabajamos en grupos reducidos de máximo 4 personas para que cada sesión mantenga su esencia personalizada, pero con la energía del grupo.",
+    introP2: "Nuestro Pilates con máquinas combina lo mejor de la terapia y el entrenamiento funcional. Ya sea para recuperarte de una lesión, mejorar tu rendimiento deportivo o simplemente entrenar de forma inteligente y sin impacto, aquí encontrarás una forma distinta y eficaz de trabajar tu cuerpo.",
+    introP3: "Y no estarás solo. Ni tampoco perdido entre veinte personas. Trabajamos en grupos reducidos de máximo 4 personas, para que cada sesión mantenga su esencia personalizada, pero con la energía y motivación del trabajo en grupo.",
+    introButtonText: "Quiero más información",
     twoColTitle: "¿Qué equipamiento usamos?",
     twoColIntro: "Cada máquina permite adaptar el nivel de exigencia y progresión ya que cuenta con muelles de resistencia:",
     twoColItems: [
-      "Máquina Reformer: plataforma deslizante con muelles para trabajar fuerza, movilidad y control con precisión",
-      "Cadillac-Plataforma: convertible para realizar ejercicios a la altura de la camilla sin bajar al suelo",
-      "Torre: estructuras verticales con resistencia variable para trabajar estabilidad y coordinación",
-      "Accesorios: pelotas, bandas elásticas, mancuernas y rulos según tus necesidades individuales"
+      "Máquina Reformer: plataforma deslizante con muelles, ideal para trabajar fuerza, movilidad y control con precisión.",
+      "Cadillac-Plataforma: la máquina es convertible por eso tan dinámica. Podrás trabajar ejercicios similares de pilates suelo, pero a la altura de la máquina, esto facilita no tener que tumbarte en suelo y partir de una altura.",
+      "Torre: estructuras verticales con resistencia variable para trabajar estabilidad y coordinación.",
+      "Accesorios: pelotas, bandas, mancuernas, etc., según tus necesidades."
     ],
     twoColImage: "/images/pilates_maquinas-min.jpg",
     twoColButtonText: "Ver más información",
-    pillarsTitle: "Para quién es el Pilates con máquinas y cómo te transforma",
-    pillars: [
-      {
-        icon: Sparkles,
-        title: "Reformer con muelles progresivos",
-        desc: "Plataforma deslizante que asiste o desafía el movimiento cuidando al 100% tus articulaciones."
-      },
-      {
-        icon: Compass,
-        title: "Cadillac y Torre vertical",
-        desc: "Descompresión articular y trabajo en diferentes alturas sin necesidad de tumbarte en el suelo."
-      },
-      {
-        icon: ShieldCheck,
-        title: "Máximo 4 personas por clase",
-        desc: "Supervisión clínica constante de fisioterapeutas colegiados que conocen tu historial y te guían paso a paso."
-      },
-      {
-        icon: HeartHandshake,
-        title: "Todo tipo de perfiles",
-        desc: "Desde personas con dolor o en rehabilitación hasta deportistas, embarazadas y personas mayores."
-      }
-    ],
+    twoColButtonHref: "/reservas",
+    banner: {
+      image: "/images/mujeres-de-tiro-completo-haciendo-pilates-juntas-scaled.jpg",
+      text: "Cada máquina permite adaptar el nivel de exigencia y progresión ya que cuenta con muelles de resistencia. En grupo reducido, el fisioterapeuta corrige, guia y reta a cada persona según su estado físico y objetivo.",
+      buttonText: "Quiero más información",
+      buttonHref: "/reservas"
+    },
     gallery: {
       subtitle: "NUESTRO ESTUDIO EN MOVIMIENTO",
       title: "Galería de Pilates con Máquinas",
@@ -272,19 +281,50 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
         }
       ]
     },
+    additionalSections: [
+      {
+        title: "¿Para quién es el Pilates con máquinas?",
+        intro: "Sabemos que el dolor tiene muchas caras. Puede aparecer:",
+        items: [
+          "Amplio rango de edad y por supuesto tanto para hombres y mujeres que quieran mejorar su capacidad física.",
+          "Personas con dolor crónico o en rehabilitación.",
+          "Deportistas que quieren prevenir lesiones y mejorar el control corporal.",
+          "Mujeres embarazadas o en postparto (con valoración previa).",
+          "Personas mayores que desean entrenar con seguridad y en grupo con condiciones similares.",
+          "Y también tú, si buscas una forma eficaz y motivadora de entrenar tu cuerpo con consciencia."
+        ],
+        image: "/images/pialtes_maquinas_de_todo-min.jpg",
+        imageAlt: "¿Para quién es el Pilates con máquinas?",
+        buttonText: "Ver más información",
+        buttonHref: "/reservas"
+      },
+      {
+        title: "¿Prefieres empezar con pilates suelo?",
+        intro: "También ofrecemos Pilates suelo terapéutico y funcional, con el mismo enfoque adaptado, profesional y grandes resultados.",
+        items: [
+          "Ideal si partes de cero o prefieres comenzar sin máquinas.",
+          "Combinable, muchos eligen una clase de suelo y máquinas por semana (muy buena opción)"
+        ],
+        image: "/images/grupo-de-personas-deportivas-en-burro-plantean-min-scaled.jpg",
+        imageAlt: "¿Prefieres empezar con pilates suelo?",
+        imageLeft: true,
+        buttonText: "Ver Pilates suelo",
+        buttonHref: "/servicios/pilates-suelo"
+      }
+    ],
     commonProblemsTitle: "Lo que muchas personas sienten antes de empezar…",
     commonProblems: [
       {
         title: "“No tengo fuerza”",
-        desc: "No te preocupes, nos adaptamos a tu situación actual y marcamos objetivos para que veas tus progresiones paso a paso gracias a la asistencia de los muelles."
+        desc: "No te preocupes, nos adaptamos a tu situación actual y marcamos objetivos para que veas tus progresiones."
       },
       {
         title: "“Me da miedo hacerlo mal en clase”",
-        desc: "Puede que alguna vez hayas pensado que el Pilates no era para ti, pero aquí descubrirás lo contrario. Te enseñamos a moverte con sentido, adaptando cada ejercicio para que sea seguro y eficaz, incluso si tu técnica no es perfecta. Siempre contarás con un fisioterapeuta a tu lado guiándote y motivándote."
+        desc: "Puede que alguna vez hayas pensado que el Pilates no era para ti, pero aquí descubrirás lo contrario. Te enseñamos a moverte con sentido, adaptando cada ejercicio para que sea seguro y eficaz, incluso si tu técnica no es perfecta. Siempre contarás con un fisioterapeuta a tu lado, guiándote y motivándote para progresar con confianza."
       },
       {
         title: "“Nunca he usado máquinas, lo veo complicado”",
-        desc: "Parece compleja desde fuera, pero todo lo contrario: facilita que tu posición sea la correcta y el profesor te la prepara a la altura y muelles correspondientes, para que tú solo tengas que preocuparte de disfrutar la clase."
+        desc: "Parece compleja desde fuera, pero todo lo contrario, facilita que tu posición sea la correcta y el profesor te la prepara a la altura y muelles correspondientes, para que tú solo tengas que preocuparte de disfrutar la clase."
       }
     ],
     faqLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
@@ -357,31 +397,48 @@ export default async function ServiceDetailPage({
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
-            src="/images/Hero-Image.jpg"
+            src={service.image || "/images/Hero-Image.jpg"}
             alt={config.heroTitle}
             fill
-            className="object-cover object-center"
             priority
+            sizes="100vw"
+            className="object-cover object-center"
           />
         </div>
 
-        {/* Left Vignette Overlay */}
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.60) 45%, rgba(0,0,0,0.20) 75%, rgba(0,0,0,0.05) 100%)"
-          }}
-        />
+        {/* Cinematic Vignette Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 -z-10" />
 
-        {/* Hero Content */}
-        <div className="max-w-2xl text-left space-y-4">
-          <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-normal leading-[1.12]">
+        {/* Content Box */}
+        <div className="max-w-2xl text-left space-y-4 sm:space-y-6">
+          <div className="inline-block border border-white/20 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md">
+            <span className="text-[10px] sm:text-xs text-white/90 uppercase tracking-widest font-semibold">
+              Servicio Especializado
+            </span>
+          </div>
+
+          <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-normal leading-[1.08] tracking-tight">
             {config.heroTitle}
           </h1>
-          <p className="text-stone-200 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl">
+
+          <p className="text-white/80 text-xs sm:text-sm md:text-base font-light max-w-xl leading-relaxed">
             {config.heroSubtitle}
           </p>
+
+          <div className="pt-2 flex flex-wrap gap-3">
+            <Link
+              href="/reservas"
+              className="inline-block bg-[#FAF8F5] hover:bg-white text-stone-900 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow-md transition-all hover:scale-105"
+            >
+              Pedir cita
+            </Link>
+            <Link
+              href="/contacto"
+              className="inline-block bg-white/15 hover:bg-white/25 text-white border border-white/30 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold backdrop-blur-md transition-all"
+            >
+              Consultar dudas
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -395,24 +452,34 @@ export default async function ServiceDetailPage({
         >
           {/* Text and Button Container */}
           <div className="max-w-4xl mx-auto space-y-6 sm:space-y-7">
-            <p className="text-stone-600 text-sm sm:text-base md:text-[17px] font-light leading-relaxed max-w-3xl mx-auto">
-              {config.introP1}
-            </p>
+            {config.introP1 && (
+              <p className="text-stone-600 text-sm sm:text-base md:text-[17px] font-light leading-relaxed max-w-3xl mx-auto">
+                {config.introP1}
+              </p>
+            )}
 
             <h2 className="font-editorial text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] text-[#787361] font-normal leading-[1.25] max-w-3xl mx-auto">
               {config.introHeadline}
             </h2>
 
-            <p className="text-stone-500 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto">
-              {config.introP2}
-            </p>
+            {config.introP2 && (
+              <p className="text-stone-500 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto">
+                {config.introP2}
+              </p>
+            )}
+
+            {config.introP3 && (
+              <p className="text-stone-500 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto">
+                {config.introP3}
+              </p>
+            )}
 
             <div className="pt-2">
               <Link
                 href="/reservas"
                 className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow-sm transition-all hover:scale-105"
               >
-                Reservar cita
+                {config.introButtonText || "Reservar cita"}
               </Link>
             </div>
           </div>
@@ -433,7 +500,7 @@ export default async function ServiceDetailPage({
         </section>
       </ScrollReveal>
 
-      {/* 4. TWO-COLUMN HIGHLIGHT SECTION */}
+      {/* 3. TWO-COLUMN HIGHLIGHT SECTION */}
       <ScrollReveal>
         <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
@@ -443,9 +510,11 @@ export default async function ServiceDetailPage({
                 {config.twoColTitle}
               </h2>
 
-              <p className="text-stone-600 text-sm sm:text-base font-light">
-                {config.twoColIntro}
-              </p>
+              {config.twoColIntro && (
+                <p className="text-stone-600 text-sm sm:text-base font-light">
+                  {config.twoColIntro}
+                </p>
+              )}
 
               <ul className="space-y-3.5">
                 {config.twoColItems.map((item, idx) => (
@@ -458,7 +527,7 @@ export default async function ServiceDetailPage({
 
               <div className="pt-2">
                 <Link
-                  href="/reservas"
+                  href={config.twoColButtonHref || "/reservas"}
                   className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-7 py-3 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
                 >
                   {config.twoColButtonText}
@@ -481,40 +550,39 @@ export default async function ServiceDetailPage({
         </section>
       </ScrollReveal>
 
-      {/* 5. 4 PILLARS SECTION */}
-      <ScrollReveal>
-        <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden space-y-10">
-          <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal max-w-3xl text-left leading-tight">
-            {config.pillarsTitle}
-          </h2>
+      {/* 4. PHOTOGRAPHIC BANNER (Matching user screenshot and fisiolaude.com) */}
+      {config.banner && (
+        <ScrollReveal>
+          <section className="mx-4 sm:mx-5 relative min-h-[300px] sm:min-h-[340px] md:min-h-[380px] rounded-[25px] overflow-hidden flex items-center justify-center p-6 sm:p-10 lg:p-14 text-center">
+            <div className="absolute inset-0 -z-20">
+              <Image
+                src={config.banner.image}
+                alt={config.banner.text}
+                fill
+                className="object-cover object-center"
+              />
+            </div>
+            {/* Dark gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/75 to-black/90 -z-10" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {config.pillars.map((item, idx) => {
-              const IconComp = item.icon;
-              return (
-                <div
-                  key={idx}
-                  className="bg-[#EDE8E4] rounded-2xl p-7 flex flex-col justify-between space-y-6 transition-all duration-300 hover:-translate-y-1"
+            <div className="max-w-3xl mx-auto space-y-6 sm:space-y-7 z-10">
+              <p className="text-white/95 text-sm sm:text-base md:text-lg lg:text-[19px] font-light leading-relaxed">
+                {config.banner.text}
+              </p>
+              <div>
+                <Link
+                  href={config.banner.buttonHref || "/reservas"}
+                  className="inline-block bg-white hover:bg-stone-100 text-stone-900 px-8 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow-md transition-all hover:scale-105"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-white/80 flex items-center justify-center text-stone-800">
-                    <IconComp className="w-5 h-5 text-stone-800" />
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="font-editorial text-xl sm:text-2xl text-stone-900 font-normal leading-snug">
-                      {item.title}
-                    </h3>
-                    <p className="text-stone-600 text-xs sm:text-sm font-light leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      </ScrollReveal>
+                  {config.banner.buttonText}
+                </Link>
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
 
-      {/* 5.5 IMAGE GALLERY LIGHTBOX */}
+      {/* 4.5 IMAGE GALLERY LIGHTBOX (Positioned right with the banner!) */}
       {config.gallery && config.gallery.images.length > 0 && (
         <ScrollReveal>
           <ImageGalleryLightbox
@@ -525,6 +593,111 @@ export default async function ServiceDetailPage({
           />
         </ScrollReveal>
       )}
+
+      {/* 5. 4 PILLARS SECTION (rendered if defined for service) */}
+      {config.pillars && config.pillars.length > 0 && (
+        <ScrollReveal>
+          <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden space-y-10">
+            {config.pillarsTitle && (
+              <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal max-w-3xl text-left leading-tight">
+                {config.pillarsTitle}
+              </h2>
+            )}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {config.pillars.map((item, idx) => {
+                const IconComp = item.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-[#EDE8E4] rounded-2xl p-7 flex flex-col justify-between space-y-6 transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-white/80 flex items-center justify-center text-stone-800">
+                      <IconComp className="w-5 h-5 text-stone-800" />
+                    </div>
+                    <div className="space-y-3">
+                      <h3 className="font-editorial text-xl sm:text-2xl text-stone-900 font-normal leading-snug">
+                        {item.title}
+                      </h3>
+                      <p className="text-stone-600 text-xs sm:text-sm font-light leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* 5.5 ADDITIONAL TWO-COLUMN SECTIONS (e.g. "¿Para quién es..." & "¿Prefieres empezar con pilates suelo?") */}
+      {config.additionalSections &&
+        config.additionalSections.map((sec, idx) => (
+          <ScrollReveal key={idx}>
+            <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+                {/* Text Content */}
+                <div
+                  className={`lg:col-span-6 space-y-6 text-left ${
+                    sec.imageLeft ? "lg:order-2" : "lg:order-1"
+                  }`}
+                >
+                  <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-[#908968] font-normal leading-[1.15]">
+                    {sec.title}
+                  </h2>
+
+                  {sec.intro && (
+                    <p className="text-stone-600 text-sm sm:text-base font-light leading-relaxed">
+                      {sec.intro}
+                    </p>
+                  )}
+
+                  {sec.items && sec.items.length > 0 && (
+                    <ul className="space-y-3.5">
+                      {sec.items.map((item, itemIdx) => (
+                        <li
+                          key={itemIdx}
+                          className="flex items-start gap-3 text-xs sm:text-sm text-stone-700 font-light"
+                        >
+                          <Check className="w-4 h-4 text-[#908968] flex-shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {sec.buttonText && (
+                    <div className="pt-2">
+                      <Link
+                        href={sec.buttonHref || "/reservas"}
+                        className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-7 py-3 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
+                      >
+                        {sec.buttonText}
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                {/* Image */}
+                <div
+                  className={`lg:col-span-6 ${
+                    sec.imageLeft ? "lg:order-1" : "lg:order-2"
+                  }`}
+                >
+                  <div className="relative aspect-[4/3] sm:aspect-[5/4] rounded-[25px] overflow-hidden shadow-sm">
+                    <Image
+                      src={sec.image}
+                      alt={sec.imageAlt || sec.title}
+                      fill
+                      className="object-cover object-center"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </ScrollReveal>
+        ))}
 
       {/* 6. BORDERED CARDS (Problemas más comunes / Lo que muchas personas sienten antes de empezar) */}
       {config.commonProblems && config.commonProblems.length > 0 && (
