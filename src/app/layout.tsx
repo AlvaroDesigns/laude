@@ -66,7 +66,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="font-sans antialiased bg-[#FAF8F5] text-[#212121] selection:bg-[#B2AFA0] selection:text-white flex flex-col min-h-screen">
+      <body className="font-sans antialiased bg-white text-[#212121] selection:bg-[#B2AFA0] selection:text-white flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

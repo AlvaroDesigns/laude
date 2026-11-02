@@ -25,7 +25,8 @@ export function ServiceFaqAccordion({ label, title, faqs }: ServiceFaqAccordionP
   };
 
   return (
-    <section className="mx-4 sm:mx-5 bg-[#FAF8F5] rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden text-left">
+    <section style={{ backgroundColor: "rgba(226, 224, 215, 0.34)" }}
+      className="mx-4 sm:mx-5 rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden text-left">
       {label && (
         <p className="text-[11px] sm:text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F] mb-3">
           {label}

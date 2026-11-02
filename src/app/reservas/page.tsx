@@ -53,7 +53,7 @@ export default function ReservasPage() {
       {/* 2. TIMP IFRAME SECTION (Island) */}
       <section className="mx-4 sm:mx-5 bg-white rounded-[25px] overflow-hidden border border-stone-200/80 shadow-sm">
         {/* Header bar */}
-        <div className="bg-[#FAF8F5] px-6 py-4 border-b border-stone-200 flex flex-wrap items-center justify-between gap-2">
+        <div className="bg-white px-6 py-4 border-b border-stone-200 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#B2AFA0] inline-block animate-pulse"></span>
             <span className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">

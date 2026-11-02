@@ -249,7 +249,7 @@ export default function ServiciosPage() {
 
             {/* Tarifa Box */}
             <div className="pt-4">
-              <div className="p-6 bg-[#FAF8F5] border border-stone-200 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-5 max-w-lg">
+              <div className="p-6 bg-white border border-stone-200 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-5 max-w-lg">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-[#8F8C7F]">
                     Tarifa Valoración Inicial Pilates

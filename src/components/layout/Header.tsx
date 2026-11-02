@@ -50,7 +50,7 @@ export function Header() {
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isTransparent
             ? 'bg-transparent pt-7 sm:pt-9 lg:pt-10 pb-4'
-            : 'bg-[#FAF8F5]/95 backdrop-blur-md shadow-sm border-b border-stone-200/80 py-3.5 sm:py-4'
+            : 'bg-white/95 backdrop-blur-md shadow-sm border-b border-stone-200/80 py-3.5 sm:py-4'
         }`}
       >
         <div className="mx-4 sm:mx-5 px-5 sm:px-8 lg:px-12">
@@ -116,7 +116,7 @@ export function Header() {
                         : 'opacity-0 translate-y-2 pointer-events-none'
                     }`}
                   >
-                    <div className="bg-[#FAF8F5] rounded-2xl shadow-xl border border-stone-200 p-2 text-stone-800 backdrop-blur-lg">
+                    <div className="bg-white rounded-2xl shadow-xl border border-stone-200 p-2 text-stone-800 backdrop-blur-lg">
                       <Link
                         href="/servicios/fisioterapia"
                         className="block px-3.5 py-2.5 text-xs font-medium tracking-wide uppercase hover:bg-[#EFE9E4] rounded-xl transition-colors"
@@ -207,7 +207,7 @@ export function Header() {
 
       {/* FULLSCREEN MOBILE MENU (100% height with Logo on top) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 h-[100dvh] w-full bg-[#FAF8F5] flex flex-col justify-between p-6 sm:p-8 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 h-[100dvh] w-full bg-white flex flex-col justify-between p-6 sm:p-8 animate-in fade-in duration-200">
           {/* Top Bar inside Menu: Logo + Close Button */}
           <div className="flex items-center justify-between pb-6 border-b border-stone-200">
             <Link href="/" onClick={closeMenu} className="relative block h-10 w-36 sm:w-44">

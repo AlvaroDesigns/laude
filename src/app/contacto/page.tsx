@@ -85,7 +85,7 @@ export default function ContactoPage() {
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-[#FAF8F5]"
+                    className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
                   />
                 </div>
                 <div>
@@ -95,7 +95,7 @@ export default function ContactoPage() {
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-[#FAF8F5]"
+                    className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
                   />
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function ContactoPage() {
                 <input
                   type="email"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-[#FAF8F5]"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
                 />
               </div>
 
@@ -118,7 +118,7 @@ export default function ContactoPage() {
                 <textarea
                   rows={5}
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-[#FAF8F5]"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
                 ></textarea>
               </div>
 

@@ -60,7 +60,7 @@ export default async function BlogPostPage({
           </div>
 
           <div className="space-y-4">
-            <span className="inline-block bg-[#FAF8F5] border border-stone-200 text-[#8F8C7F] text-xs font-medium px-3 py-1 rounded-md">
+            <span className="inline-block bg-white border border-stone-200 text-[#8F8C7F] text-xs font-medium px-3 py-1 rounded-md">
               {post.category}
             </span>
             <h1 className="font-editorial text-3xl sm:text-4xl md:text-5xl text-stone-900 font-normal leading-tight">
@@ -110,7 +110,7 @@ export default async function BlogPostPage({
           </div>
 
           {/* CTA Box */}
-          <div className="mt-12 p-8 bg-[#FAF8F5] rounded-2xl border border-stone-200 text-center space-y-4">
+          <div className="mt-12 p-8 bg-white rounded-2xl border border-stone-200 text-center space-y-4">
             <h3 className="font-editorial text-2xl text-stone-900 font-normal">
               ¿Necesitas valoración personalizada en Palma?
             </h3>
