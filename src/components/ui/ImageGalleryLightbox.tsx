@@ -147,7 +147,7 @@ export function ImageGalleryLightbox({
             <div
               key={idx}
               onClick={() => openLightbox(idx)}
-              className="group relative aspect-[4/3] rounded-[20px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-stone-100"
+              className="group relative aspect-[3/4] rounded-[20px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-stone-100"
             >
               <Image
                 src={img.src}

@@ -258,7 +258,7 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       "Torre: estructuras verticales con resistencia variable para trabajar estabilidad y coordinación.",
       "Accesorios: pelotas, bandas, mancuernas, etc., según tus necesidades."
     ],
-    twoColImage: "/images/pilates_maquinas-min.jpg",
+    twoColImage: "/images/pilates-maquinas/pilates_maquinas.webp",
     twoColButtonText: "Ver más información",
     twoColButtonHref: "/reservas",
     banner: {
@@ -273,19 +273,19 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       intro: "Espacios luminosos, máquinas Reformer de última generación y grupos reducidos para que cada movimiento esté guiado con precisión.",
       images: [
         {
-          src: "/images/pilates_maquinas-min.jpg",
-          alt: "Clases de Pilates Reformer con correas de piernas y muelles",
-          title: "Alineación y resistencia con Reformer"
+          src: "/images/pilates-maquinas/laude_pilates_maquina.webp",
+          alt: "Clases de Pilates con máquina en Laude Palma",
+          title: "Pilates con máquina Reformer"
         },
         {
-          src: "/images/pialtes_maquinas_de_todo-min.jpg",
-          alt: "Sesión guiada por fisioterapeuta colegiado en máquinas de Pilates",
-          title: "Grupos reducidos y supervisión clínica continua"
+          src: "/images/pilates-maquinas/laude_pilates_maquinas_palma.webp",
+          alt: "Estudio de Pilates con máquinas en Palma de Mallorca",
+          title: "Pilates máquinas en Palma"
         },
         {
-          src: "/images/mujeres-de-tiro-completo-haciendo-pilates-juntas-scaled.jpg",
-          alt: "Ejercicios de fuerza profunda y estabilidad postural en Reformer",
-          title: "Fuerza profunda, estabilidad y consciencia corporal"
+          src: "/images/pilates-maquinas/laude_pilates_maquinas.webp",
+          alt: "Sesión de Pilates con máquinas Reformer en grupo reducido",
+          title: "Entrenamiento guiado con máquinas de Pilates"
         }
       ]
     },
@@ -300,7 +300,7 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
         "Personas mayores que desean entrenar con seguridad y en grupo con condiciones similares.",
         "Y también tú, si buscas una forma eficaz y motivadora de entrenar tu cuerpo con consciencia."
       ],
-      image: "/images/pialtes_maquinas_de_todo-min.jpg",
+      image: "/images/pilates-maquinas/pilates_maquinas_clients.webp",
       imageAlt: "¿Para quién es el Pilates con máquinas?",
       buttonText: "Ver más información",
       buttonHref: "/reservas"
@@ -315,7 +315,7 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
         "Combinable, muchos eligen una clase de suelo y máquinas por semana (muy buena opción)"
       ],
       checkColor: "text-[#8F8B82]",
-      image: "/images/grupo-de-personas-deportivas-en-burro-plantean-min-scaled.jpg",
+      image: "/images/pilates-maquinas/cross_pilates_suelo.webp",
       imageAlt: "¿Prefieres empezar con pilates suelo?",
       imageLeft: true,
       buttonText: "Ver Pilates suelo",
