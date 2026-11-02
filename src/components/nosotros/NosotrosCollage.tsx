@@ -20,7 +20,7 @@ export function NosotrosCollage() {
         const elementCenter = rect.top + rect.height / 2;
         const screenCenter = windowHeight / 2;
         const diff = screenCenter - elementCenter;
-        // Subtle, elegant parallax shift between -35px and +35px
+        // Subtle, elegant parallax shift between -45px and +45px
         const move = Math.max(-45, Math.min(45, diff * 0.16));
         setOffsetY(move);
       }
@@ -55,13 +55,13 @@ export function NosotrosCollage() {
           />
         </div>
 
-        {/* Small photo: NO border, shadow-2xl, and smooth parallax translation */}
+        {/* Small photo: vertically centered (top-1/2 -translate-y-1/2), NO border, shadow-2xl, and smooth parallax */}
         <div
           style={{
-            transform: `translate3d(0, ${offsetY}px, 0)`,
+            transform: `translate3d(0, calc(-50% + ${offsetY}px), 0)`,
             willChange: "transform"
           }}
-          className="absolute -right-4 sm:-right-8 lg:-right-10 bottom-6 sm:bottom-10 w-48 sm:w-56 md:w-60 lg:w-64 aspect-[3/4] rounded-[25px] overflow-hidden shadow-2xl z-10 transition-transform duration-150 ease-out"
+          className="absolute -right-4 sm:-right-8 lg:-right-10 top-1/2 w-48 sm:w-56 md:w-60 lg:w-64 aspect-[3/4] rounded-[25px] overflow-hidden shadow-2xl z-10 transition-transform duration-150 ease-out"
         >
           <Image
             src="/images/pareja-estirando-en-la-playa-min-scaled.jpg"
