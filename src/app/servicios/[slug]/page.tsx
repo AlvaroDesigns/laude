@@ -35,7 +35,8 @@ export async function generateMetadata({
 
 interface CommonProblemCategory {
   title: string;
-  items: string[];
+  desc?: string;
+  items?: string[];
 }
 
 interface ServiceConfig {
@@ -52,8 +53,6 @@ interface ServiceConfig {
   twoColButtonText: string;
   pillarsTitle: string;
   pillars: { icon: LucideIcon; title: string; desc: string }[];
-  areasLabel?: string;
-  areas?: { title: string; desc: string }[];
   commonProblemsTitle?: string;
   commonProblems?: CommonProblemCategory[];
   faqLabel?: string;
@@ -150,42 +149,57 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
   },
   "pilates-suelo": {
     heroTitle: "Pilates Suelo",
-    heroSubtitle: "Control, respiración y fuerza profunda. Clases en grupos reducidos dirigidas por fisioterapeutas.",
-    introP1: "En LAUDE entendemos el cuerpo como algo que se entrena, se cuida y se escucha. Te acompañamos a recuperar la movilidad, fuerza y estabilidad.",
-    introHeadline: "Muévete con consciencia, precisión y sin dolor.",
-    introP2: "Grupos reducidos supervisados por fisioterapeutas para que cada sesión se adapte a tus necesidades específicas.",
+    heroSubtitle: "Pilates con intención: guiado, consciente y adaptado a ti. Más que estirar y respirar.",
+    introP1: "¿Crees que el pilates es solo para mujeres, personas mayores o para “hacer algo suave”? ¿Te imaginas una clase lenta y aburrida?",
+    introHeadline: "En LAUDE rompemos con todos esos mitos.",
+    introP2: "Nuestro enfoque de pilates mantiene la esencia del método original, pero lo llevamos a un nivel más activo, desafiante y funcional. Te enseñamos a moverte con consciencia, ganar fuerza real y prevenir lesiones.",
     introImage: "/images/pilates_suelo.jpg",
     twoColTitle: "Pilates con intención: guiado, consciente y adaptado a ti.",
-    twoColIntro: "Acompañamiento profesional y grupos reducidos para que cada movimiento cuente:",
+    twoColIntro: "Aquí no vienes a “hacer Pilates general”, vienes a entrenar desde el control, entender tu postura y ganar fuerza:",
     twoColItems: [
-      "Grupos reducidos de máximo 6-8 personas",
-      "Guiado siempre por fisioterapeutas colegiados",
+      "Grupos reducidos de máximo 6-8 personas para corrección continua",
+      "Guiado siempre por fisioterapeutas colegiados especializados",
       "Adaptaciones individuales según tu nivel o dolencia",
-      "Control postural, respiración y fuerza profunda"
+      "Control postural, respiración funcional y fuerza profunda"
     ],
     twoColImage: "/images/pilates_suelo-min.jpg",
     twoColButtonText: "Ver más información",
-    pillarsTitle: "Aprende a moverte con libertad, precisión y sin sobrecargar tu espalda",
+    pillarsTitle: "Entrenas, no repites sin sentido",
     pillars: [
       {
         icon: Sparkles,
         title: "Dirigido por fisioterapeutas en grupo reducido",
-        desc: "Atención real a tus posturas y correcciones en tiempo real para máxima seguridad."
+        desc: "Estás en manos de profesionales de la salud, que saben tu nombre y si hay alguna limitación que cuidar."
       },
       {
         icon: Compass,
         title: "Terapéutico y funcional",
-        desc: "Cada ejercicio tiene un propósito claro adaptado a tu condición física."
+        desc: "No solo entrenas: cuidas tu cuerpo. Nuestro Pilates está diseñado para ayudarte a prevenir lesiones y aliviar molestias."
       },
       {
         icon: ShieldCheck,
         title: "Trabajo de fuerza real",
-        desc: "Fortalece tu abdomen profundo, suelo pélvico y musculatura estabilizadora."
+        desc: "Incorporamos la Springboard, un sistema con muelles y resistencias que te reta y te ayuda a progresar de forma segura."
       },
       {
         icon: HeartHandshake,
         title: "Variedad y dinamismo",
-        desc: "Sesiones progresivas que combinan fluidez, técnica y bienestar integral."
+        desc: "Cada clase es diferente, no se trata de repetir siempre lo mismo. Usamos fitballs, foam rollers, aros y bandas elásticas."
+      }
+    ],
+    commonProblemsTitle: "Lo que muchas personas sienten antes de empezar…",
+    commonProblems: [
+      {
+        title: "No tengo fuerza, ni equilibrio",
+        desc: "Por eso te recomendamos venir: el equilibrio y la fuerza no son requisitos, son resultados que vas a obtener gracias a tu constancia."
+      },
+      {
+        title: "No soy flexible",
+        desc: "La flexibilidad no es un punto de partida, es una consecuencia del movimiento bien guiado. En muchas alteraciones del movimiento nos interesa flexibilizar tejidos, pero no vendrás a hacer figuras imposibles. Aquí lo terapéutico y funcional se unen."
+      },
+      {
+        title: "Me da miedo lesionarme",
+        desc: "Te entendemos, por eso estás en el lugar adecuado. Sabemos lo preciada que es nuestra salud y por eso no debes dejarla en manos de cualquiera; somos profesionales de la salud y el movimiento. No se trata de hacer perfecto un ejercicio, sino de reconectar con tu cuerpo, moverte sin miedo y sentirte capaz otra vez, siempre con el respaldo de fisioterapeutas."
       }
     ],
     faqLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
@@ -193,42 +207,57 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
   },
   "pilates-maquinas": {
     heroTitle: "Pilates Máquinas",
-    heroSubtitle: "Entrena con precisión en Reformer y Cadillac. Asistencia y resistencia progresiva para tu cuerpo.",
-    introP1: "En LAUDE entendemos el cuerpo como algo que se entrena, se cuida y se escucha. El entrenamiento con máquinas ofrece la máxima precisión y protección articular.",
-    introHeadline: "Fortalece tu cuerpo desde el centro hacia afuera con asistencia progresiva.",
-    introP2: "Una experiencia guiada con muelles y resistencias graduadas para mejorar postura, flexibilidad y fuerza profunda.",
-    introImage: "/images/pilates_maquinas-min.jpg",
-    twoColTitle: "Una forma inteligente y respetuosa de fortalecer tu cuerpo.",
-    twoColIntro: "El sistema de muelles y poleas de las máquinas Reformer asiste el movimiento:",
+    heroSubtitle: "Pilates máquinas: entrenamiento preciso, seguro y adaptado a tus objetivos.",
+    introP1: "¿Has visto esas camas con torre, muelles y correas que parecen de otro planeta? Eso es el Reformer, y lo utilizamos con un propósito claro: ayudarte a moverte mejor, con más control, fuerza y sin dolor.",
+    introHeadline: "Una forma inteligente y respetuosa de fortalecer tu cuerpo.",
+    introP2: "Nuestro Pilates con máquinas combina lo mejor de la terapia y el entrenamiento funcional. Trabajamos en grupos reducidos de máximo 4 personas para que cada sesión mantenga su esencia personalizada, pero con la energía del grupo.",
+    introImage: "/images/pialtes_maquinas_de_todo-min.jpg",
+    twoColTitle: "¿Qué equipamiento usamos?",
+    twoColIntro: "Cada máquina permite adaptar el nivel de exigencia y progresión ya que cuenta con muelles de resistencia:",
     twoColItems: [
-      "Resistencia progresiva que cuida tus articulaciones",
-      "Trabajo excéntrico para alargar y tonificar el músculo",
-      "Mayor rango de movimiento con total seguridad",
-      "Ideal para rehabilitación y readaptación física"
+      "Máquina Reformer: plataforma deslizante con muelles para trabajar fuerza, movilidad y control con precisión",
+      "Cadillac-Plataforma: convertible para realizar ejercicios a la altura de la camilla sin bajar al suelo",
+      "Torre: estructuras verticales con resistencia variable para trabajar estabilidad y coordinación",
+      "Accesorios: pelotas, bandas elásticas, mancuernas y rulos según tus necesidades individuales"
     ],
     twoColImage: "/images/pilates_maquinas-min.jpg",
     twoColButtonText: "Ver más información",
-    pillarsTitle: "Tecnología y método al servicio de tu bienestar y rendimiento físico",
+    pillarsTitle: "Para quién es el Pilates con máquinas y cómo te transforma",
     pillars: [
       {
         icon: Sparkles,
-        title: "Reformer con torre",
-        desc: "Resistencia variable con muelles para un control postural milimétrico."
+        title: "Reformer con muelles progresivos",
+        desc: "Plataforma deslizante que asiste o desafía el movimiento cuidando al 100% tus articulaciones."
       },
       {
         icon: Compass,
-        title: "Cadillac y Trapecio",
-        desc: "Asistencia para movimientos suspendidos y descompresión articular."
+        title: "Cadillac y Torre vertical",
+        desc: "Descompresión articular y trabajo en diferentes alturas sin necesidad de tumbarte en el suelo."
       },
       {
         icon: ShieldCheck,
-        title: "Adaptado a cada nivel",
-        desc: "Desde personas con dolor de espalda hasta deportistas que buscan optimizar su rendimiento."
+        title: "Máximo 4 personas por clase",
+        desc: "Supervisión clínica constante de fisioterapeutas colegiados que conocen tu historial y te guían paso a paso."
       },
       {
         icon: HeartHandshake,
-        title: "Atención individualizada",
-        desc: "Máximo 4 personas por clase para una supervisión clínica constante."
+        title: "Todo tipo de perfiles",
+        desc: "Desde personas con dolor o en rehabilitación hasta deportistas, embarazadas y personas mayores."
+      }
+    ],
+    commonProblemsTitle: "Lo que muchas personas sienten antes de empezar…",
+    commonProblems: [
+      {
+        title: "“No tengo fuerza”",
+        desc: "No te preocupes, nos adaptamos a tu situación actual y marcamos objetivos para que veas tus progresiones paso a paso gracias a la asistencia de los muelles."
+      },
+      {
+        title: "“Me da miedo hacerlo mal en clase”",
+        desc: "Puede que alguna vez hayas pensado que el Pilates no era para ti, pero aquí descubrirás lo contrario. Te enseñamos a moverte con sentido, adaptando cada ejercicio para que sea seguro y eficaz, incluso si tu técnica no es perfecta. Siempre contarás con un fisioterapeuta a tu lado guiándote y motivándote."
+      },
+      {
+        title: "“Nunca he usado máquinas, lo veo complicado”",
+        desc: "Parece compleja desde fuera, pero todo lo contrario: facilita que tu posición sea la correcta y el profesor te la prepara a la altura y muelles correspondientes, para que tú solo tengas que preocuparte de disfrutar la clase."
       }
     ],
     faqLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
@@ -448,7 +477,7 @@ export default async function ServiceDetailPage({
         </section>
       </ScrollReveal>
 
-      {/* 6. PROBLEMAS MÁS COMUNES */}
+      {/* 6. BORDERED CARDS (Problemas más comunes / Lo que muchas personas sienten antes de empezar) */}
       {config.commonProblems && config.commonProblems.length > 0 && (
         <ScrollReveal>
           <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden space-y-8 sm:space-y-10 text-left">
@@ -462,17 +491,24 @@ export default async function ServiceDetailPage({
                   key={idx}
                   className="bg-white rounded-[15px] border-2 border-[#eae4ce] p-6 sm:p-8 flex flex-col justify-start"
                 >
-                  <h3 className="font-editorial text-xl sm:text-2xl text-[#676767] font-normal mb-5 leading-snug">
+                  <h3 className="font-editorial text-xl sm:text-2xl text-[#676767] font-normal mb-4 leading-snug">
                     {problem.title}
                   </h3>
-                  <ul className="space-y-3">
-                    {problem.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#676767] font-light leading-relaxed">
-                        <Check className="w-4 h-4 text-[#8F8C7F] shrink-0 mt-0.5" strokeWidth={1.5} />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {problem.desc && (
+                    <p className="text-xs sm:text-sm text-[#676767] font-light leading-relaxed whitespace-pre-line">
+                      {problem.desc}
+                    </p>
+                  )}
+                  {problem.items && problem.items.length > 0 && (
+                    <ul className="space-y-3 mt-1">
+                      {problem.items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#676767] font-light leading-relaxed">
+                          <Check className="w-4 h-4 text-[#8F8C7F] shrink-0 mt-0.5" strokeWidth={1.5} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>

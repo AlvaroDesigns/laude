@@ -176,12 +176,24 @@ export const SERVICES_DATA: Record<string, Service> = {
     ],
     faqs: [
       {
-        question: "¿Es necesario tener experiencia previa para hacer Pilates en máquinas?",
-        answer: "No, en absoluto. Realizamos una valoración previa para enseñarte el funcionamiento de los muelles, respiración y colocación básica antes de integrarte en el grupo adecuado a tu nivel."
+        question: "¿Si nunca he hecho pilates y tengo dolor o alguna limitación, es seguro hacer pilates?",
+        answer: "No te preocupes, en LAUDE contamos con años de experiencia guiando a personas con dolor y viendo como mejoran gracias a la supervisión y adaptación de los ejercicios. No te imagines un pilates de posturas extrañas y que solo las puedan hacer gimnastas. Nos basamos en un pilates funcional, basándose en ejercicio terapéutico y con elementos de fuerza, son ejercicios aptos para toda clase de edad, y adaptables a tu nivel."
       },
       {
-        question: "¿Cuántas personas hay por clase de Pilates Máquinas?",
-        answer: "Mantenemos grupos muy reducidos (máximo 3-4 alumnos) para garantizar que el instructor pueda ajustar resistencias y corregir la técnica de cada persona de forma personalizada."
+        question: "¿Puedo hacer pilates si estoy embarazada?",
+        answer: "Sí. Siempre que no haya alguna contraindicación médica. En según qué fase del embarazo se recomendará seguir con las clases pero de manera individual o en grupos con la misma condición, para garantizar tu seguridad y la de tu bebé."
+      },
+      {
+        question: "¿Por qué son necesarias las iniciaciones de pilates individuales?",
+        answer: "Las iniciaciones de pilates sirven para sacar la máxima información necesaria al fisioterapeuta que te va a guiar en la clase grupal, saber tu patrón de movimiento, historial de lesiones o intervenciones de trauma, enfermedades metabólicas y posibles limitaciones del movimiento. Y sobre todo si nunca has hecho pilates, aprenderás los conceptos clave para realizarlo con máxima seguridad y rendimiento."
+      },
+      {
+        question: "¿Cuántas iniciaciones necesito hacer antes de meterme en grupo?",
+        answer: "Esto variará según cada persona. Si no tienes dolor y asimilas rápido los conceptos, con 1 o 2 sesiones es más que suficiente. En cambio si vienes con dolor o alguna limitación, valoraremos si tu dolencia requiere antes sesiones individualizadas de fisioterapia o clases privadas."
+      },
+      {
+        question: "¿Si tengo dudas sobre si empezar con pilates suelo o máquinas, o simplemente quiero probar una clase?",
+        answer: "Para estos casos damos la posibilidad de probar una clase suelta con el precio reducido a 15€. Solo se puede hacer una prueba tanto de pilates suelo como de máquinas."
       }
     ]
   },
@@ -221,12 +233,24 @@ export const SERVICES_DATA: Record<string, Service> = {
     ],
     faqs: [
       {
-        question: "¿Qué diferencia hay entre Pilates Suelo y Pilates Máquinas?",
-        answer: "En suelo trabajas contra la gravedad dominando tu propio peso corporal, utilizando elementos como aros y elásticos. En máquinas (Reformer), los muelles ofrecen tanto asistencia para personas que no pueden realizar ciertos rangos como resistencias progresivas más desafiantes."
+        question: "¿Si nunca he hecho pilates y tengo dolor o alguna limitación, es seguro hacer pilates?",
+        answer: "No te preocupes, en LAUDE contamos con años de experiencia guiando a personas con dolor y viendo como mejoran gracias a la supervisión y adaptación de los ejercicios. No te imagines un pilates de posturas extrañas y que solo las puedan hacer gimnastas. Nos basamos en un pilates funcional, basándose en ejercicio terapéutico y con elementos de fuerza, son ejercicios aptos para toda clase de edad, y adaptables a tu nivel."
       },
       {
-        question: "¿Puedo combinar clases de Suelo y Máquinas?",
-        answer: "Sí, disponemos de tarifas combinadas muy demandadas (por ejemplo: 1 clase de máquinas + 1 clase de suelo por 90€/mes)."
+        question: "¿Puedo hacer pilates si estoy embarazada?",
+        answer: "Sí. Siempre que no haya alguna contraindicación médica. En según qué fase del embarazo se recomendará seguir con las clases pero de manera individual o en grupos con la misma condición, para garantizar tu seguridad y la de tu bebé."
+      },
+      {
+        question: "¿Por qué son necesarias las iniciaciones de pilates individuales?",
+        answer: "Las iniciaciones de pilates sirven para sacar la máxima información necesaria al fisioterapeuta que te va a guiar en la clase grupal, saber tu patrón de movimiento, historial de lesiones o intervenciones de trauma, enfermedades metabólicas y posibles limitaciones del movimiento. Y sobre todo si nunca has hecho pilates, aprenderás los conceptos clave para realizarlo con máxima seguridad y rendimiento."
+      },
+      {
+        question: "¿Cuántas iniciaciones necesito hacer antes de meterme en grupo?",
+        answer: "Esto variará según cada persona. Si no tienes dolor y asimilas rápido los conceptos, con 1 o 2 sesiones es más que suficiente. En cambio si vienes con dolor o alguna limitación, valoraremos si tu dolencia requiere antes sesiones individualizadas de fisioterapia o clases privadas."
+      },
+      {
+        question: "¿Si tengo dudas sobre si empezar con pilates suelo o máquinas, o simplemente quiero probar una clase?",
+        answer: "Para estos casos damos la posibilidad de probar una clase suelta con el precio reducido a 15€. Solo se puede hacer una prueba tanto de pilates suelo como de máquinas."
       }
     ]
   }
