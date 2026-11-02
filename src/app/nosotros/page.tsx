@@ -1,3 +1,4 @@
+import { NosotrosCollage } from "@/components/nosotros/NosotrosCollage";
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import React from 'react';
 import type { Metadata } from 'next';
@@ -54,28 +55,8 @@ export default function NosotrosPage() {
       <section className="mx-4 sm:mx-5 bg-[#f5f4f2] rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left: Dual Image Collage */}
-          <div className="md:col-span-6 relative flex justify-center md:justify-end pr-6 sm:pr-10 lg:pr-12">
-            <div className="relative w-full max-w-[460px] lg:max-w-[490px]">
-              {/* Main vertical photo */}
-              <div className="relative aspect-[3/4] w-full rounded-[25px] overflow-hidden shadow-sm">
-                <Image
-                  src="/images/masaje-spa-de-pantorrillas-y-muslos-tratamiento-relajante-min.jpg"
-                  alt="Tratamiento de fisioterapia y relajación en Laude"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Overlapping floating photo on bottom-right */}
-              <div className="absolute -right-6 sm:-right-8 lg:-right-10 bottom-4 sm:bottom-6 w-48 sm:w-56 md:w-60 lg:w-64 aspect-[3/4] rounded-[20px] sm:rounded-[25px] overflow-hidden shadow-2xl z-10 border-4 border-[#f5f4f2]">
-                <Image
-                  src="/images/pareja-estirando-en-la-playa-min-scaled.jpg"
-                  alt="Cuidar el cuerpo y honrar el movimiento"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+          <div className="md:col-span-6 flex justify-center items-center">
+            <NosotrosCollage />
           </div>
 
           {/* Right: Narrative Copy */}
