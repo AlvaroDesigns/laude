@@ -49,7 +49,7 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isTransparent
-            ? 'bg-transparent pt-4 sm:pt-6 pb-3'
+            ? 'bg-transparent pt-5 sm:pt-7 lg:pt-8 pb-3 sm:pb-4'
             : 'bg-[#FAF8F5]/95 backdrop-blur-md shadow-sm border-b border-stone-200/80 py-3.5 sm:py-4'
         }`}
       >
@@ -66,133 +66,141 @@ export function Header() {
               />
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
-              <Link
-                href="/"
-                className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
-                  isTransparent
-                    ? 'text-white hover:text-[#EAE4CE]'
-                    : 'text-stone-800 hover:text-[#8F8C7F]'
-                }`}
-              >
-                HOME
-              </Link>
-
-              <Link
-                href="/nosotros"
-                className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
-                  isTransparent
-                    ? 'text-white hover:text-[#EAE4CE]'
-                    : 'text-stone-800 hover:text-[#8F8C7F]'
-                }`}
-              >
-                NOSOTROS
-              </Link>
-
-              {/* Servicios Dropdown */}
-              <div
-                className="relative group py-2"
-                onMouseEnter={() => setServicesDropdownOpen(true)}
-                onMouseLeave={() => setServicesDropdownOpen(false)}
-              >
+            {/* Right Actions: Desktop Navigation + RESERVA Button aligned together to the right */}
+            <div className="hidden lg:flex items-center gap-7 xl:gap-8">
+              <nav className="flex items-center gap-6 xl:gap-8">
                 <Link
-                  href="/servicios"
-                  className={`flex items-center gap-1 text-xs uppercase font-medium tracking-[0.15em] transition-colors ${
+                  href="/"
+                  className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
                     isTransparent
                       ? 'text-white hover:text-[#EAE4CE]'
                       : 'text-stone-800 hover:text-[#8F8C7F]'
                   }`}
                 >
-                  <span>SERVICIOS</span>
-                  <ChevronDown className="w-3.5 h-3.5 opacity-80 transition-transform group-hover:rotate-180 duration-200" />
+                  HOME
                 </Link>
 
-                <div
-                  className={`absolute top-full left-0 w-60 pt-2 transition-all duration-200 ${
-                    servicesDropdownOpen
-                      ? 'opacity-100 translate-y-0 pointer-events-auto'
-                      : 'opacity-0 translate-y-2 pointer-events-none'
+                <Link
+                  href="/nosotros"
+                  className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
+                    isTransparent
+                      ? 'text-white hover:text-[#EAE4CE]'
+                      : 'text-stone-800 hover:text-[#8F8C7F]'
                   }`}
                 >
-                  <div className="bg-[#FAF8F5] rounded-2xl shadow-xl border border-stone-200 p-2 text-stone-800 backdrop-blur-lg">
-                    <Link
-                      href="/servicios/fisioterapia"
-                      className="block px-3.5 py-2.5 text-xs font-medium tracking-wide uppercase hover:bg-[#EFE9E4] rounded-xl transition-colors"
-                    >
-                      Fisioterapia
-                    </Link>
-                    <Link
-                      href="/servicios/pilates-suelo"
-                      className="block px-3.5 py-2.5 text-xs font-medium tracking-wide uppercase hover:bg-[#EFE9E4] rounded-xl transition-colors"
-                    >
-                      Pilates Suelo
-                    </Link>
-                    <Link
-                      href="/servicios/pilates-maquinas"
-                      className="block px-3.5 py-2.5 text-xs font-medium tracking-wide uppercase hover:bg-[#EFE9E4] rounded-xl transition-colors"
-                    >
-                      Pilates Maquinas
-                    </Link>
+                  NOSOTROS
+                </Link>
+
+                {/* Servicios Dropdown */}
+                <div
+                  className="relative group py-2"
+                  onMouseEnter={() => setServicesDropdownOpen(true)}
+                  onMouseLeave={() => setServicesDropdownOpen(false)}
+                >
+                  <Link
+                    href="/servicios"
+                    className={`flex items-center gap-1 text-xs uppercase font-medium tracking-[0.15em] transition-colors ${
+                      isTransparent
+                        ? 'text-white hover:text-[#EAE4CE]'
+                        : 'text-stone-800 hover:text-[#8F8C7F]'
+                    }`}
+                  >
+                    <span>SERVICIOS</span>
+                    <ChevronDown className="w-3.5 h-3.5 opacity-80 transition-transform group-hover:rotate-180 duration-200" />
+                  </Link>
+
+                  <div
+                    className={`absolute top-full left-0 w-60 pt-2 transition-all duration-200 ${
+                      servicesDropdownOpen
+                        ? 'opacity-100 translate-y-0 pointer-events-auto'
+                        : 'opacity-0 translate-y-2 pointer-events-none'
+                    }`}
+                  >
+                    <div className="bg-[#FAF8F5] rounded-2xl shadow-xl border border-stone-200 p-2 text-stone-800 backdrop-blur-lg">
+                      <Link
+                        href="/servicios/fisioterapia"
+                        className="block px-3.5 py-2.5 text-xs font-medium tracking-wide uppercase hover:bg-[#EFE9E4] rounded-xl transition-colors"
+                      >
+                        Fisioterapia
+                      </Link>
+                      <Link
+                        href="/servicios/pilates-suelo"
+                        className="block px-3.5 py-2.5 text-xs font-medium tracking-wide uppercase hover:bg-[#EFE9E4] rounded-xl transition-colors"
+                      >
+                        Pilates Suelo
+                      </Link>
+                      <Link
+                        href="/servicios/pilates-maquinas"
+                        className="block px-3.5 py-2.5 text-xs font-medium tracking-wide uppercase hover:bg-[#EFE9E4] rounded-xl transition-colors"
+                      >
+                        Pilates Maquinas
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <Link
-                href="/tarifas"
-                className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
-                  isTransparent
-                    ? 'text-white hover:text-[#EAE4CE]'
-                    : 'text-stone-800 hover:text-[#8F8C7F]'
-                }`}
-              >
-                TARIFAS
-              </Link>
+                <Link
+                  href="/tarifas"
+                  className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
+                    isTransparent
+                      ? 'text-white hover:text-[#EAE4CE]'
+                      : 'text-stone-800 hover:text-[#8F8C7F]'
+                  }`}
+                >
+                  TARIFAS
+                </Link>
 
-              <Link
-                href="/noticias"
-                className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
-                  isTransparent
-                    ? 'text-white hover:text-[#EAE4CE]'
-                    : 'text-stone-800 hover:text-[#8F8C7F]'
-                }`}
-              >
-                NOTICIAS
-              </Link>
+                <Link
+                  href="/noticias"
+                  className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
+                    isTransparent
+                      ? 'text-white hover:text-[#EAE4CE]'
+                      : 'text-stone-800 hover:text-[#8F8C7F]'
+                  }`}
+                >
+                  NOTICIAS
+                </Link>
 
-              <Link
-                href="/contacto"
-                className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
-                  isTransparent
-                    ? 'text-white hover:text-[#EAE4CE]'
-                    : 'text-stone-800 hover:text-[#8F8C7F]'
-                }`}
-              >
-                CONTACTO
-              </Link>
-            </nav>
+                <Link
+                  href="/contacto"
+                  className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
+                    isTransparent
+                      ? 'text-white hover:text-[#EAE4CE]'
+                      : 'text-stone-800 hover:text-[#8F8C7F]'
+                  }`}
+                >
+                  CONTACTO
+                </Link>
+              </nav>
 
-            {/* Right Action: Pill Button RESERVA */}
-            <div className="hidden sm:flex items-center">
+              {/* RESERVA button directly after CONTACTO */}
               <Link
                 href="/reservas"
-                className="bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-7 py-2.5 rounded-full text-xs font-medium uppercase tracking-[0.2em] shadow-sm transition-all hover:scale-105 active:scale-95"
+                className="bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-7 py-2.5 rounded-full text-xs font-medium uppercase tracking-[0.2em] shadow-sm transition-all hover:scale-105 active:scale-95 shrink-0"
               >
                 RESERVA
               </Link>
             </div>
 
-            {/* Mobile hamburger */}
-            <button
-              type="button"
-              className={`lg:hidden p-2 rounded-xl transition-all active:scale-90 ${
-                isTransparent ? 'text-white hover:bg-white/10' : 'text-stone-900 hover:bg-stone-100'
-              }`}
-              onClick={() => setMobileMenuOpen(true)}
-              aria-label="Abrir Menú"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
+            {/* Tablet & Mobile actions */}
+            <div className="flex lg:hidden items-center gap-3">
+              <Link
+                href="/reservas"
+                className="hidden sm:inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-5 py-2 rounded-full text-xs font-medium uppercase tracking-[0.15em] shadow-sm"
+              >
+                RESERVA
+              </Link>
+              <button
+                type="button"
+                className={`p-2 rounded-xl transition-all active:scale-90 ${
+                  isTransparent ? 'text-white hover:bg-white/10' : 'text-stone-900 hover:bg-stone-100'
+                }`}
+                onClick={() => setMobileMenuOpen(true)}
+                aria-label="Abrir Menú"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
+            </div>
           </div>
         </div>
       </header>
