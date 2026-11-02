@@ -52,10 +52,10 @@ export default function NosotrosPage() {
 
       <ScrollReveal>
       {/* 2. SOBRE LAUDE SECTION (Collage on left, copy on right) */}
-      <section className="mx-4 sm:mx-5 bg-[#f5f4f2] rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-[#f5f4f2] rounded-[25px] px-5 sm:px-8 lg:px-12 py-8 sm:py-12 lg:py-14 overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left: Dual Image Collage */}
-          <div className="md:col-span-6 flex justify-center items-center">
+          <div className="md:col-span-6 flex justify-start items-center">
             <NosotrosCollage />
           </div>
 

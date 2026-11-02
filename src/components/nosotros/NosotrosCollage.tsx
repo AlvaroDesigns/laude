@@ -41,9 +41,9 @@ export function NosotrosCollage() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative flex justify-center items-center w-full py-4 sm:py-6">
+    <div ref={containerRef} className="relative flex justify-start items-center w-full py-2">
       {/* Sizing wrapper: centered and generous in scale */}
-      <div className="relative w-full max-w-[480px] lg:max-w-[520px]">
+      <div className="relative w-full max-w-[460px] sm:max-w-[490px] lg:max-w-[520px]">
         {/* Main vertical photo: centered, prominent presence */}
         <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full rounded-[25px] overflow-hidden shadow-sm">
           <Image
