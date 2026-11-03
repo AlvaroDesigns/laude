@@ -432,6 +432,7 @@ function RenderTwoColSection({ sec }: { sec: TwoColumnSection }) {
                   src={sec.image}
                   alt={sec.imageAlt || sec.title}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center"
                 />
               </div>
@@ -441,6 +442,7 @@ function RenderTwoColSection({ sec }: { sec: TwoColumnSection }) {
                   src={sec.image}
                   alt={sec.imageAlt || sec.title}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center"
                 />
               </div>
@@ -662,6 +664,7 @@ export default async function ServiceDetailPage({
                   src={config.twoColImage}
                   alt={config.twoColTitle}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center"
                 />
               </div>
@@ -679,6 +682,7 @@ export default async function ServiceDetailPage({
                 src={config.banner.image}
                 alt={config.banner.text}
                 fill
+                sizes="100vw"
                 className="object-cover object-center"
               />
             </div>
