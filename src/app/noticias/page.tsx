@@ -5,13 +5,14 @@ import Link from "next/link";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { BLOG_POSTS } from "@/data/siteData";
+import { getAbsoluteUrl, getNewsRoute, ROUTES } from '@/constants';
 
 export const metadata: Metadata = {
   title: "Noticias | Expertos en Fisioterapia y pilates en Palma Mallorca",
   description:
     "Mantente al día con nuestras novedades. Suscríbete o visita nuestro estudio: ¡nos encanta compartir lo que hacemos contigo!",
   alternates: {
-    canonical: "https://fisiolaude.com/noticias/"
+    canonical: getAbsoluteUrl(`${ROUTES.news}/`)
   }
 };
 
@@ -86,7 +87,7 @@ export default function NoticiasPage() {
                   </div>
 
                   <h2 className="font-editorial text-2xl text-stone-900 group-hover:text-[#8F8C7F] transition-colors leading-snug mb-3 font-normal">
-                    <Link href={`/noticias/${post.slug}`}>
+                    <Link href={getNewsRoute(post.slug)}>
                       {post.title}
                     </Link>
                   </h2>
@@ -96,7 +97,7 @@ export default function NoticiasPage() {
                   </p>
 
                   <Link
-                    href={`/noticias/${post.slug}`}
+                    href={getNewsRoute(post.slug)}
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8F8C7F] group-hover:translate-x-1 transition-transform"
                   >
                     <span>Leer artículo completo</span>

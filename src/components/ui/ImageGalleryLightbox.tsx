@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
-import { createPortal } from "react-dom";
 import {
-  X,
   ChevronLeft,
   ChevronRight,
+  Expand,
   Maximize2,
   Minimize2,
+  X,
   ZoomIn,
   ZoomOut,
-  Expand
 } from "lucide-react";
+import Image from "next/image";
+import React, { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 export interface GalleryImage {
   src: string;
@@ -32,7 +32,7 @@ export function ImageGalleryLightbox({
   subtitle,
   title,
   intro,
-  images
+  images,
 }: ImageGalleryLightboxProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isZoomed, setIsZoomed] = useState(false);
@@ -142,12 +142,12 @@ export function ImageGalleryLightbox({
         </div>
 
         {/* Responsive Image Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+        <div className="hide-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:pb-0">
           {images.map((img, idx) => (
             <div
               key={idx}
               onClick={() => openLightbox(idx)}
-              className="group relative aspect-[3/4] rounded-[20px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-stone-100"
+              className="group relative w-[65vw] max-w-[22rem] shrink-0 snap-center aspect-[3/4] rounded-[20px] overflow-hidden cursor-pointer bg-stone-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl md:w-auto md:max-w-none md:shrink md:snap-none"
             >
               <Image
                 src={img.src}
@@ -292,7 +292,7 @@ export function ImageGalleryLightbox({
               </div>
             )}
           </div>,
-          document.body
+          document.body,
         )}
     </>
   );

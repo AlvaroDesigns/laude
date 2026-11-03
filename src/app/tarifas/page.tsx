@@ -262,7 +262,7 @@ export default function TarifasPage() {
 
           {/* Minimalist Tabs matching fisiolaude.com with mobile horizontal scroll swipe */}
           <div className="mb-10 border-b border-stone-300/80">
-            <div className="flex items-center gap-6 sm:gap-8 overflow-x-auto no-scrollbar scroll-smooth whitespace-nowrap pb-3">
+            <div className="hide-scrollbar flex items-center gap-6 sm:gap-8 overflow-x-auto overflow-y-hidden scroll-smooth whitespace-nowrap pb-3">
               {Object.entries(TARIFAS_TABS).map(([key, tab]) => {
                 const isActive = activeTab === key;
                 return (
@@ -270,7 +270,7 @@ export default function TarifasPage() {
                     key={key}
                     type="button"
                     onClick={() => setActiveTab(key)}
-                    className={`relative text-xs sm:text-sm uppercase tracking-wide transition-colors py-2 flex-shrink-0 ${
+                    className={`relative cursor-pointer text-xs sm:text-sm uppercase tracking-wide transition-colors py-2 flex-shrink-0 ${
                       isActive
                         ? "text-stone-900 font-semibold after:absolute after:bottom-[-13px] after:left-0 after:right-0 after:h-[2px] after:bg-stone-900"
                         : "text-stone-500 hover:text-stone-800 font-normal"
@@ -299,7 +299,7 @@ export default function TarifasPage() {
                   <div className="space-y-6">
                     {/* Plan Title */}
                     <p
-                      className={`text-sm sm:text-base font-normal tracking-wide ${
+                      className={`text-base sm:text-lg font-normal tracking-wide ${
                         isPopular ? "text-white/90" : "text-stone-700"
                       }`}
                     >
@@ -312,7 +312,7 @@ export default function TarifasPage() {
                         {plan.price}
                       </span>
                       <span
-                        className={`text-xs sm:text-sm ${
+                        className={`text-sm sm:text-base ${
                           isPopular ? "text-white/80" : "text-stone-500"
                         }`}
                       >
@@ -322,7 +322,7 @@ export default function TarifasPage() {
 
                     {/* Description */}
                     <p
-                      className={`text-xs sm:text-sm font-light leading-relaxed ${
+                      className={`text-sm sm:text-base font-light leading-relaxed ${
                         isPopular ? "text-white/90" : "text-stone-600"
                       }`}
                     >
@@ -332,7 +332,7 @@ export default function TarifasPage() {
                     {/* Features list */}
                     <ul className="space-y-3 pt-2">
                       {plan.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm font-light">
+                        <li key={fIdx} className="flex items-start gap-2.5 text-sm sm:text-base font-light">
                           <Check
                             className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
                               isPopular ? "text-white" : "text-stone-700"

@@ -9,6 +9,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ServiceFaqAccordion } from "@/components/ui/ServiceFaqAccordion";
 import { ImageGalleryLightbox, type GalleryImage } from "@/components/ui/ImageGalleryLightbox";
 import { SERVICES_DATA } from "@/data/siteData";
+import { getAbsoluteUrl, getServiceRoute, ROUTES } from '@/constants';
 
 export const instant = false;
 
@@ -29,7 +30,7 @@ export async function generateMetadata({
     title: `${service.title} | Expertos en Fisioterapia y pilates en Palma Mallorca`,
     description: service.shortDesc,
     alternates: {
-      canonical: `https://fisiolaude.com/servicios/${slug}/`
+      canonical: getAbsoluteUrl(`${getServiceRoute(slug)}/`)
     }
   };
 }
@@ -104,7 +105,7 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
     introP1: "En LAUDE creemos que la salud no es solo la ausencia de dolor, sino la presencia de equilibrio. Nos enfocamos en escuchar al cuerpo, guiarlo con respeto y promover un estilo de vida consciente. Cada paciente es único y merece un tratamiento personalizado, técnico y humano.",
     introHeadline: "No tienes que resignarte al dolor. Tu cuerpo es tu templo, y merece ser cuidado, comprendido y reconquistado.",
     introP2: "A veces no es solo el dolor. Es la frustración de no poder moverte como antes, el miedo a que algo esté mal, o el cansancio de sentir que nadie entiende lo que te pasa.",
-    introImage: "/images/fisio.jpg",
+    introImage: "/images/fisio/laude_inspiracional.webp",
     twoColTitle: "Tu recuperación empieza aquí. Se protagonista de tu cambio.",
     twoColIntro: "Sabemos que el dolor tiene muchas caras. Puede aparecer:",
     twoColItems: [
@@ -113,8 +114,30 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       "Como consecuencia del estrés sostenido",
       "O sin una causa clara aparente."
     ],
-    twoColImage: "/images/pilates_sm-min.jpg",
+    twoColImage: "/images/fisio/laude_fisio.webp",
     twoColButtonText: "Ver más información",
+    gallery: {
+      subtitle: "FISIOTERAPIA EN LAUDE",
+      title: "Tu recuperación, acompañada paso a paso",
+      intro: "Valoramos, tratamos y te guiamos con un plan adaptado a tu cuerpo, tus objetivos y tu día a día.",
+      images: [
+        {
+          src: "/images/fisio/laude-fisio-valoracion.webp",
+          alt: "Valoración de fisioterapia personalizada en Laude Palma",
+          title: "Valoración personalizada"
+        },
+        {
+          src: "/images/fisio/laude-fisio-masaje.webp",
+          alt: "Tratamiento de fisioterapia manual en Laude Palma",
+          title: "Tratamiento manual"
+        },
+        {
+          src: "/images/fisio/laude-fisio-funcion.webp",
+          alt: "Ejercicio terapéutico funcional en Laude Palma",
+          title: "Movimiento y función"
+        }
+      ]
+    },
     pillarsTitle: "Tratamos tanto el dolor agudo musculoesquelético como el dolor crónico, con una visión integral y actual",
     pillars: [
       {
@@ -260,12 +283,12 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
     ],
     twoColImage: "/images/pilates-maquinas/pilates_maquinas.webp",
     twoColButtonText: "Ver más información",
-    twoColButtonHref: "/reservas",
+    twoColButtonHref: ROUTES.booking,
     banner: {
       image: "/images/pilates-maquinas/sala_de_pilates_maquinas.webp",
       text: "Cada máquina permite adaptar el nivel de exigencia y progresión ya que cuenta con muelles de resistencia. En grupo reducido, el fisioterapeuta corrige, guia y reta a cada persona según su estado físico y objetivo.",
       buttonText: "Quiero más información",
-      buttonHref: "/reservas"
+      buttonHref: ROUTES.booking
     },
     gallery: {
       subtitle: "NUESTRO ESTUDIO EN MOVIMIENTO",
@@ -303,7 +326,7 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       image: "/images/pilates-maquinas/pilates_maquinas_clients.webp",
       imageAlt: "¿Para quién es el Pilates con máquinas?",
       buttonText: "Ver más información",
-      buttonHref: "/reservas"
+      buttonHref: ROUTES.booking
     },
     crossLinkSection: {
       title: "¿Prefieres empezar  con\npilates suelo?",
@@ -319,7 +342,7 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       imageAlt: "¿Prefieres empezar con pilates suelo?",
       imageLeft: true,
       buttonText: "Ver Pilates suelo",
-      buttonHref: "/servicios/pilates-suelo",
+      buttonHref: ROUTES.pilatesMat,
       buttonClass: "inline-block bg-[#A9A499] hover:bg-[#969286] text-white px-7 py-3 rounded-full text-sm font-medium transition-all shadow-none hover:shadow",
       bgClass: "bg-[rgba(226,224,215,0.34)]",
       cardVariant: "flush-image"
@@ -408,7 +431,7 @@ function RenderTwoColSection({ sec }: { sec: TwoColumnSection }) {
             {sec.buttonText && (
               <div className="pt-2">
                 <Link
-                  href={sec.buttonHref || "/reservas"}
+                  href={sec.buttonHref || ROUTES.booking}
                   className={
                     sec.buttonClass ||
                     "inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-7 py-3 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
@@ -472,7 +495,7 @@ export default async function ServiceDetailPage({
     introP1: "En LAUDE creemos que la salud no es solo la ausencia de dolor, sino la presencia de equilibrio. Nos enfocamos en escuchar al cuerpo, guiarlo con respeto y promover un estilo de vida consciente. Cada paciente es único y merece un tratamiento personalizado, técnico y humano.",
     introHeadline: "No tienes que resignarte al dolor. Tu cuerpo es tu templo, y merece ser cuidado, comprendido y reconquistado.",
     introP2: "A veces no es solo el dolor. Es la frustración de no poder moverte como antes, el miedo a que algo esté mal, o el cansancio de sentir que nadie entiende lo que te pasa.",
-    introImage: service.image || "/images/fisio.jpg",
+    introImage: service.image || "/images/fisio/laude_inspiracional.webp",
     twoColTitle: "Tu recuperación empieza aquí. Se protagonista de tu cambio.",
     twoColIntro: "Sabemos que el dolor tiene muchas caras. Puede aparecer:",
     twoColItems: [
@@ -481,7 +504,7 @@ export default async function ServiceDetailPage({
       "Como consecuencia del estrés sostenido",
       "O sin una causa clara aparente."
     ],
-    twoColImage: service.image || "/images/pilates_sm-min.jpg",
+    twoColImage: service.image || "/images/fisio/laude_fisio.webp",
     twoColButtonText: "Ver más información",
     pillarsTitle: "Tratamos tanto el dolor agudo musculoesquelético como el dolor crónico, con una visión integral y actual",
     pillars: [
@@ -533,12 +556,6 @@ export default async function ServiceDetailPage({
 
         {/* Content Box */}
         <div className="max-w-2xl text-left space-y-4 sm:space-y-6">
-          <div className="inline-block border border-white/20 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md">
-            <span className="text-[10px] sm:text-xs text-white/90 uppercase tracking-widest font-semibold">
-              Servicio Especializado
-            </span>
-          </div>
-
           <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-normal leading-[1.08] tracking-tight">
             {config.heroTitle}
           </h1>
@@ -546,21 +563,6 @@ export default async function ServiceDetailPage({
           <p className="text-white/80 text-xs sm:text-sm md:text-base font-light max-w-xl leading-relaxed">
             {config.heroSubtitle}
           </p>
-
-          <div className="pt-2 flex flex-wrap gap-3">
-            <Link
-              href="/reservas"
-              className="inline-block bg-[#FAF8F5] hover:bg-white text-stone-900 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow-md transition-all hover:scale-105"
-            >
-              Pedir cita
-            </Link>
-            <Link
-              href="/contacto"
-              className="inline-block bg-white/15 hover:bg-white/25 text-white border border-white/30 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold backdrop-blur-md transition-all"
-            >
-              Consultar dudas
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -598,7 +600,7 @@ export default async function ServiceDetailPage({
 
             <div className="pt-2">
               <Link
-                href="/reservas"
+                href={ROUTES.booking}
                 className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow-sm transition-all hover:scale-105"
               >
                 {config.introButtonText || "Reservar cita"}
@@ -614,6 +616,7 @@ export default async function ServiceDetailPage({
                   src={config.introImage}
                   alt={config.heroTitle}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 1024px"
                   className="object-cover object-center"
                 />
               </div>
@@ -649,7 +652,7 @@ export default async function ServiceDetailPage({
 
               <div className="pt-2">
                 <Link
-                  href={config.twoColButtonHref || "/reservas"}
+                  href={config.twoColButtonHref || ROUTES.booking}
                   className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-7 py-3 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
                 >
                   {config.twoColButtonText}
@@ -695,7 +698,7 @@ export default async function ServiceDetailPage({
               </p>
               <div>
                 <Link
-                  href={config.banner.buttonHref || "/reservas"}
+                  href={config.banner.buttonHref || ROUTES.booking}
                   className="inline-block bg-white hover:bg-stone-100 text-stone-900 px-8 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow-md transition-all hover:scale-105"
                 >
                   {config.banner.buttonText}

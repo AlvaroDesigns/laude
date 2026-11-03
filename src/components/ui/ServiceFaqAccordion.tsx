@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
+import { useState } from "react";
 
 export interface FaqItem {
   question: string;
@@ -14,19 +14,23 @@ interface ServiceFaqAccordionProps {
   faqs: FaqItem[];
 }
 
-export function ServiceFaqAccordion({ label, title, faqs }: ServiceFaqAccordionProps) {
+export function ServiceFaqAccordion({
+  label,
+  title,
+  faqs,
+}: ServiceFaqAccordionProps) {
   // First item open by default like in reference screenshot
-  const [openIndices, setOpenIndices] = useState<number[]>([0]);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleIndex = (index: number) => {
-    setOpenIndices(prev =>
-      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
-    );
+    setOpenIndex((currentIndex) => (currentIndex === index ? null : index));
   };
 
   return (
-    <section style={{ backgroundColor: "rgba(226, 224, 215, 0.34)" }}
-      className="mx-4 sm:mx-5 rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden text-left">
+    <section
+      style={{ backgroundColor: "rgba(226, 224, 215, 0.34)" }}
+      className="mx-4 sm:mx-5 rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden text-left"
+    >
       {label && (
         <p className="text-[11px] sm:text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F] mb-3">
           {label}
@@ -39,7 +43,7 @@ export function ServiceFaqAccordion({ label, title, faqs }: ServiceFaqAccordionP
 
       <div className="divide-y divide-stone-200/90 border-t border-b border-stone-200/90">
         {faqs.map((faq, idx) => {
-          const isOpen = openIndices.includes(idx);
+          const isOpen = openIndex === idx;
           return (
             <div key={idx} className="py-4 sm:py-5">
               <button

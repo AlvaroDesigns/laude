@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { GoogleReviewsCarousel } from '@/components/ui/GoogleReviewsCarousel';
+import { EXTERNAL_URLS, ROUTES } from '@/constants';
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
             src="/images/Hero-Image.webp"
             alt="Laude - Fisioterapia y Pilates Palma"
             fill
+            sizes="100vw"
             className="object-cover object-center"
             priority
           />
@@ -37,8 +39,8 @@ export default function HomePage() {
           </p>
 
           <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-[70px] text-white font-normal leading-[1.08] tracking-tight">
-            Fisioterapia y pilates en<br />
-            Palma Mallorca
+            Fisioterapia y pilates<br />
+            en Palma Mallorca
           </h1>
 
           <p className="text-white/90 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl">
@@ -47,7 +49,7 @@ export default function HomePage() {
 
           <div className="pt-2">
             <Link
-              href="/servicios"
+              href={ROUTES.services}
               className="inline-block bg-white hover:bg-stone-100 text-stone-900 px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 "
             >
               Quiero más información
@@ -64,9 +66,10 @@ export default function HomePage() {
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
               <Image
-                src="/images/laure_terapeuta-min.jpg"
+                src="/images/home/laude_home.webp"
                 alt="Laude Fisioterapeuta"
                 fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover"
               />
             </div>
@@ -117,7 +120,7 @@ export default function HomePage() {
 
             <div className="pt-4">
               <Link
-                href="/reservas"
+                href={ROUTES.booking}
                 className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105"
               >
                 Reservar una cita
@@ -137,8 +140,9 @@ export default function HomePage() {
             <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
               NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL
             </p>
-            <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl text-[#908968] font-normal leading-tight">
-              Fisioterapia y Pilates pensados para tratar el origen, no solo los síntomas.
+            <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl text-[#908968] font-normal leading-tight max-w-5xl">
+              Fisioterapia y Pilates pensados para<br />
+              tratar el origen, no solo los síntomas.
             </h2>
             <p className="text-stone-600 text-sm sm:text-base font-light pt-1">
               Te ayudamos a moverte mejor, sin dolor y con confianza en tu cuerpo.
@@ -148,7 +152,7 @@ export default function HomePage() {
           {/* Right CTA button */}
           <div className="lg:shrink-0 text-left lg:text-right">
             <a
-              href="https://wa.me/34622313254"
+              href={EXTERNAL_URLS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 "
@@ -162,13 +166,14 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Box 1 */}
           <Link
-            href="/servicios/fisioterapia"
+            href={ROUTES.physiotherapy}
             className="group relative h-[560px] rounded-2xl overflow-hidden  flex flex-col justify-end p-8 text-white transition-all duration-300 hover:-translate-y-1.5 hover:"
           >
             <Image
-              src="/images/paciente-haciendo-rehabilitacion-fisica-ayudado-por-terapeutas-de-fisio-min.jpg"
+              src="/images/home/home_laude_fisio.webp"
               alt="Fisioterapia musculoesquelética"
               fill
+              sizes="(min-width: 768px) 33vw, 100vw"
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
@@ -189,13 +194,14 @@ export default function HomePage() {
 
           {/* Box 2 */}
           <Link
-            href="/servicios/pilates-suelo"
+            href={ROUTES.pilatesMat}
             className="group relative h-[560px] rounded-2xl overflow-hidden  flex flex-col justify-end p-8 text-white transition-all duration-300 hover:-translate-y-1.5 hover:"
           >
             <Image
-              src="/images/mujer-de-tiro-pilates.jpg"
+              src="/images/home/home_laude_suelo.webp"
               alt="Pilates suelo"
               fill
+              sizes="(min-width: 768px) 33vw, 100vw"
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
@@ -216,13 +222,14 @@ export default function HomePage() {
 
           {/* Box 3 */}
           <Link
-            href="/servicios/pilates-maquinas"
+            href={ROUTES.pilatesMachines}
             className="group relative h-[560px] rounded-2xl overflow-hidden  flex flex-col justify-end p-8 text-white transition-all duration-300 hover:-translate-y-1.5 hover:"
           >
             <Image
-              src="/images/personas-que-toman-clases-de-pilates-reformador-min.jpg"
+              src="/images/home/home_laude_maquinas.webp"
               alt="Pilates Maquinas"
               fill
+              sizes="(min-width: 768px) 33vw, 100vw"
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
@@ -252,6 +259,7 @@ export default function HomePage() {
             src="/images/mujeres-de-tiro-completo-haciendo-pilates-juntas-scaled.jpg"
             alt="Clases de Pilates en Fisiolaude"
             fill
+            sizes="100vw"
             className="object-cover"
           />
         </div>

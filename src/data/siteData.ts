@@ -1,3 +1,5 @@
+import { EXTERNAL_URLS, ROUTES } from '@/constants';
+
 export interface Service {
   id: string;
   slug: string;
@@ -51,31 +53,30 @@ export const SITE_INFO = {
     { days: "Sábados", hours: "09:00 - 14:00" },
     { days: "Domingos", hours: "Cerrado" }
   ],
-  whatsappUrl: "https://wa.me/34622313254?text=Hola%20Fisiolaude,%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20sobre%20una%20cita",
+  whatsappUrl: EXTERNAL_URLS.whatsapp,
   gtmId: "GT-K4CTR5BQ", // Google Tag ID existente
   social: {
-    instagram: "https://instagram.com/fisiolaude",
-    facebook: "https://facebook.com/fisiolaude"
+    instagram: EXTERNAL_URLS.instagram,
+    facebook: EXTERNAL_URLS.facebook
   }
 };
 
 export const NAVIGATION_LINKS = [
-  { name: "Inicio", href: "/" },
-  { name: "Nosotros", href: "/nosotros" },
+  { name: "Inicio", href: ROUTES.home },
+  { name: "Nosotros", href: ROUTES.about },
   {
     name: "Servicios",
-    href: "/servicios",
+    href: ROUTES.services,
     sublinks: [
-      { name: "Fisioterapia", href: "/servicios/fisioterapia", desc: "Rehabilitación y terapia manual avanzada" },
-      { name: "Pilates Máquinas", href: "/servicios/pilates-maquinas", desc: "Entrenamiento guiado con Reformer" },
-      { name: "Pilates Suelo", href: "/servicios/pilates-suelo", desc: "Control postural, fuerza y movilidad" }
+      { name: "Fisioterapia", href: ROUTES.physiotherapy, desc: "Rehabilitación y terapia manual avanzada" },
+      { name: "Pilates Máquinas", href: ROUTES.pilatesMachines, desc: "Entrenamiento guiado con Reformer" },
+      { name: "Pilates Suelo", href: ROUTES.pilatesMat, desc: "Control postural, fuerza y movilidad" }
     ]
   },
-  { name: "Tarifas", href: "/tarifas" },
-  { name: "Blog", href: "/noticias" },
-  { name: "Contacto", href: "/contacto" }
+  { name: "Tarifas", href: ROUTES.pricing },
+  { name: "Blog", href: ROUTES.news },
+  { name: "Contacto", href: ROUTES.contact }
 ];
-
 export const SERVICES_DATA: Record<string, Service> = {
   fisioterapia: {
     id: "fisioterapia",
@@ -88,7 +89,7 @@ export const SERVICES_DATA: Record<string, Service> = {
       "Combinamos las técnicas de terapia manual más contrastadas con ejercicio terapéutico específico para restaurar la función completa de tu musculatura y articulaciones.",
       "Cada sesión es individual y de atención exclusiva 1 a 1 con fisioterapeutas colegiados."
     ],
-    image: "/images/fisio.jpg",
+    image: "/images/fisio/laude_inspiracional.webp",
     benefits: [
       "Evaluación exhaustiva de postura y movilidad en la 1ª sesión",
       "Alivio del dolor agudo y crónico (cervicalgia, lumbalgia, tendinitis)",
@@ -369,7 +370,6 @@ export const BLOG_POSTS: Post[] = [
     ]
   }
 ];
-
 export const TESTIMONIALS = [
   {
     name: "Marta R.",

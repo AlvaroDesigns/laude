@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
 import { BLOG_POSTS } from '@/data/siteData';
+import { ROUTES } from '@/constants';
 
 export const instant = false;
 
@@ -45,60 +45,35 @@ export default async function BlogPostPage({
   }
 
   return (
-    <div className="space-y-5 pt-20 sm:pt-24 pb-6 sm:pb-8">
-      {/* Header Island */}
-      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
-        <div className="max-w-4xl mx-auto space-y-5">
-          <div>
-            <Link
-              href="/noticias"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8F8C7F] hover:underline"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Volver a Noticias</span>
-            </Link>
-          </div>
+    <div className="space-y-5">
+      {/* Immersive article hero */}
+      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[480px] sm:min-h-[560px] lg:min-h-[680px] rounded-[25px] overflow-hidden flex items-end justify-center px-5 sm:px-10 lg:px-16 pb-10 sm:pb-14 lg:pb-16 text-center">
+        <div className="absolute inset-0 -z-20">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/75 via-black/35 to-black/25" />
 
-          <div className="space-y-4">
-            <span className="inline-block bg-white border border-stone-200 text-[#8F8C7F] text-xs font-medium px-3 py-1 rounded-md">
-              {post.category}
-            </span>
-            <h1 className="font-editorial text-3xl sm:text-4xl md:text-5xl text-stone-900 font-normal leading-tight">
-              {post.title}
-            </h1>
-            <div className="flex flex-wrap items-center gap-4 text-xs text-stone-500 pt-1 font-light">
-              <span className="flex items-center gap-1">
-                <User className="w-3.5 h-3.5" />
-                {post.author}
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-1">
-                <Calendar className="w-3.5 h-3.5" />
-                {post.date}
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5" />
-                {post.readTime} de lectura
-              </span>
-            </div>
-          </div>
+        <div className="max-w-6xl space-y-5 sm:space-y-6 text-white">
+          <span className="inline-block rounded-full border border-white/60 bg-black/10 px-4 py-1.5 text-xs sm:text-sm font-medium backdrop-blur-sm">
+            {post.category}
+          </span>
+          <h1 className="font-editorial text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-normal leading-[1.08]">
+            {post.title}
+          </h1>
+          <p className="text-sm sm:text-base font-light text-white/90">{post.date}</p>
         </div>
       </section>
 
       {/* Article Body Island */}
       <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
         <div className="max-w-4xl mx-auto space-y-8">
-          <div className="relative aspect-[16/9] rounded-2xl overflow-hidden">
-            <Image
-              src={post.image}
-              alt={post.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-
           {/* Article text */}
           <div className="space-y-6 text-stone-700 leading-relaxed font-light text-base sm:text-lg">
             <p className="text-lg sm:text-xl font-normal text-stone-900 border-l-4 border-[#B2AFA0] pl-4 italic">
@@ -110,7 +85,7 @@ export default async function BlogPostPage({
           </div>
 
           {/* CTA Box */}
-          <div className="mt-12 p-8 bg-white rounded-2xl border border-stone-200 text-center space-y-4">
+          <div className="p-8 bg-white rounded-2xl border border-stone-200 text-center space-y-4">
             <h3 className="font-editorial text-2xl text-stone-900 font-normal">
               ¿Necesitas valoración personalizada en Palma?
             </h3>
@@ -119,7 +94,7 @@ export default async function BlogPostPage({
             </p>
             <div className="pt-2">
               <Link
-                href="/reservas"
+                href={ROUTES.booking}
                 className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
               >
                 Pedir Cita Online

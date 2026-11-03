@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { ROUTES } from '@/constants';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,8 +14,8 @@ export function Header() {
   const pathname = usePathname();
 
   const cleanPath = pathname?.replace(/\/$/, '') || '/';
-  const heroPages = ['', '/', '/nosotros', '/servicios', '/tarifas', '/contacto', '/reservas', '/noticias'];
-  const hasHero = heroPages.includes(cleanPath) || cleanPath.startsWith('/servicios/');
+  const heroPages = ['', ROUTES.home, ROUTES.about, ROUTES.services, ROUTES.pricing, ROUTES.contact, ROUTES.booking, ROUTES.news];
+  const hasHero = heroPages.includes(cleanPath) || cleanPath.startsWith(`${ROUTES.services}/`) || cleanPath.startsWith(`${ROUTES.news}/`);
   const isTransparent = hasHero && !scrolled;
 
   // Handle scroll detection
@@ -56,11 +57,12 @@ export function Header() {
         <div className="mx-4 sm:mx-5 px-5 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="relative block h-9 sm:h-10 w-32 sm:w-44 transition-transform hover:opacity-90">
+            <Link href={ROUTES.home} className="relative block h-9 sm:h-10 w-32 sm:w-44 transition-transform hover:opacity-90">
               <Image
                 src={isTransparent ? '/images/laude-light.png' : '/images/laude_marron-min.png'}
                 alt="Laude Fisioterapia & Pilates"
                 fill
+                sizes="(max-width: 639px) 128px, 176px"
                 className="object-contain object-left transition-opacity duration-200"
                 priority
               />
@@ -70,7 +72,7 @@ export function Header() {
             <div className="hidden lg:flex items-center gap-7 xl:gap-8">
               <nav className="flex items-center gap-6 xl:gap-8">
                 <Link
-                  href="/"
+                  href={ROUTES.home}
                   className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
                     isTransparent
                       ? 'text-white hover:text-[#EAE4CE]'
@@ -81,7 +83,7 @@ export function Header() {
                 </Link>
 
                 <Link
-                  href="/nosotros"
+                  href={ROUTES.about}
                   className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
                     isTransparent
                       ? 'text-white hover:text-[#EAE4CE]'
@@ -98,7 +100,7 @@ export function Header() {
                   onMouseLeave={() => setServicesDropdownOpen(false)}
                 >
                   <Link
-                    href="/servicios"
+                    href={ROUTES.services}
                     className={`flex items-center gap-1 text-xs uppercase font-medium tracking-[0.15em] transition-colors ${
                       isTransparent
                         ? 'text-white hover:text-[#EAE4CE]'
@@ -118,19 +120,19 @@ export function Header() {
                   >
                     <div className="bg-white rounded-2xl shadow-xl border border-stone-200 p-2 text-stone-800 backdrop-blur-lg">
                       <Link
-                        href="/servicios/fisioterapia"
+                        href={ROUTES.physiotherapy}
                         className="block px-3.5 py-2.5 text-xs font-medium tracking-wide uppercase hover:bg-[#EFE9E4] rounded-xl transition-colors"
                       >
                         Fisioterapia
                       </Link>
                       <Link
-                        href="/servicios/pilates-suelo"
+                        href={ROUTES.pilatesMat}
                         className="block px-3.5 py-2.5 text-xs font-medium tracking-wide uppercase hover:bg-[#EFE9E4] rounded-xl transition-colors"
                       >
                         Pilates Suelo
                       </Link>
                       <Link
-                        href="/servicios/pilates-maquinas"
+                        href={ROUTES.pilatesMachines}
                         className="block px-3.5 py-2.5 text-xs font-medium tracking-wide uppercase hover:bg-[#EFE9E4] rounded-xl transition-colors"
                       >
                         Pilates Maquinas
@@ -140,7 +142,7 @@ export function Header() {
                 </div>
 
                 <Link
-                  href="/tarifas"
+                  href={ROUTES.pricing}
                   className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
                     isTransparent
                       ? 'text-white hover:text-[#EAE4CE]'
@@ -151,7 +153,7 @@ export function Header() {
                 </Link>
 
                 <Link
-                  href="/noticias"
+                  href={ROUTES.news}
                   className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
                     isTransparent
                       ? 'text-white hover:text-[#EAE4CE]'
@@ -162,7 +164,7 @@ export function Header() {
                 </Link>
 
                 <Link
-                  href="/contacto"
+                  href={ROUTES.contact}
                   className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
                     isTransparent
                       ? 'text-white hover:text-[#EAE4CE]'
@@ -175,7 +177,7 @@ export function Header() {
 
               {/* RESERVA button directly after CONTACTO */}
               <Link
-                href="/reservas"
+                href={ROUTES.booking}
                 className="bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-7 py-2.5 rounded-full text-xs font-medium uppercase tracking-[0.2em] shadow-sm transition-all hover:scale-105 active:scale-95 shrink-0"
               >
                 RESERVA
@@ -185,7 +187,7 @@ export function Header() {
             {/* Tablet & Mobile actions */}
             <div className="flex lg:hidden items-center gap-3">
               <Link
-                href="/reservas"
+                href={ROUTES.booking}
                 className="hidden sm:inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-5 py-2 rounded-full text-xs font-medium uppercase tracking-[0.15em] shadow-sm"
               >
                 RESERVA
@@ -210,11 +212,12 @@ export function Header() {
         <div className="fixed inset-0 z-50 h-[100dvh] w-full bg-white flex flex-col justify-between p-6 sm:p-8 animate-in fade-in duration-200">
           {/* Top Bar inside Menu: Logo + Close Button */}
           <div className="flex items-center justify-between pb-6 border-b border-stone-200">
-            <Link href="/" onClick={closeMenu} className="relative block h-10 w-36 sm:w-44">
+            <Link href={ROUTES.home} onClick={closeMenu} className="relative block h-10 w-36 sm:w-44">
               <Image
                 src="/images/laude_marron-min.png"
                 alt="Laude Fisioterapia & Pilates"
                 fill
+                sizes="(max-width: 639px) 144px, 176px"
                 className="object-contain object-left"
                 priority
               />
@@ -233,7 +236,7 @@ export function Header() {
           {/* Navigation Links */}
           <div className="flex-1 py-8 overflow-y-auto space-y-6">
             <Link
-              href="/"
+              href={ROUTES.home}
               onClick={closeMenu}
               className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
             >
@@ -241,7 +244,7 @@ export function Header() {
             </Link>
 
             <Link
-              href="/nosotros"
+              href={ROUTES.about}
               onClick={closeMenu}
               className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
             >
@@ -251,7 +254,7 @@ export function Header() {
             {/* SERVICIOS with nested links */}
             <div className="space-y-3">
               <Link
-                href="/servicios"
+                href={ROUTES.services}
                 onClick={closeMenu}
                 className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
               >
@@ -259,23 +262,23 @@ export function Header() {
               </Link>
               <div className="pl-4 space-y-2.5 border-l-2 border-[#B2AFA0]">
                 <Link
-                  href="/servicios/fisioterapia"
+                  href={ROUTES.physiotherapy}
                   onClick={closeMenu}
-                  className="block text-xs uppercase tracking-widest text-stone-600 hover:text-stone-900 py-1"
+                  className="block text-base uppercase tracking-wider text-stone-600 hover:text-stone-900 py-1"
                 >
                   FISIOTERAPIA
                 </Link>
                 <Link
-                  href="/servicios/pilates-suelo"
+                  href={ROUTES.pilatesMat}
                   onClick={closeMenu}
-                  className="block text-xs uppercase tracking-widest text-stone-600 hover:text-stone-900 py-1"
+                  className="block text-base uppercase tracking-wider text-stone-600 hover:text-stone-900 py-1"
                 >
                   PILATES SUELO
                 </Link>
                 <Link
-                  href="/servicios/pilates-maquinas"
+                  href={ROUTES.pilatesMachines}
                   onClick={closeMenu}
-                  className="block text-xs uppercase tracking-widest text-stone-600 hover:text-stone-900 py-1"
+                  className="block text-base uppercase tracking-wider text-stone-600 hover:text-stone-900 py-1"
                 >
                   PILATES MAQUINAS
                 </Link>
@@ -283,7 +286,7 @@ export function Header() {
             </div>
 
             <Link
-              href="/tarifas"
+              href={ROUTES.pricing}
               onClick={closeMenu}
               className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
             >
@@ -291,7 +294,7 @@ export function Header() {
             </Link>
 
             <Link
-              href="/noticias"
+              href={ROUTES.news}
               onClick={closeMenu}
               className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
             >
@@ -299,7 +302,7 @@ export function Header() {
             </Link>
 
             <Link
-              href="/contacto"
+              href={ROUTES.contact}
               onClick={closeMenu}
               className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
             >
@@ -310,7 +313,7 @@ export function Header() {
           {/* Bottom Button */}
           <div className="pt-4 border-t border-stone-200">
             <Link
-              href="/reservas"
+              href={ROUTES.booking}
               onClick={closeMenu}
               className="block text-center w-full bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white py-4 rounded-full text-xs font-semibold uppercase tracking-[0.25em] shadow-md transition-all active:scale-95"
             >

@@ -3,13 +3,14 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { getAbsoluteUrl, ROUTES } from '@/constants';
 
 export const metadata: Metadata = {
   title: 'Nosotros | Expertos en Fisioterapia y pilates en Palma Mallorca',
   description:
     'Laude, clínica de fisioterapia en Mallorca. Rehabilitación, tratamientos personalizados y mejora de tu bienestar físico.',
   alternates: {
-    canonical: 'https://fisiolaude.com/nosotros/'
+    canonical: getAbsoluteUrl(`${ROUTES.about}/`)
   }
 };
 

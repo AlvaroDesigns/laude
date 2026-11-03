@@ -1,15 +1,16 @@
-import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import React from 'react';
-import type { Metadata } from 'next';
-import Image from 'next/image';
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { EXTERNAL_URLS, getAbsoluteUrl, ROUTES } from '@/constants';
 
 export const metadata: Metadata = {
-  title: 'Contacto | Expertos en Fisioterapia y pilates en Palma Mallorca',
+  title: "Contacto | Expertos en Fisioterapia y pilates en Palma Mallorca",
   description:
-    'Utilice el formulario a continuación o visite el estudio: nos encantaría saber de usted. Fisioterapia y pilates en Son Ferriol (Palma).',
+    "Utilice el formulario a continuación o visite el estudio: nos encantaría saber de usted. Fisioterapia y pilates en Son Ferriol (Palma).",
   alternates: {
-    canonical: 'https://fisiolaude.com/contacto/'
-  }
+    canonical: getAbsoluteUrl(`${ROUTES.contact}/`),
+  },
 };
 
 export default function ContactoPage() {
@@ -33,7 +34,7 @@ export default function ContactoPage() {
           className="absolute inset-0 -z-10"
           style={{
             background:
-              'linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.60) 45%, rgba(0,0,0,0.20) 75%, rgba(0,0,0,0.05) 100%)'
+              "linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.60) 45%, rgba(0,0,0,0.20) 75%, rgba(0,0,0,0.05) 100%)",
           }}
         />
 
@@ -44,120 +45,134 @@ export default function ContactoPage() {
           </h1>
 
           <p className="text-white/95 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-xl">
-            Utilice el formulario a continuación o visite el estudio: nos encantaría saber de usted.
+            Utilice el formulario a continuación o visite el estudio: nos
+            encantaría saber de usted.
           </p>
         </div>
       </section>
 
       <ScrollReveal>
-      {/* 2. FORM SECTION (Island with image on left and form on right) */}
-      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
-        <div className="text-left space-y-3 mb-10">
-          <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
-            QUEREMOS ESCUCHARTE Y AYUDARTE A MEJORAR
-          </p>
-          <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl text-stone-900 font-normal leading-tight">
-            ¿Tienes alguna pregunta? Estamos aquí para ayudarte.
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-          {/* Left: Treatment Photo */}
-          <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] rounded-[22px] overflow-hidden">
-              <Image
-                src="/images/masaje-spa-de-pantorrillas-y-muslos-tratamiento-relajante-min.jpg"
-                alt="Tratamiento Fisioterapia Laude"
-                fill
-                className="object-cover"
-              />
-            </div>
+        {/* 2. FORM SECTION (Island with image on left and form on right) */}
+        <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
+          <div className="text-left space-y-3 mb-10">
+            <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
+              QUEREMOS ESCUCHARTE Y AYUDARTE A MEJORAR
+            </p>
+            <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl text-stone-900 font-normal leading-tight">
+              ¿Tienes alguna pregunta? Estamos aquí para ayudarte.
+            </h2>
           </div>
 
-          {/* Right: Contact Form */}
-          <div className="lg:col-span-7">
-            <form className="space-y-5 text-left">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
-                    Nombre
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
-                    Apellidos
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            {/* Left: Treatment Photo */}
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[4/5] rounded-[22px] overflow-hidden">
+                <Image
+                  src="/images/masaje-spa-de-pantorrillas-y-muslos-tratamiento-relajante-min.jpg"
+                  alt="Tratamiento Fisioterapia Laude"
+                  fill
+                  className="object-cover"
                 />
               </div>
+            </div>
 
-              <div>
-                <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
-                  Mensaje
-                </label>
-                <textarea
-                  rows={5}
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
-                ></textarea>
-              </div>
+            {/* Right: Contact Form */}
+            <div className="lg:col-span-7">
+              <form className="space-y-5 text-left">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
+                      Nombre
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
+                      Apellidos
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
+                    />
+                  </div>
+                </div>
 
-              <div className="flex items-center gap-2 pt-1">
-                <input type="checkbox" id="privacy" required className="accent-[#B2AFA0] w-4 h-4" />
-                <label htmlFor="privacy" className="text-xs text-stone-600 font-light">
-                  He leído y acepto la política de privacidad
-                </label>
-              </div>
+                <div>
+                  <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
+                  />
+                </div>
 
-              <div className="pt-3">
-                <button
-                  type="submit"
-                  className="bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-10 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
-                >
-                  Enviar
-                </button>
-              </div>
-            </form>
+                <div>
+                  <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
+                    Mensaje
+                  </label>
+                  <textarea
+                    rows={5}
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
+                  ></textarea>
+                </div>
+
+                <div className="flex items-center gap-2 pt-1">
+                  <input
+                    type="checkbox"
+                    id="privacy"
+                    required
+                    className="accent-[#B2AFA0] w-4 h-4"
+                  />
+                  <label
+                    htmlFor="privacy"
+                    className="text-xs text-stone-600 font-light"
+                  >
+                    He leído y acepto la{" "}
+                    <Link
+                      href={ROUTES.privacyPolicy}
+                      className="underline underline-offset-2 hover:text-stone-900"
+                    >
+                      política de privacidad
+                    </Link>
+                  </label>
+                </div>
+
+                <div className="pt-3">
+                  <button
+                    type="submit"
+                    className="bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-10 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
+                  >
+                    Enviar
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-      </section>
-
+        </section>
       </ScrollReveal>
 
       <ScrollReveal>
-      {/* 3. GOOGLE MAPS ISLAND */}
-      <section className="mx-4 sm:mx-5 rounded-[25px] overflow-hidden shadow-sm">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46798.777396927166!2d2.720238999379904!3d39.58187797498733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12979579ee2b74df%3A0x6e4ec7c792ddb8f7!2sLAUDE%20-%20Fisioterapia%20y%20Pilates%20en%20Son%20Ferriol!5e0!3m2!1ses!2ses!4v1759935165461!5m2!1ses!2ses"
-          width="100%"
-          height="450"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="w-full"
-        />
-      </section>
+        {/* 3. GOOGLE MAPS ISLAND */}
+        <section className="mx-4 sm:mx-5 rounded-[25px] overflow-hidden shadow-sm">
+          <iframe
+            src={EXTERNAL_URLS.mapsEmbed}
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full"
+          />
+        </section>
       </ScrollReveal>
     </div>
   );

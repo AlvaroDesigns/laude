@@ -2,13 +2,14 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { EXTERNAL_URLS, getAbsoluteUrl, ROUTES } from '@/constants';
 
 export const metadata: Metadata = {
   title: 'Reservas | Expertos en Fisioterapia y pilates en Palma Mallorca',
   description:
     'Agenda tu cita online en Fisiolaude. Selecciona tratamiento, día y hora para recibir atención profesional y personalizada en Son Ferriol (Palma).',
   alternates: {
-    canonical: 'https://fisiolaude.com/reservas/'
+    canonical: getAbsoluteUrl(`${ROUTES.booking}/`)
   }
 };
 
@@ -68,7 +69,7 @@ export default function ReservasPage() {
         {/* Timp Widget Iframe */}
         <div className="w-full bg-white relative">
           <iframe
-            src="https://web.timp.pro/home/20357/branch_building/siblings#/home/20357/branch_building/schedule"
+            src={EXTERNAL_URLS.booking}
             title="Horarios de reservas TIMP Fisiolaude"
             className="w-full h-[780px] sm:h-[880px] lg:h-[950px] border-none"
             allow="payment; camera; microphone"

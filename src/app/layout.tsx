@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import { Antic_Didone, Instrument_Sans } from 'next/font/google';
-import Script from 'next/script';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFloat } from '@/components/layout/WhatsAppFloat';
 import { LocalBusinessSchema } from '@/components/seo/JsonLd';
+import { CookieConsent } from '@/components/legal/CookieConsent';
 import { SITE_INFO } from '@/data/siteData';
+import { EXTERNAL_URLS, SITE_URL } from '@/constants';
 
 const anticDidone = Antic_Didone({
   subsets: ['latin'],
@@ -23,7 +24,7 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fisiolaude.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Laude | Expertos en Fisioterapia y pilates en Palma Mallorca',
     template: '%s | Laude Fisioterapia y Pilates Palma'
@@ -50,27 +51,16 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${anticDidone.variable} ${instrumentSans.variable} scroll-smooth`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href={EXTERNAL_URLS.googleFonts} />
+        <link rel="preconnect" href={EXTERNAL_URLS.googleFontsStatic} crossOrigin="anonymous" />
                 <LocalBusinessSchema />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${SITE_INFO.gtmId}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${SITE_INFO.gtmId}');
-          `}
-        </Script>
       </head>
       <body className="font-sans antialiased bg-white text-[#212121] selection:bg-[#B2AFA0] selection:text-white flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
         <WhatsAppFloat />
+        <CookieConsent gtmId={SITE_INFO.gtmId} />
       </body>
     </html>
   );

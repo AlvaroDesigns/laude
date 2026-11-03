@@ -47,9 +47,10 @@ export function NosotrosCollage() {
         {/* Main vertical photo: centered, prominent presence */}
         <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full rounded-[25px] overflow-hidden shadow-sm">
           <Image
-            src="/images/masaje-spa-de-pantorrillas-y-muslos-tratamiento-relajante-min.jpg"
+            src="/images/nosotros.webp"
             alt="Tratamiento de fisioterapia y relajación en Laude"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover object-center"
             priority
           />
@@ -64,9 +65,10 @@ export function NosotrosCollage() {
           className="absolute -right-4 sm:-right-8 lg:-right-10 top-1/2 w-48 sm:w-56 md:w-60 lg:w-64 aspect-[3/4] rounded-[25px] overflow-hidden shadow-2xl z-10 transition-transform duration-150 ease-out"
         >
           <Image
-            src="/images/pareja-estirando-en-la-playa-min-scaled.jpg"
+            src="/images/nosotros_small.webp"
             alt="Cuidar el cuerpo y honrar el movimiento"
             fill
+            sizes="(max-width: 640px) 192px, (max-width: 1024px) 240px, 256px"
             className="object-cover object-center"
           />
         </div>

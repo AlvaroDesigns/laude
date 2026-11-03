@@ -3,13 +3,14 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getAbsoluteUrl, ROUTES } from '@/constants';
 
 export const metadata: Metadata = {
   title: 'Servicios | Expertos en Fisioterapia y pilates en Palma Mallorca',
   description:
     'Cuidar, rendir, recuperar: el cuerpo como punto de partida. Fisioterapia, Pilates suelo y Pilates con máquinas en Palma de Mallorca.',
   alternates: {
-    canonical: 'https://fisiolaude.com/servicios/'
+    canonical: getAbsoluteUrl(`${ROUTES.services}/`)
   }
 };
 
@@ -96,7 +97,7 @@ export default function ServiciosPage() {
 
             <div className="pt-2">
               <Link
-                href="/servicios/fisioterapia"
+                href={ROUTES.physiotherapy}
                 className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105"
               >
                 Ver más información
@@ -149,7 +150,7 @@ export default function ServiciosPage() {
 
             <div className="pt-2">
               <Link
-                href="/servicios/pilates-maquinas"
+                href={ROUTES.pilatesMachines}
                 className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105"
               >
                 Ver más información
@@ -201,7 +202,7 @@ export default function ServiciosPage() {
 
             <div className="pt-2">
               <Link
-                href="/servicios/pilates-suelo"
+                href={ROUTES.pilatesMat}
                 className="inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105"
               >
                 Ver más información
@@ -213,9 +214,10 @@ export default function ServiciosPage() {
           <div className="lg:col-span-6">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/pilates_sm-min.jpg"
-                alt="Pilates Suelo en Palma - Laude"
+                src="/images/fisio/laude_fisio.webp"
+                alt="Fisioterapia y Pilates en Laude Palma"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -259,7 +261,7 @@ export default function ServiciosPage() {
                   </p>
                 </div>
                 <Link
-                  href="/reservas"
+                  href={ROUTES.booking}
                   className="inline-block text-center bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3 rounded-full text-xs font-semibold uppercase tracking-wider shadow transition-all hover:scale-105"
                 >
                   Pedir Cita
