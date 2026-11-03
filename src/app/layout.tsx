@@ -6,7 +6,6 @@ import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFloat } from '@/components/layout/WhatsAppFloat';
 import { LocalBusinessSchema } from '@/components/seo/JsonLd';
 import { CookieConsent } from '@/components/legal/CookieConsent';
-import { SITE_INFO } from '@/data/siteData';
 import { EXTERNAL_URLS, SITE_URL } from '@/constants';
 
 const anticDidone = Antic_Didone({
@@ -48,6 +47,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const googleTagId = process.env.NEXT_PUBLIC_GTM_ID;
+
   return (
     <html lang="es" className={`${anticDidone.variable} ${instrumentSans.variable} scroll-smooth`}>
       <head>
@@ -60,7 +61,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <WhatsAppFloat />
-        <CookieConsent gtmId={SITE_INFO.gtmId} />
+        {googleTagId && <CookieConsent gtmId={googleTagId} />}
       </body>
     </html>
   );

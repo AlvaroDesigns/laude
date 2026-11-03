@@ -135,7 +135,7 @@ export function ImageGalleryLightbox({
             {title}
           </h2>
           {intro && (
-            <p className="text-stone-600 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl">
+            <p className="text-stone-600 text-xs sm:text-sm md:text-base font-light leading-relaxed">
               {intro}
             </p>
           )}

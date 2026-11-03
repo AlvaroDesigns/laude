@@ -1,24 +1,39 @@
-import React from "react";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import { Check, Sparkles, Compass, ShieldCheck, HeartHandshake, type LucideIcon } from "lucide-react";
 import { FaqSchema } from "@/components/seo/JsonLd";
+import { PilatesMatProductionLayout } from "@/components/services/PilatesMatProductionLayout";
+import {
+  ImageGalleryLightbox,
+  type GalleryImage,
+} from "@/components/ui/ImageGalleryLightbox";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ServiceFaqAccordion } from "@/components/ui/ServiceFaqAccordion";
-import { ImageGalleryLightbox, type GalleryImage } from "@/components/ui/ImageGalleryLightbox";
+import {
+  EXTERNAL_URLS,
+  getAbsoluteUrl,
+  getServiceRoute,
+  ROUTES,
+} from "@/constants";
 import { SERVICES_DATA } from "@/data/siteData";
-import { getAbsoluteUrl, getServiceRoute, ROUTES } from '@/constants';
+import {
+  Check,
+  Compass,
+  HeartHandshake,
+  ShieldCheck,
+  Sparkles,
+  type LucideIcon,
+} from "lucide-react";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export const instant = false;
 
 export async function generateStaticParams() {
-  return Object.keys(SERVICES_DATA).map(slug => ({ slug }));
+  return Object.keys(SERVICES_DATA).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
@@ -30,8 +45,8 @@ export async function generateMetadata({
     title: `${service.title} | Expertos en Fisioterapia y pilates en Palma Mallorca`,
     description: service.shortDesc,
     alternates: {
-      canonical: getAbsoluteUrl(`${getServiceRoute(slug)}/`)
-    }
+      canonical: getAbsoluteUrl(`${getServiceRoute(slug)}/`),
+    },
   };
 }
 
@@ -101,10 +116,14 @@ interface ServiceConfig {
 const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
   fisioterapia: {
     heroTitle: "Fisioterapia",
-    heroSubtitle: "Fisioterapia profesional enfocada en resultados. Te acompañamos en cada paso hacia una recuperación segura.",
-    introP1: "En LAUDE creemos que la salud no es solo la ausencia de dolor, sino la presencia de equilibrio. Nos enfocamos en escuchar al cuerpo, guiarlo con respeto y promover un estilo de vida consciente. Cada paciente es único y merece un tratamiento personalizado, técnico y humano.",
-    introHeadline: "No tienes que resignarte al dolor. Tu cuerpo es tu templo, y merece ser cuidado, comprendido y reconquistado.",
-    introP2: "A veces no es solo el dolor. Es la frustración de no poder moverte como antes, el miedo a que algo esté mal, o el cansancio de sentir que nadie entiende lo que te pasa.",
+    heroSubtitle:
+      "Fisioterapia profesional enfocada en resultados. Te acompañamos en cada paso hacia una recuperación segura.",
+    introP1:
+      "En LAUDE creemos que la salud no es solo la ausencia de dolor, sino la presencia de equilibrio. Nos enfocamos en escuchar al cuerpo, guiarlo con respeto y promover un estilo de vida consciente. Cada paciente es único y merece un tratamiento personalizado, técnico y humano.",
+    introHeadline:
+      "No tienes que resignarte al dolor. Tu cuerpo es tu templo, y merece ser cuidado, comprendido y reconquistado.",
+    introP2:
+      "A veces no es solo el dolor. Es la frustración de no poder moverte como antes, el miedo a que algo esté mal, o el cansancio de sentir que nadie entiende lo que te pasa.",
     introImage: "/images/fisio/laude_inspiracional.webp",
     twoColTitle: "Tu recuperación empieza aquí. Se protagonista de tu cambio.",
     twoColIntro: "Sabemos que el dolor tiene muchas caras. Puede aparecer:",
@@ -112,56 +131,59 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       "Tras una lesión deportiva",
       "Por sobrecarga postural o laboral",
       "Como consecuencia del estrés sostenido",
-      "O sin una causa clara aparente."
+      "O sin una causa clara aparente.",
     ],
     twoColImage: "/images/fisio/laude_fisio.webp",
     twoColButtonText: "Ver más información",
     gallery: {
       subtitle: "FISIOTERAPIA EN LAUDE",
       title: "Tu recuperación, acompañada paso a paso",
-      intro: "Valoramos, tratamos y te guiamos con un plan adaptado a tu cuerpo, tus objetivos y tu día a día.",
+      intro:
+        "Valoramos, tratamos y te guiamos con un plan adaptado a tu cuerpo, tus objetivos y tu día a día.",
       images: [
         {
           src: "/images/fisio/laude-fisio-valoracion.webp",
           alt: "Valoración de fisioterapia personalizada en Laude Palma",
-          title: "Valoración personalizada"
+          title: "Valoración personalizada",
         },
         {
           src: "/images/fisio/laude-fisio-masaje.webp",
           alt: "Tratamiento de fisioterapia manual en Laude Palma",
-          title: "Tratamiento manual"
+          title: "Tratamiento manual",
         },
         {
           src: "/images/fisio/laude-fisio-funcion.webp",
           alt: "Ejercicio terapéutico funcional en Laude Palma",
-          title: "Movimiento y función"
-        }
-      ]
+          title: "Movimiento y función",
+        },
+      ],
     },
-    pillarsTitle: "Tratamos tanto el dolor agudo musculoesquelético como el dolor crónico, con una visión integral y actual",
+    pillarsTitle:
+      "Tratamos tanto el dolor agudo musculoesquelético como el dolor crónico, con una visión integral y actual",
     pillars: [
       {
         icon: Sparkles,
         title: "Conocimiento que empodera",
-        desc: "Te explicamos qué sucede y por qué. Cuanta más claridad tienes, menos miedo sientes, mas libre es tu movimiento y más fácil es avanzar."
+        desc: "Te explicamos qué sucede y por qué. Cuanta más claridad tienes, menos miedo sientes, mas libre es tu movimiento y más fácil es avanzar.",
       },
       {
         icon: Compass,
         title: "Alivio y buenos hábitos para que no vuelva a aparecer",
-        desc: "El dolor nace de muchas piezas (postura, descanso, hábitos, emociones). Trabajamos todas las que importan para ti. Nos basamos en una valoración exhaustiva donde cada detalle cuenta."
+        desc: "El dolor nace de muchas piezas (postura, descanso, hábitos, emociones). Trabajamos todas las que importan para ti. Nos basamos en una valoración exhaustiva donde cada detalle cuenta.",
       },
       {
         icon: ShieldCheck,
         title: "Herramientas para tu día a día",
-        desc: "Todo lo aprendido en la sesión te lo llevas para ya aplicarlo desde el primer minuto con seguimiento y progresiones."
+        desc: "Todo lo aprendido en la sesión te lo llevas para ya aplicarlo desde el primer minuto con seguimiento y progresiones.",
       },
       {
         icon: HeartHandshake,
         title: "Acompañamiento real más allá de la sesión presencial",
-        desc: "Sabemos que es difícil cumplir tareas por el ritmo de vida o simplemente falta de fuerza de voluntad. Por eso priorizamos el seguimiento individual."
-      }
+        desc: "Sabemos que es difícil cumplir tareas por el ritmo de vida o simplemente falta de fuerza de voluntad. Por eso priorizamos el seguimiento individual.",
+      },
     ],
-    commonProblemsTitle: "Aquí tienes algunos de los problemas más comunes que tratamos:",
+    commonProblemsTitle:
+      "Aquí tienes algunos de los problemas más comunes que tratamos:",
     commonProblems: [
       {
         title: "Columna y postura",
@@ -170,116 +192,157 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
           "Síndromes de atrapamiento nervioso.",
           "Problemas posturales.",
           "Disfunciones de movimiento.",
-          "Sobrecarga por estrés físico."
-        ]
+          "Sobrecarga por estrés físico.",
+        ],
       },
       {
         title: "Lesiones deportivas",
         items: [
           "Distensiones y desgarros musculares.",
           "Sobrecargas por sobreuso.",
-          "Prevención de recaídas."
-        ]
+          "Prevención de recaídas.",
+        ],
       },
       {
         title: "Articulaciones",
         items: [
           "Esguinces articulares.",
           "Lesiones de rodilla y tobillo.",
-          "Preparación preparatoria y rehabilitación postoperatoria."
-        ]
+          "Preparación preparatoria y rehabilitación postoperatoria.",
+        ],
       },
       {
         title: "Tendones y fascia",
-        items: [
-          "Tendinitis.",
-          "Fascitis plantar."
-        ]
+        items: ["Tendinitis.", "Fascitis plantar."],
       },
       {
         title: "Mandíbula y ATM",
         items: [
           "Dolor orofacial.",
           "Disfunción temporomandibular.",
-          "Bruxismo."
-        ]
-      }
+          "Bruxismo.",
+        ],
+      },
     ],
     faqLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
-    faqTitle: "¿Preguntas sobre el servicio de fisioterapia? Tenemos las respuestas"
+    faqTitle:
+      "¿Preguntas sobre el servicio de fisioterapia? Tenemos las respuestas",
   },
   "pilates-suelo": {
-    heroTitle: "Pilates Suelo",
-    heroSubtitle: "Pilates con intención: guiado, consciente y adaptado a ti. Más que estirar y respirar.",
-    introP1: "¿Crees que el pilates es solo para mujeres, personas mayores o para “hacer algo suave”? ¿Te imaginas una clase lenta y aburrida?",
+    heroTitle: "Pilates suelo",
+    heroSubtitle: "Pilates con intención: guiado, consciente y adaptado a ti.",
+    introP1:
+      "¿Crees que el pilates es solo para mujeres, personas mayores o para “hacer algo suave”? ¿Te imaginas una clase lenta y aburrida?",
     introHeadline: "En LAUDE rompemos con todos esos mitos.",
-    introP2: "Nuestro enfoque de pilates mantiene la esencia del método original, pero lo llevamos a un nivel más activo, desafiante y funcional. Te enseñamos a moverte con consciencia, ganar fuerza real y prevenir lesiones.",
+    introP2:
+      "Nuestro enfoque de Pilates mantiene la esencia del método original, pero lo llevamos a otro nivel: trabajamos fuerza, movilidad y control corporal de forma dinámica, guiada y segura.",
     twoColTitle: "Pilates con intención: guiado, consciente y adaptado a ti.",
-    twoColIntro: "Aquí no vienes a “hacer Pilates general”, vienes a entrenar desde el control, entender tu postura y ganar fuerza:",
+    twoColIntro:
+      "Más que estirar y respirar. Priorizamos la fuerza, el control, la salud y moverte mejor.",
     twoColItems: [
-      "Grupos reducidos de máximo 6-8 personas para corrección continua",
-      "Guiado siempre por fisioterapeutas colegiados especializados",
-      "Adaptaciones individuales según tu nivel o dolencia",
-      "Control postural, respiración funcional y fuerza profunda"
+      "Grupos reducidos y guiados por fisioterapeutas.",
+      "Ejercicio terapéutico, funcional y adaptado a ti.",
+      "Fuerza, movilidad, control corporal y estabilidad.",
+      "Material variado para que cada clase sea dinámica.",
     ],
     twoColImage: "/images/pilates_suelo-min.jpg",
     twoColButtonText: "Ver más información",
-    pillarsTitle: "Entrenas, no repites sin sentido",
+    gallery: {
+      subtitle: "PILATES SUELO EN LAUDE",
+      title: "Movimiento consciente, fuerza real",
+      intro:
+        "Clases guiadas en grupos reducidos, con material variado y la atención de fisioterapeutas en cada movimiento.",
+      images: [
+        {
+          src: "/images/pilates_m-min.jpg",
+          alt: "Clase de Pilates suelo en Laude Palma",
+          title: "Pilates suelo guiado",
+        },
+        {
+          src: "/images/mujeres-de-tiro-completo-haciendo-pilates-juntas-scaled.jpg",
+          alt: "Grupo de Pilates suelo en Palma",
+          title: "Grupos reducidos",
+        },
+        {
+          src: "/images/home/home_laude_suelo.webp",
+          alt: "Ejercicio de movilidad en clase de Pilates suelo",
+          title: "Control y movilidad",
+        },
+      ],
+    },
+    pillarsTitle: "Entrenas, no repites sin sentido.",
     pillars: [
       {
         icon: Sparkles,
         title: "Dirigido por fisioterapeutas en grupo reducido",
-        desc: "Estás en manos de profesionales de la salud, que saben tu nombre y si hay alguna limitación que cuidar."
+        desc: "Estás en manos de profesionales de la salud, que saben tu nombre y si hay alguna condición física a tener en cuenta. Esto permite corregirte y adaptar cada ejercicio para ti, para que te sientas guiado en todo momento.",
       },
       {
         icon: Compass,
         title: "Terapéutico y funcional",
-        desc: "No solo entrenas: cuidas tu cuerpo. Nuestro Pilates está diseñado para ayudarte a prevenir lesiones y aliviar molestias."
+        desc: "No solo entrenas: cuidas tu cuerpo. Nuestro Pilates está diseñado para ayudarte a prevenir lesiones, mejorar dolores persistentes, acompañar procesos de recuperación y mejorar tu rendimiento físico.",
       },
       {
         icon: ShieldCheck,
         title: "Trabajo de fuerza real",
-        desc: "Incorporamos la Springboard, un sistema con muelles y resistencias que te reta y te ayuda a progresar de forma segura."
+        desc: "Incorporamos la Springboard, un sistema con muelles y resistencias que te reta y te ayuda a ganar fuerza, coordinación y estabilidad.",
       },
       {
         icon: HeartHandshake,
         title: "Variedad y dinamismo",
-        desc: "Cada clase es diferente, no se trata de repetir siempre lo mismo. Usamos fitballs, foam rollers, aros y bandas elásticas."
-      }
+        desc: "Cada clase es diferente, no se trata de repetir siempre lo mismo. Usamos fitballs, aros, kettlebells, mancuernas, bandas elásticas y más, para mantener tu cuerpo y tu mente activos.",
+      },
+      {
+        icon: Check,
+        title: "Aquí entrenas, no repites sin sentido",
+        desc: "No vienes a hacer Pilates general: entrenas desde el control, entiendes qué estás activando y cómo hacerlo. Cada sesión es una oportunidad para moverte mejor, sentirte más fuerte y prevenir lesiones.",
+      },
     ],
+    banner: {
+      image: "/images/pilates_m-min.jpg",
+      text: "Pilates suelo para mejorar tu control, fuerza y movilidad. Sesiones guiadas para aprender a moverte mejor y progresar con seguridad.",
+      buttonText: "Quiero más información",
+      buttonHref: EXTERNAL_URLS.whatsapp,
+    },
     commonProblemsTitle: "Lo que muchas personas sienten antes de empezar…",
     commonProblems: [
       {
         title: "No tengo fuerza, ni equilibrio",
-        desc: "Por eso te recomendamos venir: el equilibrio y la fuerza no son requisitos, son resultados que vas a obtener gracias a tu constancia."
+        desc: "Por eso te recomendamos venir: el equilibrio y la fuerza no son requisitos, son resultados que vas a obtener gracias a tu constancia.",
       },
       {
         title: "No soy flexible",
-        desc: "La flexibilidad no es un punto de partida, es una consecuencia del movimiento bien guiado. En muchas alteraciones del movimiento nos interesa flexibilizar tejidos, pero no vendrás a hacer figuras imposibles. Aquí lo terapéutico y funcional se unen."
+        desc: "La flexibilidad no es un punto de partida, es una consecuencia del movimiento bien guiado. En muchas alteraciones del movimiento nos interesa flexibilizar tejidos, pero no vendrás a hacer figuras imposibles. Aquí lo terapéutico y funcional se unen.",
       },
       {
         title: "Me da miedo lesionarme",
-        desc: "Te entendemos, por eso estás en el lugar adecuado. Sabemos lo preciada que es nuestra salud y por eso no debes dejarla en manos de cualquiera; somos profesionales de la salud y el movimiento. No se trata de hacer perfecto un ejercicio, sino de reconectar con tu cuerpo, moverte sin miedo y sentirte capaz otra vez, siempre con el respaldo de fisioterapeutas."
-      }
+        desc: "Te entendemos, por eso estás en el lugar adecuado. Sabemos lo preciada que es nuestra salud y por eso no debes dejarla en manos de cualquiera; somos profesionales de la salud y el movimiento. No se trata de hacer perfecto un ejercicio, sino de reconectar con tu cuerpo, moverte sin miedo y sentirte capaz otra vez, siempre con el respaldo de fisioterapeutas.",
+      },
     ],
     faqLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
-    faqTitle: "¿Preguntas sobre Pilates Suelo? Tenemos las respuestas"
+    faqTitle: "¿Preguntas sobre Pilates Suelo? Tenemos las respuestas",
   },
   "pilates-maquinas": {
     heroTitle: "Pilates maquinas",
-    heroSubtitle: "Pilates máquinas: entrenamiento preciso, seguro y adaptado a tus objetivos.",
-    introP1: "¿Has visto esas camas con torre, muelles y correas que parecen de otro planeta? Eso es el Reformer, lo utilizamos con un propósito claro: ayudarte a moverte mejor, con más control, fuerza y sin dolor.",
-    introHeadline: "Una forma inteligente y respetuosa de fortalecer tu cuerpo.",
-    introP2: "Nuestro Pilates con máquinas combina lo mejor de la terapia y el entrenamiento funcional. Ya sea para recuperarte de una lesión, mejorar tu rendimiento deportivo o simplemente entrenar de forma inteligente y sin impacto, aquí encontrarás una forma distinta y eficaz de trabajar tu cuerpo.",
-    introP3: "Y no estarás solo. Ni tampoco perdido entre veinte personas. Trabajamos en grupos reducidos de máximo 4 personas, para que cada sesión mantenga su esencia personalizada, pero con la energía y motivación del trabajo en grupo.",
+    heroSubtitle:
+      "Pilates máquinas: entrenamiento preciso, seguro y adaptado a tus objetivos.",
+    introP1:
+      "¿Has visto esas camas con torre, muelles y correas que parecen de otro planeta? Eso es el Reformer, lo utilizamos con un propósito claro: ayudarte a moverte mejor, con más control, fuerza y sin dolor.",
+    introHeadline:
+      "Una forma inteligente y respetuosa de fortalecer tu cuerpo.",
+    introP2:
+      "Nuestro Pilates con máquinas combina lo mejor de la terapia y el entrenamiento funcional. Ya sea para recuperarte de una lesión, mejorar tu rendimiento deportivo o simplemente entrenar de forma inteligente y sin impacto, aquí encontrarás una forma distinta y eficaz de trabajar tu cuerpo.",
+    introP3:
+      "Y no estarás solo. Ni tampoco perdido entre veinte personas. Trabajamos en grupos reducidos de máximo 4 personas, para que cada sesión mantenga su esencia personalizada, pero con la energía y motivación del trabajo en grupo.",
     introButtonText: "Quiero más información",
     twoColTitle: "¿Qué equipamiento usamos?",
-    twoColIntro: "Cada máquina permite adaptar el nivel de exigencia y progresión ya que cuenta con muelles de resistencia:",
+    twoColIntro:
+      "Cada máquina permite adaptar el nivel de exigencia y progresión ya que cuenta con muelles de resistencia:",
     twoColItems: [
       "Máquina Reformer: plataforma deslizante con muelles, ideal para trabajar fuerza, movilidad y control con precisión.",
       "Cadillac-Plataforma: la máquina es convertible por eso tan dinámica. Podrás trabajar ejercicios similares de pilates suelo, pero a la altura de la máquina, esto facilita no tener que tumbarte en suelo y partir de una altura.",
       "Torre: estructuras verticales con resistencia variable para trabajar estabilidad y coordinación.",
-      "Accesorios: pelotas, bandas, mancuernas, etc., según tus necesidades."
+      "Accesorios: pelotas, bandas, mancuernas, etc., según tus necesidades.",
     ],
     twoColImage: "/images/pilates-maquinas/pilates_maquinas.webp",
     twoColButtonText: "Ver más información",
@@ -288,29 +351,30 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       image: "/images/pilates-maquinas/sala_de_pilates_maquinas.webp",
       text: "Cada máquina permite adaptar el nivel de exigencia y progresión ya que cuenta con muelles de resistencia. En grupo reducido, el fisioterapeuta corrige, guia y reta a cada persona según su estado físico y objetivo.",
       buttonText: "Quiero más información",
-      buttonHref: ROUTES.booking
+      buttonHref: ROUTES.booking,
     },
     gallery: {
       subtitle: "NUESTRO ESTUDIO EN MOVIMIENTO",
       title: "Galería de Pilates con Máquinas",
-      intro: "Espacios luminosos, máquinas Reformer de última generación y grupos reducidos para que cada movimiento esté guiado con precisión.",
+      intro:
+        "Espacios luminosos, máquinas Reformer de última generación y grupos reducidos para que cada movimiento esté guiado con precisión.",
       images: [
         {
           src: "/images/pilates-maquinas/laude_pilates_maquina.webp",
           alt: "Clases de Pilates con máquina en Laude Palma",
-          title: "Pilates con máquina Reformer"
+          title: "Pilates con máquina Reformer",
         },
         {
           src: "/images/pilates-maquinas/laude_pilates_maquinas_palma.webp",
           alt: "Estudio de Pilates con máquinas en Palma de Mallorca",
-          title: "Pilates máquinas en Palma"
+          title: "Pilates máquinas en Palma",
         },
         {
           src: "/images/pilates-maquinas/laude_pilates_maquinas.webp",
           alt: "Sesión de Pilates con máquinas Reformer en grupo reducido",
-          title: "Entrenamiento guiado con máquinas de Pilates"
-        }
-      ]
+          title: "Entrenamiento guiado con máquinas de Pilates",
+        },
+      ],
     },
     audienceSection: {
       title: "¿Para quién es el Pilates con máquinas?",
@@ -321,21 +385,22 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
         "Deportistas que quieren prevenir lesiones y mejorar el control corporal.",
         "Mujeres embarazadas o en postparto (con valoración previa).",
         "Personas mayores que desean entrenar con seguridad y en grupo con condiciones similares.",
-        "Y también tú, si buscas una forma eficaz y motivadora de entrenar tu cuerpo con consciencia."
+        "Y también tú, si buscas una forma eficaz y motivadora de entrenar tu cuerpo con consciencia.",
       ],
       image: "/images/pilates-maquinas/pilates_maquinas_clients.webp",
       imageAlt: "¿Para quién es el Pilates con máquinas?",
       buttonText: "Ver más información",
-      buttonHref: ROUTES.booking
+      buttonHref: ROUTES.booking,
     },
     crossLinkSection: {
       title: "¿Prefieres empezar  con\npilates suelo?",
       titleColor: "text-[#676767]",
-      intro: "También ofrecemos Pilates suelo terapéutico y funcional, con el mismo enfoque adaptado, profesional y grandes resultados.",
+      intro:
+        "También ofrecemos Pilates suelo terapéutico y funcional, con el mismo enfoque adaptado, profesional y grandes resultados.",
       textColor: "text-[#676767]",
       items: [
         "Ideal si partes de cero o prefieres comenzar sin máquinas.",
-        "Combinable, muchos eligen una clase de suelo y máquinas por semana (muy buena opción)"
+        "Combinable, muchos eligen una clase de suelo y máquinas por semana (muy buena opción)",
       ],
       checkColor: "text-[#8F8B82]",
       image: "/images/pilates-maquinas/cross_pilates_suelo.webp",
@@ -343,28 +408,29 @@ const SERVICE_CONFIGS: Record<string, ServiceConfig> = {
       imageLeft: true,
       buttonText: "Ver Pilates suelo",
       buttonHref: ROUTES.pilatesMat,
-      buttonClass: "inline-block bg-[#A9A499] hover:bg-[#969286] text-white px-7 py-3 rounded-full text-sm font-medium transition-all shadow-none hover:shadow",
+      buttonClass:
+        "inline-block bg-[#A9A499] hover:bg-[#969286] text-white px-7 py-3 rounded-full text-sm font-medium transition-all shadow-none hover:shadow",
       bgClass: "bg-[rgba(226,224,215,0.34)]",
-      cardVariant: "flush-image"
+      cardVariant: "flush-image",
     },
     commonProblemsTitle: "Lo que muchas personas sienten antes de empezar…",
     commonProblems: [
       {
         title: "“No tengo fuerza”",
-        desc: "No te preocupes, nos adaptamos a tu situación actual y marcamos objetivos para que veas tus progresiones."
+        desc: "No te preocupes, nos adaptamos a tu situación actual y marcamos objetivos para que veas tus progresiones.",
       },
       {
         title: "“Me da miedo hacerlo mal en clase”",
-        desc: "Puede que alguna vez hayas pensado que el Pilates no era para ti, pero aquí descubrirás lo contrario. Te enseñamos a moverte con sentido, adaptando cada ejercicio para que sea seguro y eficaz, incluso si tu técnica no es perfecta. Siempre contarás con un fisioterapeuta a tu lado, guiándote y motivándote para progresar con confianza."
+        desc: "Puede que alguna vez hayas pensado que el Pilates no era para ti, pero aquí descubrirás lo contrario. Te enseñamos a moverte con sentido, adaptando cada ejercicio para que sea seguro y eficaz, incluso si tu técnica no es perfecta. Siempre contarás con un fisioterapeuta a tu lado, guiándote y motivándote para progresar con confianza.",
       },
       {
         title: "“Nunca he usado máquinas, lo veo complicado”",
-        desc: "Parece compleja desde fuera, pero todo lo contrario, facilita que tu posición sea la correcta y el profesor te la prepara a la altura y muelles correspondientes, para que tú solo tengas que preocuparte de disfrutar la clase."
-      }
+        desc: "Parece compleja desde fuera, pero todo lo contrario, facilita que tu posición sea la correcta y el profesor te la prepara a la altura y muelles correspondientes, para que tú solo tengas que preocuparte de disfrutar la clase.",
+      },
     ],
     faqLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
-    faqTitle: "¿Preguntas sobre Pilates Máquinas? Tenemos las respuestas"
-  }
+    faqTitle: "¿Preguntas sobre Pilates Máquinas? Tenemos las respuestas",
+  },
 };
 
 function RenderTwoColSection({ sec }: { sec: TwoColumnSection }) {
@@ -478,7 +544,7 @@ function RenderTwoColSection({ sec }: { sec: TwoColumnSection }) {
 }
 
 export default async function ServiceDetailPage({
-  params
+  params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
@@ -489,12 +555,24 @@ export default async function ServiceDetailPage({
     notFound();
   }
 
+  if (slug === "pilates-suelo") {
+    return (
+      <>
+        <FaqSchema faqs={service.faqs} />
+        <PilatesMatProductionLayout faqs={service.faqs} />
+      </>
+    );
+  }
+
   const config = SERVICE_CONFIGS[slug] || {
     heroTitle: service.title,
     heroSubtitle: service.subtitle || service.shortDesc,
-    introP1: "En LAUDE creemos que la salud no es solo la ausencia de dolor, sino la presencia de equilibrio. Nos enfocamos en escuchar al cuerpo, guiarlo con respeto y promover un estilo de vida consciente. Cada paciente es único y merece un tratamiento personalizado, técnico y humano.",
-    introHeadline: "No tienes que resignarte al dolor. Tu cuerpo es tu templo, y merece ser cuidado, comprendido y reconquistado.",
-    introP2: "A veces no es solo el dolor. Es la frustración de no poder moverte como antes, el miedo a que algo esté mal, o el cansancio de sentir que nadie entiende lo que te pasa.",
+    introP1:
+      "En LAUDE creemos que la salud no es solo la ausencia de dolor, sino la presencia de equilibrio. Nos enfocamos en escuchar al cuerpo, guiarlo con respeto y promover un estilo de vida consciente. Cada paciente es único y merece un tratamiento personalizado, técnico y humano.",
+    introHeadline:
+      "No tienes que resignarte al dolor. Tu cuerpo es tu templo, y merece ser cuidado, comprendido y reconquistado.",
+    introP2:
+      "A veces no es solo el dolor. Es la frustración de no poder moverte como antes, el miedo a que algo esté mal, o el cansancio de sentir que nadie entiende lo que te pasa.",
     introImage: service.image || "/images/fisio/laude_inspiracional.webp",
     twoColTitle: "Tu recuperación empieza aquí. Se protagonista de tu cambio.",
     twoColIntro: "Sabemos que el dolor tiene muchas caras. Puede aparecer:",
@@ -502,35 +580,36 @@ export default async function ServiceDetailPage({
       "Tras una lesión deportiva",
       "Por sobrecarga postural o laboral",
       "Como consecuencia del estrés sostenido",
-      "O sin una causa clara aparente."
+      "O sin una causa clara aparente.",
     ],
     twoColImage: service.image || "/images/fisio/laude_fisio.webp",
     twoColButtonText: "Ver más información",
-    pillarsTitle: "Tratamos tanto el dolor agudo musculoesquelético como el dolor crónico, con una visión integral y actual",
+    pillarsTitle:
+      "Tratamos tanto el dolor agudo musculoesquelético como el dolor crónico, con una visión integral y actual",
     pillars: [
       {
         icon: Sparkles,
         title: "Conocimiento que empodera",
-        desc: "Te explicamos qué sucede y por qué para avanzar con confianza."
+        desc: "Te explicamos qué sucede y por qué para avanzar con confianza.",
       },
       {
         icon: Compass,
         title: "Alivio y buenos hábitos",
-        desc: "Trabajamos las causas reales de tus molestias."
+        desc: "Trabajamos las causas reales de tus molestias.",
       },
       {
         icon: ShieldCheck,
         title: "Herramientas para tu día a día",
-        desc: "Ejercicios prácticos para mantener los resultados."
+        desc: "Ejercicios prácticos para mantener los resultados.",
       },
       {
         icon: HeartHandshake,
         title: "Acompañamiento real",
-        desc: "Seguimiento cercano en cada etapa de tu proceso."
-      }
+        desc: "Seguimiento cercano en cada etapa de tu proceso.",
+      },
     ],
     faqLabel: "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL",
-    faqTitle: `¿Preguntas sobre ${service.title}? Tenemos las respuestas`
+    faqTitle: `¿Preguntas sobre ${service.title}? Tenemos las respuestas`,
   };
 
   return (
@@ -538,7 +617,7 @@ export default async function ServiceDetailPage({
       <FaqSchema faqs={service.faqs} />
 
       {/* 1. HERO SECTION (Photographic island matching fisiolaude.com) */}
-      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[640px] rounded-[25px] overflow-hidden flex items-center justify-start px-5 sm:px-8 lg:px-14 pt-24 sm:pt-32 md:pt-38 lg:pt-44 pb-7 sm:pb-10 lg:pb-14">
+      <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative isolate min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[640px] rounded-[25px] overflow-hidden flex items-center justify-start px-5 sm:px-8 lg:px-14 pt-24 sm:pt-32 md:pt-38 lg:pt-44 pb-7 sm:pb-10 lg:pb-14">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -643,7 +722,10 @@ export default async function ServiceDetailPage({
 
               <ul className="space-y-3.5">
                 {config.twoColItems.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-stone-700 font-light">
+                  <li
+                    key={idx}
+                    className="flex items-start gap-3 text-xs sm:text-sm text-stone-700 font-light"
+                  >
                     <Check className="w-4 h-4 text-[#908968] flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
@@ -759,7 +841,9 @@ export default async function ServiceDetailPage({
       )}
 
       {/* 5.5 AUDIENCE SECTION (e.g. "¿Para quién es el Pilates con máquinas?") */}
-      {config.audienceSection && <RenderTwoColSection sec={config.audienceSection} />}
+      {config.audienceSection && (
+        <RenderTwoColSection sec={config.audienceSection} />
+      )}
       {config.additionalSections &&
         config.additionalSections.map((sec, idx) => (
           <RenderTwoColSection key={idx} sec={sec} />
@@ -770,7 +854,8 @@ export default async function ServiceDetailPage({
         <ScrollReveal>
           <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden space-y-8 sm:space-y-10 text-left">
             <h2 className="font-editorial text-2xl sm:text-3xl md:text-4xl lg:text-[42px] text-[#676767] font-normal leading-[1.2] max-w-4xl">
-              {config.commonProblemsTitle || "Aquí tienes algunos de los problemas más comunes que tratamos:"}
+              {config.commonProblemsTitle ||
+                "Aquí tienes algunos de los problemas más comunes que tratamos:"}
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -790,8 +875,14 @@ export default async function ServiceDetailPage({
                   {problem.items && problem.items.length > 0 && (
                     <ul className="space-y-3 mt-1">
                       {problem.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#676767] font-light leading-relaxed">
-                          <Check className="w-4 h-4 text-[#8F8C7F] shrink-0 mt-0.5" strokeWidth={1.5} />
+                        <li
+                          key={i}
+                          className="flex items-start gap-2.5 text-xs sm:text-sm text-[#676767] font-light leading-relaxed"
+                        >
+                          <Check
+                            className="w-4 h-4 text-[#8F8C7F] shrink-0 mt-0.5"
+                            strokeWidth={1.5}
+                          />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -805,13 +896,18 @@ export default async function ServiceDetailPage({
       )}
 
       {/* 6.5 CROSS-LINK SECTION (e.g. "¿Prefieres empezar con pilates suelo?") */}
-      {config.crossLinkSection && <RenderTwoColSection sec={config.crossLinkSection} />}
+      {config.crossLinkSection && (
+        <RenderTwoColSection sec={config.crossLinkSection} />
+      )}
 
       {/* 7. PREGUNTAS FRECUENTES (Interactive Accordion Island) */}
       <ScrollReveal>
         <ServiceFaqAccordion
           label={config.faqLabel || "NUESTROS SERVICIOS, TU BIENESTAR INTEGRAL"}
-          title={config.faqTitle || `¿Preguntas sobre el servicio de ${config.heroTitle}? Tenemos las respuestas`}
+          title={
+            config.faqTitle ||
+            `¿Preguntas sobre el servicio de ${config.heroTitle}? Tenemos las respuestas`
+          }
           faqs={service.faqs}
         />
       </ScrollReveal>

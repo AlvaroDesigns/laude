@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
-import { Check } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Check } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 interface Plan {
   title: string;
@@ -25,8 +25,8 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         desc: "Ideal si buscas una atención puntual o una primera valoración. Esta sesión está centrada 100% en tus necesidades, con tratamiento personalizado desde el primer minuto.",
         features: [
           "Ideal para lesiones puntuales o revisión inicial.",
-          "Flexibilidad total sin compromiso de continuidad."
-        ]
+          "Flexibilidad total sin compromiso de continuidad.",
+        ],
       },
       {
         title: "Paquete de 4 sesiones",
@@ -37,8 +37,8 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         features: [
           "Ahorro frente a sesiones individuales.",
           "Continuidad en el tratamiento para una recuperación más eficaz.",
-          "Planificación de sesiones a tu ritmo."
-        ]
+          "Planificación de sesiones a tu ritmo.",
+        ],
       },
       {
         title: "Paquete de 8 sesiones",
@@ -48,10 +48,10 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         features: [
           "Mejor tarifa por sesión.",
           "Ideal para procesos de recuperación mas largos o mantenimiento.",
-          "Seguimiento detallado y evolución garantizada."
-        ]
-      }
-    ]
+          "Seguimiento detallado y evolución garantizada.",
+        ],
+      },
+    ],
   },
   "pilates-suelo": {
     label: "Pilates suelo",
@@ -64,8 +64,8 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         features: [
           "Ideal para mantener una rutina estable sin agobios.",
           "Entrenamientos técnicos y conscientes.",
-          "Tu momento semanal para resetear y sentirte mejor."
-        ]
+          "Tu momento semanal para resetear y sentirte mejor.",
+        ],
       },
       {
         title: "Paquete de 2 clases a la semana",
@@ -76,8 +76,8 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         features: [
           "Notarás más control, coordinación y fuerza.",
           "Ritmo equilibrado: avanzas sin sobrecargar.",
-          "Te ayuda a consolidar sensaciones y progresos semana a semana."
-        ]
+          "Te ayuda a consolidar sensaciones y progresos semana a semana.",
+        ],
       },
       {
         title: "Paquete de 3 clases a la semana",
@@ -87,10 +87,10 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         features: [
           "Más continuidad para integrar mejor la técnica.",
           "Mayor sensación de control, fluidez y confianza corporal.",
-          "Evolución firme y perceptible en tu día a día."
-        ]
-      }
-    ]
+          "Evolución firme y perceptible en tu día a día.",
+        ],
+      },
+    ],
   },
   "pilates-maquina": {
     label: "Pilates Máquina",
@@ -103,8 +103,8 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         features: [
           "Activa tu cuerpo, mejora tu postura y nota más estabilidad.",
           "Ideal para empezar a sentir cambios sin exigencias.",
-          "Movimiento preciso con acompañamiento profesional."
-        ]
+          "Movimiento preciso con acompañamiento profesional.",
+        ],
       },
       {
         title: "Paquete de 2 clases a la semana",
@@ -115,8 +115,8 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         features: [
           "Más fuerza, más control y mejor coordinación cada semana.",
           "Sesiones que te impulsan a mejorar sin sobrecargar.",
-          "Progresión real: tu cuerpo responde y tú lo sientes."
-        ]
+          "Progresión real: tu cuerpo responde y tú lo sientes.",
+        ],
       },
       {
         title: "Paquete de 3 clases a la semana",
@@ -126,10 +126,10 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         features: [
           "Cambios claros en tu forma de moverte y en cómo te sientes.",
           "Técnicas más avanzadas y un control corporal que se nota dentro y fuera del estudio.",
-          "Ritmo ideal para ver resultados rápidos y duraderos."
-        ]
-      }
-    ]
+          "Ritmo ideal para ver resultados rápidos y duraderos.",
+        ],
+      },
+    ],
   },
   "suelo-maquina": {
     label: "Suelo + Máquina",
@@ -141,8 +141,8 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         desc: "La combinación imprescindible para empezar a notar cambios reales.",
         features: [
           "Dos sesiones que equilibran fuerza, control y movilidad.",
-          "Perfecta para avanzar con seguridad y constancia."
-        ]
+          "Perfecta para avanzar con seguridad y constancia.",
+        ],
       },
       {
         title: "2 suelo + 1 máquina (3 días/semana)",
@@ -152,8 +152,8 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         desc: "Tu cuerpo lo nota: más práctica, más precisión, mejores sensaciones.",
         features: [
           "Técnica afinada y progresos visibles semana a semana.",
-          "Frecuencia ideal para un avance sólido y continuo."
-        ]
+          "Frecuencia ideal para un avance sólido y continuo.",
+        ],
       },
       {
         title: "1 suelo + 2 máquina (3 días/semana)",
@@ -162,10 +162,10 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         desc: "Entrenamiento completo para una evolución profunda.",
         features: [
           "Movimiento potente, estable y muy controlado.",
-          "Cambios claros en fuerza, postura y calidad de movimiento."
-        ]
-      }
-    ]
+          "Cambios claros en fuerza, postura y calidad de movimiento.",
+        ],
+      },
+    ],
   },
   "sesion-individual": {
     label: "Sesión individual Ej. Terapéutico o Pilates",
@@ -177,8 +177,8 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         desc: "Ideal para una valoración completa y para interiorizar los conceptos clave del ejercicio terapéutico.",
         features: [
           "Aprendizaje preciso y adaptado a tu forma de moverte.",
-          "Atención 100% personalizada en camilla y máquinas."
-        ]
+          "Atención 100% personalizada en camilla y máquinas.",
+        ],
       },
       {
         title: "Paquete de 4 sesiones",
@@ -188,8 +188,8 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         desc: "Perfecto para quienes necesitan un seguimiento a corto plazo. Este bono te permite ahorrar mientras recibes atención constante y eficaz.",
         features: [
           "Objetivos claros a corto plazo para avanzar desde el primer día.",
-          "Acompañamiento cercano y progresiones a medida."
-        ]
+          "Acompañamiento cercano y progresiones a medida.",
+        ],
       },
       {
         title: "Paquete de 8 sesiones",
@@ -198,11 +198,11 @@ const TARIFAS_TABS: Record<string, { label: string; plans: Plan[] }> = {
         desc: "Perfecto para objetivos a largo plazo y para acelerar tu proceso de recuperación o mejora.",
         features: [
           "Trabajo continuo que consolida cambios reales.",
-          "La tarifa más rentable para un tratamiento completo."
-        ]
-      }
-    ]
-  }
+          "La tarifa más rentable para un tratamiento completo.",
+        ],
+      },
+    ],
+  },
 };
 
 export default function TarifasPage() {
@@ -229,7 +229,7 @@ export default function TarifasPage() {
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.60) 45%, rgba(0,0,0,0.20) 75%, rgba(0,0,0,0.05) 100%)"
+              "linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.60) 45%, rgba(0,0,0,0.20) 75%, rgba(0,0,0,0.05) 100%)",
           }}
         />
 
@@ -239,14 +239,15 @@ export default function TarifasPage() {
             Nuestras Tarifas
           </h1>
           <p className="text-stone-200 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl">
-            Precios transparentes sin cargos ocultos. Tanto si estás empezando como si estás creciendo rápidamente, te tenemos cubierto.
+            Precios transparentes sin cargos ocultos. Tanto si estás empezando
+            como si estás creciendo rápidamente, te tenemos cubierto.
           </p>
         </div>
       </section>
 
-      {/* 2. PRICING & TABS SECTION (Warm beige #EDE8E4 container matching fisiolaude.com) */}
+      {/* 2. PRICING & TABS SECTION */}
       <ScrollReveal>
-        <section className="mx-4 sm:mx-5 bg-[#EDE8E4] rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
+        <section className="mx-4 sm:mx-5 bg-[#f5f4f2] rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
           {/* Header text inside section */}
           <div className="max-w-3xl mb-8 space-y-3">
             <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
@@ -256,7 +257,8 @@ export default function TarifasPage() {
               ¿Preguntas sobre precios? Tenemos las respuestas
             </h2>
             <p className="text-stone-600 text-sm sm:text-base font-light">
-              Aquí empieza tu camino hacia un cuerpo más libre, más fuerte y en el que puedas volver a confiar.
+              Aquí empieza tu camino hacia un cuerpo más libre, más fuerte y en
+              el que puedas volver a confiar.
             </p>
           </div>
 
@@ -332,13 +334,20 @@ export default function TarifasPage() {
                     {/* Features list */}
                     <ul className="space-y-3 pt-2">
                       {plan.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2.5 text-sm sm:text-base font-light">
+                        <li
+                          key={fIdx}
+                          className="flex items-start gap-2.5 text-sm sm:text-base font-light"
+                        >
                           <Check
                             className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
                               isPopular ? "text-white" : "text-stone-700"
                             }`}
                           />
-                          <span className={isPopular ? "text-white/95" : "text-stone-700"}>
+                          <span
+                            className={
+                              isPopular ? "text-white/95" : "text-stone-700"
+                            }
+                          >
                             {feat}
                           </span>
                         </li>
