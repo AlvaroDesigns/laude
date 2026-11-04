@@ -1,9 +1,9 @@
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { EXTERNAL_URLS, getAbsoluteUrl, ROUTES } from "@/constants";
 import { SITE_INFO } from "@/data/siteData";
+import { ArrowUpRight, Camera, Mail, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowUpRight, Camera, Mail, MessageCircle } from "lucide-react";
-import { EXTERNAL_URLS, getAbsoluteUrl, ROUTES } from "@/constants";
 
 export const metadata: Metadata = {
   title: "Contacto | Expertos en Fisioterapia y pilates en Palma Mallorca",
@@ -46,13 +46,14 @@ export default function ContactoPage() {
           </h1>
 
           <p className="text-white/95 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-xl">
-            Escríbenos por WhatsApp, correo o Instagram. Estamos aquí para ayudarte.
+            Escríbenos por WhatsApp, correo o Instagram. Estamos aquí para
+            ayudarte.
           </p>
         </div>
       </section>
 
       <ScrollReveal>
-      {/* 2. DIRECT CONTACT */}
+        {/* 2. DIRECT CONTACT */}
         <section className="mx-4 overflow-hidden rounded-[25px] bg-white p-5 sm:mx-5 sm:p-8 lg:p-12">
           <div className="max-w-5xl text-left">
             <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
@@ -62,7 +63,9 @@ export default function ContactoPage() {
               Estamos a un mensaje de distancia.
             </h2>
             <p className="mt-5 max-w-4xl text-sm font-light leading-relaxed text-stone-600 sm:text-base lg:text-lg">
-              Para pedir una cita, resolver una duda o conocer mejor nuestras clases, escríbenos por WhatsApp. También puedes seguir nuestro día a día en Instagram.
+              Para pedir una cita, resolver una duda o conocer mejor nuestras
+              clases, escríbenos por WhatsApp. También puedes seguir nuestro día
+              a día en Instagram.
             </p>
           </div>
 
@@ -74,15 +77,27 @@ export default function ContactoPage() {
               className="group inline-flex w-fit items-center gap-3 rounded-full bg-[#B2AFA0] px-6 py-3.5 text-white transition-colors hover:bg-[#9E9B8D]"
             >
               <MessageCircle className="size-4 shrink-0" strokeWidth={1.5} />
-              <span className="text-xs font-semibold uppercase tracking-wider">Escríbenos por WhatsApp</span>
+              <span className="text-xs font-semibold uppercase tracking-wider">
+                Escríbenos por WhatsApp
+              </span>
               <ArrowUpRight className="ml-auto size-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
 
-            <a href={`mailto:${SITE_INFO.email}`} className="group flex items-center gap-3 py-2 text-stone-900">
-              <Mail className="size-5 shrink-0 text-[#8F8C7F]" strokeWidth={1.5} />
+            <a
+              href={`mailto:${SITE_INFO.email}`}
+              className="group flex items-center gap-3 py-2 text-stone-900"
+            >
+              <Mail
+                className="size-5 shrink-0 text-[#8F8C7F]"
+                strokeWidth={1.5}
+              />
               <span>
-                <span className="block text-xs font-medium uppercase tracking-[0.2em] text-[#8F8C7F]">Email</span>
-                <span className="mt-1.5 block text-base font-medium text-stone-800 sm:text-lg">{SITE_INFO.email}</span>
+                <span className="block text-xs font-medium uppercase tracking-[0.2em] text-[#8F8C7F]">
+                  Email
+                </span>
+                <span className="mt-1.5 block text-base font-medium text-stone-800 sm:text-lg">
+                  {SITE_INFO.email}
+                </span>
               </span>
             </a>
 
@@ -92,11 +107,17 @@ export default function ContactoPage() {
               rel="noopener noreferrer"
               className="group flex items-center gap-3 py-2 text-stone-900"
             >
-              <Camera className="size-5 shrink-0 text-[#8F8C7F]" strokeWidth={1.5} />
+              <Camera
+                className="size-5 shrink-0 text-[#8F8C7F]"
+                strokeWidth={1.5}
+              />
               <span>
-                <span className="block text-xs font-medium uppercase tracking-[0.2em] text-[#8F8C7F]">Síguenos</span>
+                <span className="block text-xs font-medium uppercase tracking-[0.2em] text-[#8F8C7F]">
+                  Síguenos
+                </span>
                 <span className="mt-1.5 flex items-center gap-2 text-base font-medium text-stone-800 sm:text-lg">
-                  @fisiolaude <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  @fisiolaude{" "}
+                  <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </span>
               </span>
             </a>
