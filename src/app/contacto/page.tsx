@@ -1,13 +1,14 @@
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SITE_INFO } from "@/data/siteData";
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { EXTERNAL_URLS, getAbsoluteUrl, ROUTES } from '@/constants';
+import { ArrowUpRight, Camera, Mail, MessageCircle } from "lucide-react";
+import { EXTERNAL_URLS, getAbsoluteUrl, ROUTES } from "@/constants";
 
 export const metadata: Metadata = {
   title: "Contacto | Expertos en Fisioterapia y pilates en Palma Mallorca",
   description:
-    "Utilice el formulario a continuación o visite el estudio: nos encantaría saber de usted. Fisioterapia y pilates en Son Ferriol (Palma).",
+    "Contacta con Laude por WhatsApp, correo o Instagram. Fisioterapia y Pilates en Son Ferriol (Palma).",
   alternates: {
     canonical: getAbsoluteUrl(`${ROUTES.contact}/`),
   },
@@ -45,116 +46,60 @@ export default function ContactoPage() {
           </h1>
 
           <p className="text-white/95 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-xl">
-            Utilice el formulario a continuación o visite el estudio: nos
-            encantaría saber de usted.
+            Escríbenos por WhatsApp, correo o Instagram. Estamos aquí para ayudarte.
           </p>
         </div>
       </section>
 
       <ScrollReveal>
-        {/* 2. FORM SECTION (Island with image on left and form on right) */}
-        <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
-          <div className="text-left space-y-3 mb-10">
+      {/* 2. DIRECT CONTACT */}
+        <section className="mx-4 overflow-hidden rounded-[25px] bg-white p-5 sm:mx-5 sm:p-8 lg:p-12">
+          <div className="max-w-5xl text-left">
             <p className="text-xs uppercase font-medium tracking-[0.2em] text-[#8F8C7F]">
-              QUEREMOS ESCUCHARTE Y AYUDARTE A MEJORAR
+              CONTACTO
             </p>
-            <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl text-stone-900 font-normal leading-tight">
-              ¿Tienes alguna pregunta? Estamos aquí para ayudarte.
+            <h2 className="mt-4 font-editorial text-4xl font-normal leading-[1.08] text-[#5d3829] sm:text-5xl lg:text-6xl">
+              Estamos a un mensaje de distancia.
             </h2>
+            <p className="mt-5 max-w-4xl text-sm font-light leading-relaxed text-stone-600 sm:text-base lg:text-lg">
+              Para pedir una cita, resolver una duda o conocer mejor nuestras clases, escríbenos por WhatsApp. También puedes seguir nuestro día a día en Instagram.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            {/* Left: Treatment Photo */}
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[4/5] rounded-[22px] overflow-hidden">
-                <Image
-                  src="/images/masaje-spa-de-pantorrillas-y-muslos-tratamiento-relajante-min.jpg"
-                  alt="Tratamiento Fisioterapia Laude"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+          <div className="mt-8 grid gap-6 border-t border-stone-200 pt-6 md:grid-cols-[auto_1fr_1fr] md:items-center md:gap-10">
+            <a
+              href={EXTERNAL_URLS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex w-fit items-center gap-3 rounded-full bg-[#B2AFA0] px-6 py-3.5 text-white transition-colors hover:bg-[#9E9B8D]"
+            >
+              <MessageCircle className="size-4 shrink-0" strokeWidth={1.5} />
+              <span className="text-xs font-semibold uppercase tracking-wider">Escríbenos por WhatsApp</span>
+              <ArrowUpRight className="ml-auto size-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
 
-            {/* Right: Contact Form */}
-            <div className="lg:col-span-7">
-              <form className="space-y-5 text-left">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
-                      Nombre
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
-                      Apellidos
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
-                    />
-                  </div>
-                </div>
+            <a href={`mailto:${SITE_INFO.email}`} className="group flex items-center gap-3 py-2 text-stone-900">
+              <Mail className="size-5 shrink-0 text-[#8F8C7F]" strokeWidth={1.5} />
+              <span>
+                <span className="block text-xs font-medium uppercase tracking-[0.2em] text-[#8F8C7F]">Email</span>
+                <span className="mt-1.5 block text-base font-medium text-stone-800 sm:text-lg">{SITE_INFO.email}</span>
+              </span>
+            </a>
 
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-stone-700 font-medium mb-1.5">
-                    Mensaje
-                  </label>
-                  <textarea
-                    rows={5}
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#B2AFA0] bg-white"
-                  ></textarea>
-                </div>
-
-                <div className="flex items-center gap-2 pt-1">
-                  <input
-                    type="checkbox"
-                    id="privacy"
-                    required
-                    className="accent-[#B2AFA0] w-4 h-4"
-                  />
-                  <label
-                    htmlFor="privacy"
-                    className="text-xs text-stone-600 font-light"
-                  >
-                    He leído y acepto la{" "}
-                    <Link
-                      href={ROUTES.privacyPolicy}
-                      className="underline underline-offset-2 hover:text-stone-900"
-                    >
-                      política de privacidad
-                    </Link>
-                  </label>
-                </div>
-
-                <div className="pt-3">
-                  <button
-                    type="submit"
-                    className="bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-10 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow transition-all hover:scale-105"
-                  >
-                    Enviar
-                  </button>
-                </div>
-              </form>
-            </div>
+            <a
+              href={EXTERNAL_URLS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 py-2 text-stone-900"
+            >
+              <Camera className="size-5 shrink-0 text-[#8F8C7F]" strokeWidth={1.5} />
+              <span>
+                <span className="block text-xs font-medium uppercase tracking-[0.2em] text-[#8F8C7F]">Síguenos</span>
+                <span className="mt-1.5 flex items-center gap-2 text-base font-medium text-stone-800 sm:text-lg">
+                  @fisiolaude <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </span>
+              </span>
+            </a>
           </div>
         </section>
       </ScrollReveal>

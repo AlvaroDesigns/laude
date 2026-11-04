@@ -3,6 +3,7 @@ export const SITE_URL = 'https://fisiolaude.com';
 export const ROUTES = {
   home: '/',
   about: '/nosotros',
+  team: '/equipo',
   services: '/servicios',
   physiotherapy: '/servicios/fisioterapia',
   pilatesMat: '/servicios/pilates-suelo',

@@ -17,6 +17,24 @@ export function Header() {
   const heroPages = ['', ROUTES.home, ROUTES.about, ROUTES.services, ROUTES.pricing, ROUTES.contact, ROUTES.booking, ROUTES.news];
   const hasHero = heroPages.includes(cleanPath) || cleanPath.startsWith(`${ROUTES.services}/`) || cleanPath.startsWith(`${ROUTES.news}/`);
   const isTransparent = hasHero && !scrolled;
+  const isActiveRoute = (route: string) =>
+    route === ROUTES.home
+      ? cleanPath === ROUTES.home
+      : cleanPath === route || cleanPath.startsWith(`${route}/`);
+  const desktopNavClass = (active: boolean) =>
+    `relative py-1 text-xs font-medium uppercase tracking-[0.15em] transition-colors after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:transition-transform ${
+      active
+        ? isTransparent
+          ? 'text-white after:scale-x-100'
+          : 'text-[#787361] after:scale-x-100'
+        : isTransparent
+          ? 'text-white hover:text-[#EAE4CE] after:scale-x-0 hover:after:scale-x-100'
+          : 'text-stone-800 hover:text-[#8F8C7F] after:scale-x-0 hover:after:scale-x-100'
+    }`;
+  const mobileNavClass = (active: boolean) =>
+    `block font-editorial text-2xl tracking-wide transition-colors sm:text-3xl ${
+      active ? 'text-[#787361]' : 'text-stone-900 hover:text-[#8F8C7F]'
+    }`;
 
   // Handle scroll detection
   useEffect(() => {
@@ -69,28 +87,27 @@ export function Header() {
             </Link>
 
             {/* Right Actions: Desktop Navigation + RESERVA Button aligned together to the right */}
-            <div className="hidden lg:flex items-center gap-7 xl:gap-8">
+            <div className="hidden xl:flex items-center gap-7 xl:gap-8">
               <nav className="flex items-center gap-6 xl:gap-8">
                 <Link
                   href={ROUTES.home}
-                  className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
-                    isTransparent
-                      ? 'text-white hover:text-[#EAE4CE]'
-                      : 'text-stone-800 hover:text-[#8F8C7F]'
-                  }`}
+                  className={desktopNavClass(isActiveRoute(ROUTES.home))}
                 >
                   HOME
                 </Link>
 
                 <Link
                   href={ROUTES.about}
-                  className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
-                    isTransparent
-                      ? 'text-white hover:text-[#EAE4CE]'
-                      : 'text-stone-800 hover:text-[#8F8C7F]'
-                  }`}
+                  className={desktopNavClass(isActiveRoute(ROUTES.about))}
                 >
                   NOSOTROS
+                </Link>
+
+                <Link
+                  href={ROUTES.team}
+                  className={desktopNavClass(isActiveRoute(ROUTES.team))}
+                >
+                  EQUIPO
                 </Link>
 
                 {/* Servicios Dropdown */}
@@ -101,11 +118,7 @@ export function Header() {
                 >
                   <Link
                     href={ROUTES.services}
-                    className={`flex items-center gap-1 text-xs uppercase font-medium tracking-[0.15em] transition-colors ${
-                      isTransparent
-                        ? 'text-white hover:text-[#EAE4CE]'
-                        : 'text-stone-800 hover:text-[#8F8C7F]'
-                    }`}
+                    className={`${desktopNavClass(isActiveRoute(ROUTES.services))} flex items-center gap-1`}
                   >
                     <span>SERVICIOS</span>
                     <ChevronDown className="w-3.5 h-3.5 opacity-80 transition-transform group-hover:rotate-180 duration-200" />
@@ -143,33 +156,21 @@ export function Header() {
 
                 <Link
                   href={ROUTES.pricing}
-                  className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
-                    isTransparent
-                      ? 'text-white hover:text-[#EAE4CE]'
-                      : 'text-stone-800 hover:text-[#8F8C7F]'
-                  }`}
+                  className={desktopNavClass(isActiveRoute(ROUTES.pricing))}
                 >
                   TARIFAS
                 </Link>
 
                 <Link
                   href={ROUTES.news}
-                  className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
-                    isTransparent
-                      ? 'text-white hover:text-[#EAE4CE]'
-                      : 'text-stone-800 hover:text-[#8F8C7F]'
-                  }`}
+                  className={desktopNavClass(isActiveRoute(ROUTES.news))}
                 >
                   NOTICIAS
                 </Link>
 
                 <Link
                   href={ROUTES.contact}
-                  className={`text-xs uppercase font-medium tracking-[0.15em] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1.5px] after:bg-current after:scale-x-0 hover:after:scale-x-100 after:transition-transform ${
-                    isTransparent
-                      ? 'text-white hover:text-[#EAE4CE]'
-                      : 'text-stone-800 hover:text-[#8F8C7F]'
-                  }`}
+                  className={desktopNavClass(isActiveRoute(ROUTES.contact))}
                 >
                   CONTACTO
                 </Link>
@@ -185,7 +186,7 @@ export function Header() {
             </div>
 
             {/* Tablet & Mobile actions */}
-            <div className="flex lg:hidden items-center gap-3">
+            <div className="flex xl:hidden items-center gap-3">
               <Link
                 href={ROUTES.booking}
                 className="hidden sm:inline-block bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-5 py-2 rounded-full text-xs font-medium uppercase tracking-[0.15em] shadow-sm"
@@ -238,7 +239,7 @@ export function Header() {
             <Link
               href={ROUTES.home}
               onClick={closeMenu}
-              className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
+              className={mobileNavClass(isActiveRoute(ROUTES.home))}
             >
               HOME
             </Link>
@@ -246,9 +247,17 @@ export function Header() {
             <Link
               href={ROUTES.about}
               onClick={closeMenu}
-              className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
+              className={mobileNavClass(isActiveRoute(ROUTES.about))}
             >
               NOSOTROS
+            </Link>
+
+            <Link
+              href={ROUTES.team}
+              onClick={closeMenu}
+              className={mobileNavClass(isActiveRoute(ROUTES.team))}
+            >
+              EQUIPO
             </Link>
 
             {/* SERVICIOS with nested links */}
@@ -256,7 +265,7 @@ export function Header() {
               <Link
                 href={ROUTES.services}
                 onClick={closeMenu}
-                className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
+                className={mobileNavClass(isActiveRoute(ROUTES.services))}
               >
                 SERVICIOS
               </Link>
@@ -264,21 +273,21 @@ export function Header() {
                 <Link
                   href={ROUTES.physiotherapy}
                   onClick={closeMenu}
-                  className="block text-base uppercase tracking-wider text-stone-600 hover:text-stone-900 py-1"
+                  className={`block py-1 text-base uppercase tracking-wider transition-colors ${isActiveRoute(ROUTES.physiotherapy) ? 'font-medium text-[#787361]' : 'text-stone-600 hover:text-stone-900'}`}
                 >
                   FISIOTERAPIA
                 </Link>
                 <Link
                   href={ROUTES.pilatesMat}
                   onClick={closeMenu}
-                  className="block text-base uppercase tracking-wider text-stone-600 hover:text-stone-900 py-1"
+                  className={`block py-1 text-base uppercase tracking-wider transition-colors ${isActiveRoute(ROUTES.pilatesMat) ? 'font-medium text-[#787361]' : 'text-stone-600 hover:text-stone-900'}`}
                 >
                   PILATES SUELO
                 </Link>
                 <Link
                   href={ROUTES.pilatesMachines}
                   onClick={closeMenu}
-                  className="block text-base uppercase tracking-wider text-stone-600 hover:text-stone-900 py-1"
+                  className={`block py-1 text-base uppercase tracking-wider transition-colors ${isActiveRoute(ROUTES.pilatesMachines) ? 'font-medium text-[#787361]' : 'text-stone-600 hover:text-stone-900'}`}
                 >
                   PILATES MAQUINAS
                 </Link>
@@ -288,7 +297,7 @@ export function Header() {
             <Link
               href={ROUTES.pricing}
               onClick={closeMenu}
-              className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
+              className={mobileNavClass(isActiveRoute(ROUTES.pricing))}
             >
               TARIFAS
             </Link>
@@ -296,7 +305,7 @@ export function Header() {
             <Link
               href={ROUTES.news}
               onClick={closeMenu}
-              className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
+              className={mobileNavClass(isActiveRoute(ROUTES.news))}
             >
               NOTICIAS
             </Link>
@@ -304,7 +313,7 @@ export function Header() {
             <Link
               href={ROUTES.contact}
               onClick={closeMenu}
-              className="block font-editorial text-2xl sm:text-3xl text-stone-900 tracking-wide hover:text-[#8F8C7F] transition-colors"
+              className={mobileNavClass(isActiveRoute(ROUTES.contact))}
             >
               CONTACTO
             </Link>

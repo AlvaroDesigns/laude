@@ -1,7 +1,7 @@
 import { GoogleReviewsCarousel } from "@/components/ui/GoogleReviewsCarousel";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { EXTERNAL_URLS, ROUTES } from "@/constants";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -312,6 +312,65 @@ export default function HomePage() {
 
           {/* Google Reviews Trustindex Carousel */}
           <GoogleReviewsCarousel />
+        </section>
+      </ScrollReveal>
+
+      {/* 6. INSTAGRAM */}
+      <ScrollReveal>
+        <section className="mx-4 grid gap-5 sm:mx-5 lg:grid-cols-2">
+          <a
+            href={EXTERNAL_URLS.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex h-[280px] items-end overflow-hidden rounded-[25px] p-6 sm:h-[280px] sm:p-8 lg:h-[300px] lg:p-10"
+            aria-label="Seguir a Laude en Instagram"
+          >
+            <Image
+              src="/images/laude_ig.webp"
+              alt="Clase guiada de Pilates en Laude"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-stone-950/55 transition-colors group-hover:bg-stone-950/45" />
+            <div className="relative z-10 max-w-md text-white">
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-white/75">
+                Síguenos en Instagram
+              </p>
+              <h2 className="mt-4 font-editorial text-3xl leading-tight sm:text-4xl lg:whitespace-nowrap lg:text-[clamp(1.9rem,2.5vw,2.6rem)]">
+                El día a día de Laude, más cerca de ti.
+              </h2>
+              <span className="mt-8 inline-flex items-center gap-2 border-b border-white/70 pb-1 text-xs font-semibold uppercase tracking-wider">
+                @fisiolaude <ArrowUpRight className="size-4" />
+              </span>
+            </div>
+          </a>
+
+          <Link
+            href={ROUTES.contact}
+            className="group relative flex h-[280px] items-end overflow-hidden rounded-[25px] p-6 sm:h-[280px] sm:p-8 lg:h-[300px] lg:p-10"
+            aria-label="Contacta con nosotros"
+          >
+            <Image
+              src="/images/laude_contact.webp"
+              alt="Contacta con el equipo de Laude"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-stone-950/65 transition-colors group-hover:bg-stone-950/55" />
+            <div className="relative z-10 max-w-md text-white">
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-white/75">
+                Estamos aquí para ayudarte
+              </p>
+              <h2 className="mt-4 font-editorial text-4xl leading-tight sm:text-5xl">
+                Contacta con nosotros.
+              </h2>
+              <span className="mt-8 inline-flex items-center gap-2 border-b border-white/70 pb-1 text-xs font-semibold uppercase tracking-wider">
+                Ver contacto <ArrowUpRight className="size-4" />
+              </span>
+            </div>
+          </Link>
         </section>
       </ScrollReveal>
     </div>
