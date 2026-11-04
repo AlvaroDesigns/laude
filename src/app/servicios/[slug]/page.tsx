@@ -613,7 +613,7 @@ export default async function ServiceDetailPage({
   };
 
   return (
-    <div className="space-y-5 pb-6 sm:pb-8">
+    <div className="space-y-5 pb-4 sm:pb-5">
       <FaqSchema faqs={service.faqs} />
 
       {/* 1. HERO SECTION (Photographic island matching fisiolaude.com) */}

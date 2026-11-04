@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 export function LegalDocument({ document, children }: { document: LegalDocumentType; children?: ReactNode }) {
   return (
-    <div className="space-y-5 pt-20 sm:pt-24 pb-6 sm:pb-8">
+    <div className="space-y-5 pt-20 sm:pt-24 pb-4 sm:pb-5">
       <section className="mx-4 sm:mx-5 bg-[#f5f4f2] rounded-[25px] px-6 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20">
         <article className="max-w-3xl mx-auto">
           <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#8F8C7F]">Información legal</p>

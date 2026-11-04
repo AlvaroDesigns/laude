@@ -45,7 +45,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 pb-4 sm:pb-5">
       {/* Immersive article hero */}
       <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[480px] sm:min-h-[560px] lg:min-h-[680px] rounded-[25px] overflow-hidden flex items-end justify-center px-5 sm:px-10 lg:px-16 pb-10 sm:pb-14 lg:pb-16 text-center">
         <div className="absolute inset-0 -z-20">
