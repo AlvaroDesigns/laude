@@ -50,7 +50,7 @@ export default function RootLayout({
   const googleTagId = process.env.NEXT_PUBLIC_GTM_ID;
 
   return (
-    <html lang="es" className={`${anticDidone.variable} ${instrumentSans.variable} scroll-smooth`}>
+    <html lang="es" className={`${anticDidone.variable} ${instrumentSans.variable} scroll-smooth`} data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href={EXTERNAL_URLS.googleFonts} />
         <link rel="preconnect" href={EXTERNAL_URLS.googleFontsStatic} crossOrigin="anonymous" />

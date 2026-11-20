@@ -140,6 +140,7 @@ export default function NosotrosPage() {
                 src="/images/fisio_s-min.jpg"
                 alt="Laura - Fisioterapeuta LAUDE (Nº col 1580)"
                 fill
+                sizes="(max-width: 767px) 100vw, 50vw"
                 className="object-cover object-center"
               />
             </div>

@@ -17,35 +17,22 @@ const team = [
     name: "Laura Delgado",
     image: "/images/team/laura_d.jpg",
     alt: "Laura Delgado, equipo de Laude",
-    role: "Fisioterapeuta · Nº col. 1580",
-    paragraphs: [
-      "Soy Laura, fisioterapeuta y la persona que está detrás de LAUDE. Desde que terminé la carrera no he dejado de formarme en ejercicio terapéutico, pilates, dolor crónico y fisioterapia neuromusculoesquelética.",
-      "Me encanta entender cómo se mueve el cuerpo y cómo puedo ayudar a que funcione mejor. Trabajo con una idea muy sencilla: escuchar de verdad a quien tengo delante.",
-      "Me gusta que cada paciente se sienta cómodo y en confianza mientras trabajamos en su recuperación. Creo en un trato cercano, claro y sin prisas, para avanzar de una forma amable y realista.",
-    ],
+    role: "Fisioterapeuta · Nº col. 1580 · Directora de Laude",
+    services: "Servicio de fisioterapia y rehabilitación, pilates suelo y máquinas terapéutico.",
   },
   {
     name: "Laura Alonso",
     image: "/images/team/laura_a.jpg",
     alt: "Laura Alonso, equipo de Laude",
-    role: "Fisioterapeuta",
-    paragraphs: [
-      "Laura Alonso es fisioterapeuta y nueva integrante de nuestro equipo. Su forma de entender la fisioterapia coincide con la nuestra: tratamientos personalizados, cercanía y un objetivo muy claro: ayudar a cada persona a recuperar su calidad de vida.",
-      "En consulta combina terapia manual, punción seca, neuromodulación percutánea y ejercicio terapéutico, adaptando cada tratamiento a las necesidades de cada paciente.",
-      "Su pasión por el deporte y su experiencia con disciplinas como el CrossFit le permiten comprender muy bien las necesidades de quienes buscan volver a moverse sin dolor o rendir al máximo.",
-    ],
+    role: "Fisioterapeuta · Nº col. 2507",
+    services: "Servicio de fisioterapia y rehabilitación y clases de pilates terapéutico.",
   },
   {
     name: "Ariadna Climent",
     image: "/images/team/ariadna.jpg",
     alt: "Ariadna Climent, equipo de Laude",
-    role: "Fisioterapeuta",
-    paragraphs: [
-      "Ariadna es nuestra nueva fisioterapeuta. Apasionada del deporte y, especialmente, de las disciplinas acuáticas, encuentra en el movimiento una forma de disfrutar, superarse y cuidar de uno mismo.",
-      "Esta pasión también forma parte de su manera de entender la fisioterapia, donde el ejercicio, la recuperación y la prevención van de la mano.",
-      "Su objetivo es acompañar a cada paciente en su proceso de recuperación, adaptándose a sus necesidades y ayudándole a recuperar la confianza en su cuerpo.",
-      "Con su incorporación seguimos creciendo como equipo, manteniendo aquello que nos define: la cercanía, el trato personalizado y las ganas de ayudar a cada persona a sentirse mejor.",
-    ],
+    role: "Fisioterapeuta · Nº col. 2545",
+    services: "Servicio de fisioterapia y rehabilitación y clases de pilates terapéutico.",
   },
 ];
 
@@ -58,6 +45,7 @@ export default function EquipoPage() {
             src="/images/Hero-Image.jpg"
             alt="Equipo de Laude Fisioterapia y Pilates"
             fill
+            sizes="100vw"
             className="object-cover object-center"
             priority
           />
@@ -80,39 +68,50 @@ export default function EquipoPage() {
       </section>
 
       <ScrollReveal>
-        <section className="mx-4 space-y-5 sm:mx-5">
-          {team.map((member, index) => (
+        <section className="mx-4 grid gap-5 rounded-[25px] bg-[#f5f4f2] p-5 sm:mx-5 sm:gap-8 sm:p-8 xl:grid-cols-3 xl:gap-10 xl:p-10">
+          {team.map((member) => (
             <article
               key={member.name}
-              className="grid overflow-hidden rounded-[25px] bg-[#f5f4f2] lg:grid-cols-2"
+              className="group overflow-hidden rounded-[20px] bg-white"
             >
-              <div className={`p-5 sm:p-8 lg:min-h-[580px] lg:p-10 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                <div className="relative aspect-[4/5] min-h-[360px] overflow-hidden rounded-[20px] bg-white lg:h-full lg:aspect-auto lg:min-h-[500px]">
-                  <Image
-                    src={member.image}
-                    alt={member.alt}
-                    fill
-                    sizes="(max-width: 1023px) 100vw, 50vw"
-                    className="object-cover object-top"
-                  />
-                </div>
+              <div className="relative aspect-[4/5] md:aspect-square overflow-hidden bg-stone-200">
+                <Image
+                  src={member.image}
+                  alt={member.alt}
+                  fill
+                  sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                />
               </div>
-              <div className={`flex flex-col justify-center p-6 sm:p-8 lg:p-12 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+              <div className="flex min-h-[220px] flex-col justify-between p-6 sm:p-8">
                 <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#8F8C7F]">Equipo Laude</p>
-                <h2 className="mt-4 font-editorial text-4xl font-normal leading-[1.1] text-stone-900 sm:text-5xl">
+                <h2 className="mt-5 font-editorial text-4xl font-normal leading-[1.1] text-stone-900 sm:text-[42px]">
                   {member.name}
                 </h2>
                 <p className="mt-3 text-sm font-medium uppercase tracking-[0.14em] text-[#908968]">
                   {member.role}
                 </p>
-                <div className="mt-7 space-y-4 text-sm font-light leading-relaxed text-stone-600 sm:text-base">
-                  {member.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
+                <p className="mt-6 text-sm font-light leading-relaxed text-stone-600 sm:text-base">{member.services}</p>
               </div>
             </article>
           ))}
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="mx-4 rounded-[25px] bg-white px-6 py-12 sm:mx-5 sm:px-10 sm:py-16 lg:px-16">
+          <div className="grid gap-8 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-4">
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#8F8C7F]">Equipo Laude</p>
+              <h2 className="mt-4 font-editorial text-4xl font-normal leading-[1.1] text-stone-900 sm:text-5xl">
+                Lo que nos une
+              </h2>
+            </div>
+            <div className="space-y-5 text-base font-light leading-relaxed text-stone-700 sm:text-lg lg:col-span-8 lg:max-w-3xl">
+              <p>Nos apasiona el movimiento y compartimos una misma forma de entender la fisioterapia. Combinamos razonamiento clínico, terapia manual y ejercicio terapéutico para comprender el origen de cada problema, más allá de sus síntomas.</p>
+              <p>Trabajamos desde el conocimiento, la experiencia y la sensibilidad. Nos importa cómo te sientes, cómo afecta el dolor a tu día a día y qué quieres volver a hacer.</p>
+            </div>
+          </div>
         </section>
       </ScrollReveal>
     </div>

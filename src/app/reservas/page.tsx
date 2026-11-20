@@ -2,6 +2,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { EXTERNAL_URLS, getAbsoluteUrl, ROUTES } from '@/constants';
 
 export const metadata: Metadata = {
@@ -47,6 +48,13 @@ export default function ReservasPage() {
           <p className="text-white/95 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-xl">
             Agenda tu cita online en Fisiolaude. Selecciona tratamiento, día y hora para recibir atención profesional y personalizada.
           </p>
+          <Link
+            href={ROUTES.services}
+            className="inline-flex items-center gap-2 pt-2 text-xs font-medium uppercase tracking-[0.18em] text-white transition-colors hover:text-[#EAE4CE]"
+          >
+            <span aria-hidden="true">←</span>
+            Volver a servicios
+          </Link>
         </div>
       </section>
 

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function ServiciosPage() {
   return (
-    <div className="space-y-5 pb-4 sm:pb-5">
+    <div className="flex flex-col gap-5 pb-4 sm:pb-5">
       {/* 1. HERO SECTION (Identical to original with Hero image & transparent header) */}
       <section className="mx-4 sm:mx-5 mt-4 sm:mt-5 relative min-h-[380px] sm:min-h-[460px] md:min-h-[540px] lg:min-h-[640px] rounded-[25px] overflow-hidden flex items-center justify-start px-5 sm:px-8 lg:px-14 pt-24 sm:pt-32 md:pt-38 lg:pt-44 pb-7 sm:pb-10 lg:pb-14">
         {/* Background Image */}
@@ -25,6 +25,7 @@ export default function ServiciosPage() {
             src="/images/Hero-Image.jpg"
             alt="Laude - Servicios de Fisioterapia y Pilates Palma"
             fill
+            sizes="100vw"
             className="object-cover object-center"
             priority
           />
@@ -73,9 +74,65 @@ export default function ServiciosPage() {
 
       </ScrollReveal>
 
+      <ScrollReveal className="order-last relative z-10 lg:-mt-24">
+      {/* 3. VALORACIÓN INICIAL (Punto de partida) */}
+      <section className="mx-4 sm:mx-5">
+        <div className="relative z-10 overflow-hidden rounded-[25px] border border-stone-200 bg-white p-6 shadow-[0_24px_60px_rgba(68,64,53,0.14)] sm:p-10 lg:mx-10 lg:p-14 2xl:mx-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="lg:col-span-7 space-y-6 text-left">
+            <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal leading-snug">
+              ¿Por dónde empiezo, pilates suelo o máquinas? ¿Qué es lo mejor para mí?
+            </h2>
+
+            <div className="space-y-4 text-sm sm:text-base text-stone-600 font-light leading-relaxed">
+              <p>
+                Entendemos tu duda; por ello realizamos una valoración inicial antes de empezar.
+              </p>
+              <p>
+                Esto consiste en una sesión individual donde el fisioterapeuta valorará tu estado actual, cómo te mueves, cuáles son tus limitaciones y anotará tu historial de lesiones o intervenciones pasadas. Te aconsejará qué es lo mejor para ti o tu lesión.
+              </p>
+              <p>
+                A veces es necesario pasar por sesiones de fisioterapia antes de empezar las clases, ya que el dolor muchas veces genera disfunción y limitaciones que antes hay que resolver.
+              </p>
+            </div>
+
+            <div className="pt-4">
+              <div className="p-6 bg-white border border-stone-200 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-5 max-w-lg">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#8F8C7F]">
+                    Tarifa valoración inicial Pilates
+                  </p>
+                  <p className="font-editorial text-4xl text-stone-900 mt-1">35€</p>
+                </div>
+                <Link
+                  href={ROUTES.booking}
+                  className="inline-block text-center bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3 rounded-full text-xs font-semibold uppercase tracking-wider shadow transition-all hover:scale-105"
+                >
+                  Pedir cita
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[380px] aspect-[3/4] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/valoracion-min.jpg"
+                alt="Valoración inicial Pilates Palma - Laude"
+                fill
+                sizes="(max-width: 1023px) 100vw, 380px"
+                className="object-cover"
+              />
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+      </ScrollReveal>
+
       <ScrollReveal>
       {/* 3. FISIOTERAPIA (Island) */}
-      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-[#f5f4f2] rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Text */}
           <div className="lg:col-span-6 space-y-6 text-left">
@@ -112,6 +169,7 @@ export default function ServiciosPage() {
                 src="/images/fisio_s-min.jpg"
                 alt="Fisioterapia en Palma - Laude"
                 fill
+                sizes="(max-width: 1023px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -165,6 +223,7 @@ export default function ServiciosPage() {
                 src="/images/pilates_m-min.jpg"
                 alt="Pilates Máquinas en Palma - Laude"
                 fill
+                sizes="(max-width: 1023px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -176,7 +235,7 @@ export default function ServiciosPage() {
 
       <ScrollReveal>
       {/* 5. PILATES SUELO (Island) */}
-      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
+      <section className="mx-4 sm:mx-5 bg-[#f5f4f2] rounded-[25px] p-6 sm:p-10 lg:px-14 lg:pt-14 lg:pb-32 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Text */}
           <div className="lg:col-span-6 space-y-6 text-left">
@@ -227,63 +286,6 @@ export default function ServiciosPage() {
 
       </ScrollReveal>
 
-      <ScrollReveal>
-      {/* 6. VALORACIÓN INICIAL COMPARISON ISLAND */}
-      <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-14 overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Text & Pricing Box */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <h2 className="font-editorial text-3xl sm:text-4xl text-stone-900 font-normal leading-snug">
-              ¿Por donde empiezo, pilates suelo o máquinas?¿Que es lo mejor para mi?
-            </h2>
-
-            <div className="space-y-4 text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              <p>
-                Entendemos tu duda por ello realizamos una valoración inicial antes de empezar.
-              </p>
-              <p>
-                Esto consiste en una sesión individual donde el fisioterapeuta valorará tu estado actual, como te mueves, cuáles son tus limitaciones, anotará tu historial tanto de lesiones o intervenciones pasadas. El fisioterapeuta te aconsejará que es lo mejor para ti o tu lesión.
-              </p>
-              <p>
-                A veces es necesario pasar por sesiones de fisioterapia antes de empezar las clases, ya que el dolor muchas veces genera disfunción y limitaciones que antes hay que resolver.
-              </p>
-            </div>
-
-            {/* Tarifa Box */}
-            <div className="pt-4">
-              <div className="p-6 bg-white border border-stone-200 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-5 max-w-lg">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-[#8F8C7F]">
-                    Tarifa Valoración Inicial Pilates
-                  </p>
-                  <p className="font-editorial text-4xl text-stone-900 mt-1">
-                    35€
-                  </p>
-                </div>
-                <Link
-                  href={ROUTES.booking}
-                  className="inline-block text-center bg-[#B2AFA0] hover:bg-[#9E9B8D] text-white px-8 py-3 rounded-full text-xs font-semibold uppercase tracking-wider shadow transition-all hover:scale-105"
-                >
-                  Pedir Cita
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[380px] aspect-[3/4] rounded-2xl overflow-hidden">
-              <Image
-                src="/images/valoracion-min.jpg"
-                alt="Valoración inicial Pilates Palma - Laude"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      </ScrollReveal>
     </div>
   );
 }
