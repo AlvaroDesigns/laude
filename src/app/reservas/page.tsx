@@ -79,7 +79,7 @@ export default function ReservasPage() {
           <iframe
             src={EXTERNAL_URLS.booking}
             title="Horarios de reservas TIMP Fisiolaude"
-            className="w-full h-[780px] sm:h-[880px] lg:h-[950px] border-none"
+            className="w-full h-[680px] sm:h-[720px] lg:h-[760px] border-none"
             allow="payment; camera; microphone"
             allowFullScreen
             loading="lazy"
