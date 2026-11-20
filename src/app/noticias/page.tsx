@@ -27,6 +27,7 @@ export default function NoticiasPage() {
             src="/images/Hero-Image.jpg"
             alt="Laude - Noticias Fisioterapia y Pilates"
             fill
+            sizes="100vw"
             className="object-cover object-center"
             priority
           />
@@ -57,54 +58,52 @@ export default function NoticiasPage() {
         <section className="mx-4 sm:mx-5 bg-white rounded-[25px] p-6 sm:p-10 lg:p-12 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {BLOG_POSTS.map(post => (
-              <article
+              <Link
                 key={post.id}
-                className="bg-white rounded-2xl border border-stone-200/80 overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                href={getNewsRoute(post.slug)}
+                aria-label={`Leer artículo: ${post.title}`}
+                className="group block rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8F8C7F]"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-md text-[11px] font-semibold text-[#8F8C7F]">
-                    {post.category}
-                  </div>
-                </div>
-
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center gap-3 text-xs text-stone-400 mb-3">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5" />
-                      {post.date}
-                    </span>
-                    <span>•</span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5" />
-                      {post.readTime}
-                    </span>
+                <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-stone-200/80 bg-white">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute top-3 left-3 rounded-md bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-[#8F8C7F] backdrop-blur-sm">
+                      {post.category}
+                    </div>
                   </div>
 
-                  <h2 className="font-editorial text-2xl text-stone-900 group-hover:text-[#8F8C7F] transition-colors leading-snug mb-3 font-normal">
-                    <Link href={getNewsRoute(post.slug)}>
+                  <div className="flex flex-grow flex-col p-6">
+                    <div className="mb-3 flex items-center gap-3 text-xs text-stone-400">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="h-3.5 w-3.5" />
+                        {post.date}
+                      </span>
+                      <span>•</span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="h-3.5 w-3.5" />
+                        {post.readTime}
+                      </span>
+                    </div>
+
+                    <h2 className="mb-3 font-editorial text-2xl font-normal leading-snug text-stone-900 transition-colors group-hover:text-[#8F8C7F]">
                       {post.title}
-                    </Link>
-                  </h2>
+                    </h2>
 
-                  <p className="text-xs text-stone-600 leading-relaxed mb-6 flex-grow font-light">
-                    {post.excerpt}
-                  </p>
+                    <p className="mb-6 flex-grow text-xs font-light leading-relaxed text-stone-600">{post.excerpt}</p>
 
-                  <Link
-                    href={getNewsRoute(post.slug)}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8F8C7F] group-hover:translate-x-1 transition-transform"
-                  >
-                    <span>Leer artículo completo</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </article>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8F8C7F] transition-transform group-hover:translate-x-1">
+                      <span>Leer artículo completo</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                  </div>
+                </article>
+              </Link>
             ))}
           </div>
         </section>

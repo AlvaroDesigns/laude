@@ -95,7 +95,7 @@ export default function ContactoPage() {
                 <span className="block text-xs font-medium uppercase tracking-[0.2em] text-[#8F8C7F]">
                   Email
                 </span>
-                <span className="mt-1.5 block text-base font-medium text-stone-800 sm:text-lg">
+                <span className="mt-0.5 block text-base font-medium text-stone-800 sm:text-lg">
                   {SITE_INFO.email}
                 </span>
               </span>
@@ -115,7 +115,7 @@ export default function ContactoPage() {
                 <span className="block text-xs font-medium uppercase tracking-[0.2em] text-[#8F8C7F]">
                   Síguenos
                 </span>
-                <span className="mt-1.5 flex items-center gap-2 text-base font-medium text-stone-800 sm:text-lg">
+                <span className="mt-0.5 flex items-center gap-2 text-base font-medium text-stone-800 sm:text-lg">
                   @fisiolaude{" "}
                   <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </span>

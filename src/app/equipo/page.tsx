@@ -16,6 +16,7 @@ const team = [
   {
     name: "Laura Delgado",
     image: "/images/team/laura_d.jpg",
+    hoverImage: "/images/team/laura_d_b.jpeg",
     alt: "Laura Delgado, equipo de Laude",
     role: "Fisioterapeuta · Nº col. 1580 · Directora de Laude",
     services: "Servicio de fisioterapia y rehabilitación, pilates suelo y máquinas terapéutico.",
@@ -23,6 +24,7 @@ const team = [
   {
     name: "Laura Alonso",
     image: "/images/team/laura_a.jpg",
+    hoverImage: "/images/team/laura_a_b.jpeg",
     alt: "Laura Alonso, equipo de Laude",
     role: "Fisioterapeuta · Nº col. 2507",
     services: "Servicio de fisioterapia y rehabilitación y clases de pilates terapéutico.",
@@ -74,14 +76,24 @@ export default function EquipoPage() {
               key={member.name}
               className="group overflow-hidden rounded-[20px] bg-white"
             >
-              <div className="relative aspect-[4/5] md:aspect-square overflow-hidden bg-stone-200">
+              <div className="group/photo relative aspect-[4/5] overflow-hidden bg-stone-200 md:aspect-square">
                 <Image
                   src={member.image}
                   alt={member.alt}
                   fill
                   sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                  className={`object-cover object-top transition-all duration-700 ease-out motion-reduce:transition-none ${member.hoverImage ? "group-hover/photo:scale-[1.03] group-hover/photo:opacity-0" : ""}`}
                 />
+                {member.hoverImage && (
+                  <Image
+                    src={member.hoverImage}
+                    alt=""
+                    aria-hidden="true"
+                    fill
+                    sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                    className="scale-[1.03] object-cover object-center opacity-0 transition-all duration-700 ease-out group-hover/photo:scale-100 group-hover/photo:opacity-100 motion-reduce:transition-none"
+                  />
+                )}
               </div>
               <div className="flex min-h-[220px] flex-col justify-between p-6 sm:p-8">
                 <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#8F8C7F]">Equipo Laude</p>
