@@ -59,8 +59,8 @@ export function CookieConsent({ gtmId }: { gtmId?: string }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/35 p-4 backdrop-blur-[2px]" role="dialog" aria-modal="true" aria-label="Gestionar consentimiento" aria-live="polite">
-      <div className="relative w-full max-w-[880px] rounded-[12px] bg-white px-6 py-10 shadow-2xl sm:px-14 sm:py-11 md:px-[54px]">
+    <div className="fixed bottom-4 left-4 z-50 w-[calc(100%-2rem)] max-w-[440px]" role="dialog" aria-label="Gestionar consentimiento" aria-live="polite">
+      <div className="relative rounded-[12px] bg-white px-6 py-8 shadow-2xl sm:px-[54px] sm:py-11">
         <button
           type="button"
           onClick={() => setIsOpen(false)}
@@ -69,8 +69,8 @@ export function CookieConsent({ gtmId }: { gtmId?: string }) {
         >
           <span aria-hidden="true" className="text-3xl font-extralight leading-none">×</span>
         </button>
-        <h2 className="pr-8 text-3xl font-medium tracking-[-0.04em] text-[#292929] sm:text-[38px]">Gestionar consentimiento</h2>
-        <p className="mt-16 max-w-[720px] text-xl font-light leading-[1.62] tracking-[-0.02em] text-[#292929] sm:text-[29px]">
+        <h2 className="pr-8 text-2xl font-medium tracking-[-0.04em] text-[#292929] sm:text-[34px]">Gestionar consentimiento</h2>
+        <p className="mt-12 text-base font-light leading-[1.62] tracking-[-0.02em] text-[#292929] sm:text-[21px]">
           Usamos cookies para mejorar su experiencia de navegación, mostrarle anuncios o contenidos personalizados y analizar nuestro tráfico. Al hacer clic en “Aceptar todo” usted da su consentimiento a nuestro uso de las cookies.
         </p>
         <p className="mt-4 text-sm font-light text-stone-600">
@@ -91,14 +91,14 @@ export function CookieConsent({ gtmId }: { gtmId?: string }) {
           </div>
         )}
 
-        <div className="mt-12 grid gap-3 sm:grid-cols-3 sm:gap-4">
-          <button type="button" onClick={() => setShowSettings((value) => !value)} className="min-h-14 cursor-pointer rounded-full border-2 border-[#B2AFA0] px-5 py-3 text-lg font-light text-[#989484] transition-colors hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F] sm:text-[27px]">
+        <div className="mt-8 grid gap-2 sm:grid-cols-3 sm:gap-2">
+          <button type="button" onClick={() => setShowSettings((value) => !value)} className="min-h-12 cursor-pointer rounded-full border-2 border-[#B2AFA0] px-3 py-2 text-sm font-light text-[#989484] transition-colors hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F] sm:text-base">
             {showSettings ? 'Ocultar opciones' : 'Personalizar'}
           </button>
-          <button type="button" onClick={() => saveConsent('rejected')} className="min-h-14 cursor-pointer rounded-full border-2 border-[#B2AFA0] px-5 py-3 text-lg font-light text-[#989484] transition-colors hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F] sm:text-[27px]">
+          <button type="button" onClick={() => saveConsent('rejected')} className="min-h-12 cursor-pointer rounded-full border-2 border-[#B2AFA0] px-3 py-2 text-sm font-light text-[#989484] transition-colors hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F] sm:text-base">
             Rechazar todo
           </button>
-          <button type="button" onClick={() => saveConsent('accepted')} className="min-h-14 cursor-pointer rounded-full bg-[#B2AFA0] px-5 py-3 text-lg font-light text-white transition-colors hover:bg-[#9E9B8D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F] sm:text-[27px]">
+          <button type="button" onClick={() => saveConsent('accepted')} className="min-h-12 cursor-pointer rounded-full bg-[#B2AFA0] px-3 py-2 text-sm font-light text-white transition-colors hover:bg-[#9E9B8D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F] sm:text-base">
             Aceptar todo
           </button>
         </div>
