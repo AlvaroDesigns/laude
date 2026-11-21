@@ -59,27 +59,27 @@ export function CookieConsent({ gtmId }: { gtmId?: string }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed bottom-4 left-0.5 z-50 w-[calc(100%-1rem)] max-w-[408px]" role="dialog" aria-label="Gestionar consentimiento" aria-live="polite">
-      <div className="relative rounded-[12px] bg-white px-6 py-8 shadow-2xl sm:px-[54px] sm:py-11">
+    <div className="fixed bottom-4 left-4 z-50 w-[calc(100%-2rem)] max-w-[360px]" role="dialog" aria-label="Gestionar consentimiento" aria-live="polite">
+      <div className="relative rounded-[12px] bg-white px-5 py-5 shadow-2xl sm:px-6 sm:py-6">
         <button
           type="button"
           onClick={() => setIsOpen(false)}
-          className="absolute right-5 top-5 grid size-9 cursor-pointer place-items-center rounded-full text-slate-500 transition-colors hover:bg-stone-100 hover:text-stone-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F]"
+          className="absolute right-2 top-2 grid size-7 cursor-pointer place-items-center rounded-full text-slate-500 transition-colors hover:bg-stone-100 hover:text-stone-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F]"
           aria-label="Cerrar preferencias de cookies"
         >
-          <span aria-hidden="true" className="text-3xl font-extralight leading-none">×</span>
+          <span aria-hidden="true" className="text-xl font-extralight leading-none">×</span>
         </button>
-        <h2 className="max-w-[260px] pr-8 text-2xl font-medium tracking-[-0.04em] text-[#292929] sm:text-[32px]">Gestionar consentimiento</h2>
-        <p className="mt-12 text-base font-light leading-[1.7] tracking-[-0.02em] text-[#292929] sm:text-[18px]">
+        <h2 className="max-w-[180px] pr-7 text-lg font-medium tracking-[-0.04em] text-[#292929] sm:text-[22px]">Gestionar consentimiento</h2>
+        <p className="mt-4 text-xs font-light leading-[1.5] tracking-[-0.02em] text-[#292929] sm:text-[13px]">
           Usamos cookies para mejorar su experiencia de navegación, mostrarle anuncios o contenidos personalizados y analizar nuestro tráfico. Al hacer clic en “Aceptar todo” usted da su consentimiento a nuestro uso de las cookies.
         </p>
-        <p className="mt-4 text-sm font-light text-stone-600">
+        <p className="mt-2 text-[10px] font-light text-stone-600">
           Consulta nuestra{' '}
           <Link href={ROUTES.cookiePolicy} className="underline decoration-[#B2AFA0] underline-offset-4 hover:text-stone-900">Política de Cookies</Link>.
         </p>
 
         {showSettings && (
-          <div className="mt-6 rounded-2xl bg-[#f5f4f2] p-4 text-sm text-stone-700">
+          <div className="mt-3 rounded-2xl bg-[#f5f4f2] p-3 text-xs text-stone-700">
             <div className="flex items-start justify-between gap-4">
               <div><p className="font-medium">Cookies necesarias</p><p className="mt-1 text-stone-500">Siempre activas para guardar tu elección y ofrecer una navegación segura.</p></div>
               <span className="rounded-full bg-stone-200 px-2.5 py-1 text-xs font-medium">Activas</span>
@@ -91,14 +91,14 @@ export function CookieConsent({ gtmId }: { gtmId?: string }) {
           </div>
         )}
 
-        <div className="mt-8 grid gap-2 sm:grid-cols-3 sm:gap-2">
-          <button type="button" onClick={() => setShowSettings((value) => !value)} className="min-h-12 cursor-pointer rounded-full border-2 border-[#B2AFA0] px-2 py-2 text-sm font-light text-[#989484] transition-colors hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F]">
-            {showSettings ? 'Ocultar opciones' : 'Personalizar'}
+        <div className="mt-4 grid grid-cols-3 gap-1.5">
+          <button type="button" onClick={() => setShowSettings((value) => !value)} className="min-h-9 cursor-pointer whitespace-nowrap rounded-full border-2 border-[#B2AFA0] px-1 py-1 text-[10px] font-light text-[#989484] transition-colors hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F]">
+            {showSettings ? 'Ocultar' : 'Personalizar'}
           </button>
-          <button type="button" onClick={() => saveConsent('rejected')} className="min-h-12 cursor-pointer rounded-full border-2 border-[#B2AFA0] px-2 py-2 text-sm font-light text-[#989484] transition-colors hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F]">
+          <button type="button" onClick={() => saveConsent('rejected')} className="min-h-9 cursor-pointer whitespace-nowrap rounded-full border-2 border-[#B2AFA0] px-1 py-1 text-[10px] font-light text-[#989484] transition-colors hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F]">
             Rechazar todo
           </button>
-          <button type="button" onClick={() => saveConsent('accepted')} className="min-h-12 cursor-pointer rounded-full bg-[#B2AFA0] px-2 py-2 text-sm font-light text-white transition-colors hover:bg-[#9E9B8D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F]">
+          <button type="button" onClick={() => saveConsent('accepted')} className="min-h-9 cursor-pointer whitespace-nowrap rounded-full bg-[#B2AFA0] px-1 py-1 text-[10px] font-light text-white transition-colors hover:bg-[#9E9B8D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F]">
             Aceptar todo
           </button>
         </div>
