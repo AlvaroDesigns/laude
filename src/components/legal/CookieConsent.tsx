@@ -29,13 +29,13 @@ declare global {
   }
 }
 
-export function CookieConsent({ gtmId }: { gtmId: string }) {
+export function CookieConsent({ gtmId }: { gtmId?: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
 
   useEffect(() => {
     const consent = window.localStorage.getItem(CONSENT_KEY) as Consent | null;
-    if (consent === 'accepted') loadAnalytics(gtmId);
+    if (consent === 'accepted' && gtmId) loadAnalytics(gtmId);
     const openTimer = !consent ? window.setTimeout(() => setIsOpen(true), 0) : undefined;
 
     const openPreferences = () => {
@@ -51,7 +51,7 @@ export function CookieConsent({ gtmId }: { gtmId: string }) {
 
   const saveConsent = (consent: Consent) => {
     window.localStorage.setItem(CONSENT_KEY, consent);
-    if (consent === 'accepted') loadAnalytics(gtmId);
+    if (consent === 'accepted' && gtmId) loadAnalytics(gtmId);
     setIsOpen(false);
     setShowSettings(false);
   };
@@ -59,16 +59,27 @@ export function CookieConsent({ gtmId }: { gtmId: string }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-x-4 bottom-4 z-50 sm:inset-x-auto sm:right-5 sm:bottom-5 sm:w-[min(34rem,calc(100vw-2.5rem))]" role="dialog" aria-label="Preferencias de cookies" aria-live="polite">
-      <div className="rounded-[25px] border border-stone-200 bg-white p-6 shadow-2xl sm:p-7">
-        <p className="font-editorial text-2xl text-stone-900">Tus preferencias de cookies</p>
-        <p className="mt-3 text-sm leading-relaxed font-light text-stone-600">
-          Usamos cookies necesarias para que la web funcione y, si lo autorizas, cookies analíticas para mejorarla. Consulta nuestra{' '}
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/35 p-4 backdrop-blur-[2px]" role="dialog" aria-modal="true" aria-label="Gestionar consentimiento" aria-live="polite">
+      <div className="relative w-full max-w-[880px] rounded-[12px] bg-white px-6 py-10 shadow-2xl sm:px-14 sm:py-11 md:px-[54px]">
+        <button
+          type="button"
+          onClick={() => setIsOpen(false)}
+          className="absolute right-5 top-5 grid size-9 cursor-pointer place-items-center rounded-full text-slate-500 transition-colors hover:bg-stone-100 hover:text-stone-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F]"
+          aria-label="Cerrar preferencias de cookies"
+        >
+          <span aria-hidden="true" className="text-3xl font-extralight leading-none">×</span>
+        </button>
+        <h2 className="pr-8 text-3xl font-medium tracking-[-0.04em] text-[#292929] sm:text-[38px]">Gestionar consentimiento</h2>
+        <p className="mt-16 max-w-[720px] text-xl font-light leading-[1.62] tracking-[-0.02em] text-[#292929] sm:text-[29px]">
+          Usamos cookies para mejorar su experiencia de navegación, mostrarle anuncios o contenidos personalizados y analizar nuestro tráfico. Al hacer clic en “Aceptar todo” usted da su consentimiento a nuestro uso de las cookies.
+        </p>
+        <p className="mt-4 text-sm font-light text-stone-600">
+          Consulta nuestra{' '}
           <Link href={ROUTES.cookiePolicy} className="underline decoration-[#B2AFA0] underline-offset-4 hover:text-stone-900">Política de Cookies</Link>.
         </p>
 
         {showSettings && (
-          <div className="mt-5 rounded-2xl bg-[#f5f4f2] p-4 text-sm text-stone-700">
+          <div className="mt-6 rounded-2xl bg-[#f5f4f2] p-4 text-sm text-stone-700">
             <div className="flex items-start justify-between gap-4">
               <div><p className="font-medium">Cookies necesarias</p><p className="mt-1 text-stone-500">Siempre activas para guardar tu elección y ofrecer una navegación segura.</p></div>
               <span className="rounded-full bg-stone-200 px-2.5 py-1 text-xs font-medium">Activas</span>
@@ -80,15 +91,15 @@ export function CookieConsent({ gtmId }: { gtmId: string }) {
           </div>
         )}
 
-        <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-end">
-          <button type="button" onClick={() => setShowSettings((value) => !value)} className="cursor-pointer rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-stone-700 hover:bg-stone-100">
-            {showSettings ? 'Ocultar opciones' : 'Configurar'}
+        <div className="mt-12 grid gap-3 sm:grid-cols-3 sm:gap-4">
+          <button type="button" onClick={() => setShowSettings((value) => !value)} className="min-h-14 cursor-pointer rounded-full border-2 border-[#B2AFA0] px-5 py-3 text-lg font-light text-[#989484] transition-colors hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F] sm:text-[27px]">
+            {showSettings ? 'Ocultar opciones' : 'Personalizar'}
           </button>
-          <button type="button" onClick={() => saveConsent('rejected')} className="cursor-pointer rounded-full border border-stone-300 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-stone-800 hover:bg-stone-100">
-            Rechazar
+          <button type="button" onClick={() => saveConsent('rejected')} className="min-h-14 cursor-pointer rounded-full border-2 border-[#B2AFA0] px-5 py-3 text-lg font-light text-[#989484] transition-colors hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F] sm:text-[27px]">
+            Rechazar todo
           </button>
-          <button type="button" onClick={() => saveConsent('accepted')} className="cursor-pointer rounded-full bg-[#B2AFA0] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white hover:bg-[#9E9B8D]">
-            Aceptar todas
+          <button type="button" onClick={() => saveConsent('accepted')} className="min-h-14 cursor-pointer rounded-full bg-[#B2AFA0] px-5 py-3 text-lg font-light text-white transition-colors hover:bg-[#9E9B8D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F8C7F] sm:text-[27px]">
+            Aceptar todo
           </button>
         </div>
       </div>

@@ -32,6 +32,7 @@ const team = [
   {
     name: "Ariadna Climent",
     image: "/images/team/ariadna.jpg",
+    hoverImage: "/images/team/ariadna-a.jpg",
     alt: "Ariadna Climent, equipo de Laude",
     role: "Fisioterapeuta · Nº col. 2545",
     services: "Servicio de fisioterapia y rehabilitación y clases de pilates terapéutico.",

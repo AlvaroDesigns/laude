@@ -61,7 +61,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <WhatsAppFloat />
-        {googleTagId && <CookieConsent gtmId={googleTagId} />}
+        <CookieConsent gtmId={googleTagId} />
       </body>
     </html>
   );
